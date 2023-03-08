@@ -1,0 +1,12 @@
+@import '@/styles/mixins';
+@import '@/styles/colors';
+
+.tag {
+  @include fontSize(14px, 100%);
+
+  padding: 13px 30px;
+  outline: 0;
+  border: 0;
+  background: #F0F0F0;
+  border-radius: 21px;
+}

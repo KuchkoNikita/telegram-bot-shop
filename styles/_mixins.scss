@@ -1,0 +1,29 @@
+@import './functions';
+
+@mixin flex($fd: row, $jc: initial, $ai: initial, $fw: nowrap) {
+  display: flex;
+  flex-flow: $fd $fw;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin fontSize($size, $lineHeight: null) {
+  font-size: calc-rem($size);
+
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+}
+
+@mixin sectionTitle {
+  @include fontSize(40px, 100%);
+
+  font-weight: 400;
+}
+
+@mixin centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

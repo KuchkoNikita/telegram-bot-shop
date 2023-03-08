@@ -1,0 +1,150 @@
+{
+  "globals": {
+    "window": true,
+    "document": true,
+    "navigator": true,
+    "fetch": true,
+    "localStorage": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:json/recommended",
+    "plugin:@next/next/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react-hooks"
+  ],
+  "ignorePatterns": [
+    "/build",
+    "/node_modules",
+    "/public",
+    "yarn.lock"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "no-restricted-globals": "off",
+    "react/jsx-fragments": "off",
+    "react/no-danger": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-array-index-key": "off", // TODO re-review
+    "no-unused-expressions": "off",
+    "no-case-declarations": "off", // TODO re-review
+    "no-param-reassign": "off", // TODO re-review
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 150
+      }
+    ],
+    "camelcase": [
+      0,
+      {
+        "properties": "never",
+        "ignoreDestructuring": true
+      }
+    ],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ],
+    "react/jsx-props-no-spreading": "off", // TODO re-review
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": [
+          "Label"
+        ],
+        "required": {
+          "every": [],
+          "some": [ "nesting", "id" ]
+        },
+        "allowChildren": false
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelComponents": [
+          "CustomLabel"
+        ],
+        "labelAttributes": [
+          "inputLabel"
+        ],
+        "controlComponents": [
+          "CustomInput"
+        ],
+        "assert": "both",
+        "depth": 3
+      }
+    ],
+    "jsx-a11y/click-events-have-key-events": "off", // TODO re-review
+    "jsx-a11y/no-noninteractive-element-interactions": "off", // TODO re-review
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": "*", "next": "continue" },
+      { "blankLine": "always", "prev": "*", "next": "if" },
+      { "blankLine": "always", "prev": "*", "next": "break" },
+      { "blankLine": "always", "prev": "while", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "while" },
+      { "blankLine": "always", "prev": "switch", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "switch" },
+      { "blankLine": "always", "prev": "if", "next": "*" }
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "consistent-return": "off", // TODO re-review
+    "no-unused-vars": "off", // TODO re-review
+    "react/destructuring-assignment": "off",
+    "react/jsx-max-props-per-line": [
+      1,
+      {
+          "maximum": 1
+      }
+    ],
+    "no-return-await": "off",
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "react/no-unused-prop-types": "warn"
+  }
+}
