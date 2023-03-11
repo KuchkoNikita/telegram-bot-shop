@@ -4,5 +4,6 @@
 .container {
   @include flex(row, space-between, center);
 
-  padding: $sideSectionPadding;
+  padding: 0 $sideSectionPadding;
+  height: $headerHeight;
 }

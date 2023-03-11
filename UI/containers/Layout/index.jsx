@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 
 const MetaTags = dynamic(() => import('@/UI/components/MetaTags'));
 const Header = dynamic(() => import('UI/sections/Header'));
-const NavigationMenu = dynamic(() => import('UI/sections/NavigationMenu'));
 const Footer = dynamic(() => import('UI/sections/Footer'));
 
 const Layout = ({ children }) => (
