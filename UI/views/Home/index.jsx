@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 const Home = () => (
   <main className={styles.main}>
-    <TagsList />
+    {/* <TagsList /> */}
     <ProductList />
   </main>
 );
