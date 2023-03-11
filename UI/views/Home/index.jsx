@@ -1,4 +1,3 @@
-import TagsList from '@/Ui/components/TagsList';
 import ProductList from '@/UI/sections/ProductList';
 import styles from './styles.module.scss';
 
