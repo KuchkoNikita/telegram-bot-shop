@@ -12,8 +12,8 @@ const NavigationMenu = ({ isBurgerMenu }) => (
   >
     <nav className={styles.navigationList}>
       {NAVIGATION_MENU_ITEM.map(({ title, link }) => (
-        <div>
-          <a className={styles.navigationListItem} href={link}>{title}</a>
+        <div className={styls.navigationWrapperItem}>
+          <a className={styles.navigationItem} href={link}>{title}</a>
         </div>
       ))}
     </nav>

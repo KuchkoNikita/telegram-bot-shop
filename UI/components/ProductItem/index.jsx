@@ -1,23 +1,26 @@
 import Image from 'next/image'
 import urlImage from '@/assets/images/logo.jpeg';
+import { useProductItem } from './utils/useProductItem';
 import styles from './styles.module.scss';
 
-const ProductList = ({
-  link,
-}) => (
-  <div className={styles.card}>
+const ProductList = (props) => {
+  const {} = useProductItem(props);
+  
+  return (
     <a href="#">
-      <Image
-        src={urlImage}
-        alt="Picture of the author"
-        width={120}
-        height={120}
-      />
-      <div className={styles.cardInfo}>
-        <p className={styles.cardPrice}>90 рублей</p>
+      <div className={styles.card}>
+        <Image
+          src={urlImage}
+          alt="Picture of the author"
+          width={165}
+          height={165}
+        />
+        <div className={styles.cardInfo}>
+          <p className={styles.cardPrice}>90 рублей</p>
+        </div>
       </div>
     </a>
-  </div>
-);
+  )
+};
 
 export default ProductList;

@@ -7,10 +7,11 @@
   align-items: $ai;
 }
 
-@mixin grid($tc: none, $tr: none) {
+@mixin grid($tc: none, $tr: none, $gg: 0) {
   display: grid;
   grid-template-columns: $tc;
   grid-template-rows: $tr;
+  grid-gap: $gg;
 }
 
 @mixin fontSize($size, $lineHeight: null) {

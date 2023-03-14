@@ -23,6 +23,7 @@
   padding: 0 $sideSectionPadding;
 }
 
-.navigationListItem {
-  display: block;
+.navigationWrapperItem {
+  padding: 10px;
+  border-bottom: 1px solid var(--tg-theme-hint-color);
 }
