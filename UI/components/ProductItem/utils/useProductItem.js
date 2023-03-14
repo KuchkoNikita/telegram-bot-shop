@@ -1,8 +1,10 @@
 export const useProductItem = ({
   link,
+  onClick,
 }) => {
 
   return {
-    link
+    link,
+    onClick
   };
 };
