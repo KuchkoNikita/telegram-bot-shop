@@ -1,7 +1,7 @@
 @import '@/styles/mixins';
 
 .container {
-  @include flex(row, space-between);
+  @include grid(repeat(1fr, 2), none);
 
   flex-wrap: wrap;
   padding: 0 15px;

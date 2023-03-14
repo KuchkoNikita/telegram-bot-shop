@@ -12,6 +12,7 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
+      <div>{window.innerWidth}</div>
       <Burger onClick={handleOnClick} />
       <NavigationMenu isBurgerMenu={isBurgerMenu} />
     </header>

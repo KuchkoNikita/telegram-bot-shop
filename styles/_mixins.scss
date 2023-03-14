@@ -7,6 +7,12 @@
   align-items: $ai;
 }
 
+@mixin grid($tc: none, $tr: none) {
+  display: grid;
+  grid-template-columns: $tc;
+  grid-template-rows: $tr;
+}
+
 @mixin fontSize($size, $lineHeight: null) {
   font-size: calc-rem($size);
 
