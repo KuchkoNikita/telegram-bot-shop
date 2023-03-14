@@ -2,7 +2,7 @@
 @import '@/styles/mixins';
 
 .container {
-  @include flex(row, space-between, center);
+  @include flex(row, flex-end, center);
 
   padding: 0 $sideSectionPadding;
   height: $headerHeight;
