@@ -1,11 +1,22 @@
 import Image from 'next/image'
 import urlImage from '@/assets/images/logo.jpeg';
+import CounterButton from '@/UI/components/CounterButton';
 import { useProductItem } from './utils/useProductItem';
 import styles from './styles.module.scss';
+import { useState } from 'react';
 
-const ProductList = (props) => {
+const ProductItem = (props) => {
+  const [countProduct, setCountProduct] = useState(0)
   const {} = useProductItem(props);
   
+  const handlePlusClick = () => {
+    setCountProduct((prevState) => prevState + 1)
+  }
+
+  const handleMinusClick = () => {
+    setCountProduct((prevState) => prevState - 1)
+  }
+
   return (
     <a href="#">
       <div className={styles.card}>
@@ -16,11 +27,18 @@ const ProductList = (props) => {
           height={165}
         />
         <div className={styles.cardInfo}>
-          <p className={styles.cardPrice}>90 рублей</p>
+          <p className={styles.productPrice}>90 рублей</p>
+          <CounterButton
+            count={countProduct}
+            handlePlusClick={handlePlusClick}
+            handleMinusClick={handleMinusClick}
+          >
+            Добавить
+          </CounterButton>
         </div>
       </div>
     </a>
   )
 };
 
-export default ProductList;
+export default ProductItem;
