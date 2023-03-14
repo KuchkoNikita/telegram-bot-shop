@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
-      <Burger onClick={handleOnClick} />
+      <Burger isNavigationOpen={isBurgerMenu} onClick={handleOnClick} />
       <NavigationMenu isBurgerMenu={isBurgerMenu} />
     </header>
   )

@@ -9,7 +9,12 @@ const Burger = ({
 }) => {
   
   return (
-    <button className={cn(styles.burger, className)} onClick={onClick}>Open</button>
+    // <button className={cn(styles.burger, className)} onClick={onClick}>Open</button>
+    <div onClick={onClick} className={cn(styles.burger, {[styles.burgerActive]: isNavigationOpen})}>
+      <span className={cn(styles.line, styles.line1)}></span>
+      <span className={cn(styles.line, styles.line2)}></span>
+      <span className={cn(styles.line, styles.line3)}></span>
+    </div>
   );
   // <div 
   //   onClick={onClick}
