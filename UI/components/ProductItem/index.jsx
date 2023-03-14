@@ -30,6 +30,8 @@ const ProductItem = (props) => {
       />
       <div className={styles.cardInfo}>
         <p className={styles.productPrice}>90 рублей</p>
+        <p>Vaporesso Luxe X</p>
+        <p>1500 mAh 5 мл.</p>
         <CounterButton
           count={countProduct}
           handlePlusClick={handlePlusClick}
