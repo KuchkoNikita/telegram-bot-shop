@@ -1,4 +1,12 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
 .navigationWrapperItem {
   padding: 10px;
   border-bottom: 1px solid var(--tg-theme-hint-color);
+}
+
+.navigationContainer {
+  margin-top: $headerHeight;
+  padding: 0 $sideSectionPadding;
 }

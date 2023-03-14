@@ -14,10 +14,8 @@ const Popup = ({
         })
       }
     >
-    <div className={styles.popupContainer}>
       {children}
     </div>
-  </div>
   );
 };
 

@@ -12,7 +12,7 @@ const ProductList = () => {
 
   return (
     <section className={styles.container}>
-      {[null, null, null, null].map(() => <ProductItem onClick={handleProductClick} />)}
+      {[null, null, null, null, null, null, null, null].map(() => <ProductItem onClick={handleProductClick} />)}
       <ProductPopup isProductActive={activeProduct} />
     </section>
   )

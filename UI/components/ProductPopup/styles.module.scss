@@ -1,0 +1,31 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.popup {
+  z-index: 100;
+}
+
+.productContainer {
+  padding: 0 $sideSectionPadding;
+}
+
+.productHeader {
+  @include flex(row, space-between, center);
+
+  margin-top: 15px;
+}
+
+.productLables,
+.productLable {
+  @include flex(row, initial, center);
+}
+
+.productLable {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.productLableText {
+  margin-left: 5px;
+}
