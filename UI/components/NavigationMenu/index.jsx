@@ -10,15 +10,13 @@ const NavigationMenu = ({ isBurgerMenu }) => (
       })
     }
   >
-    <ul
-      className={styles.navigationList}
-    >
+    <nav className={styles.navigationList}>
       {NAVIGATION_MENU_ITEM.map(({ title, link }) => (
-        <li>
+        <div>
           <a className={styles.navigationListItem} href={link}>{title}</a>
-        </li>
+        </div>
       ))}
-    </ul>
+    </nav>
   </div>
 );
 
