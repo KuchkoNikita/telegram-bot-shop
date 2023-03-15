@@ -21,8 +21,9 @@ const ProductItem = (props) => {
   }
 
   return (
-    <div className={styles.card} onClick={onClick}>
+    <div className={styles.card}>
       <Image
+        onClick={onClick}
         src={urlImage}
         alt="Picture of the author"
         width={165}

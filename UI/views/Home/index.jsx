@@ -1,11 +1,31 @@
+import { useState } from 'react';
 import ProductList from '@/UI/sections/ProductList';
+import CardButton from '@/UI/components/CardButton';
+import TagsList from '@/UI/components/TagsList';
+import CardPopup from '@/UI/components/CardPopup';
 import styles from './styles.module.scss';
 
-const Home = () => (
-  <main className={styles.main}>
-    {/* <TagsList /> */}
-    <ProductList />
-  </main>
-);
+const Home = () => {
+  const [isActiveCard, setIsActiveCard] = useState(false);
+
+  const handleProductClick = () => {
+    setIsActiveCard((prevState) => !prevState);
+  };
+
+  return (
+    <main className={styles.main}>
+      <TagsList />
+      <ProductList />
+      <CardButton
+        count={10}
+        onClick={handleProductClick}
+      />
+      <CardPopup
+        isOpen={isActiveCard}
+        onCloseButtonClick={handleProductClick}
+      />
+    </main>
+  )
+};
 
 export default Home;

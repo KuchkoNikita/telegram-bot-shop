@@ -2,6 +2,8 @@
 @import '@/styles/mixins';
 
 .popup {
+  overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   left: -100%;
   right: 0;
@@ -16,5 +18,14 @@
 
 .popupActive {
   left: 0;
+
+  .closeButton {
+    position: fixed;
+  }
 }
 
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

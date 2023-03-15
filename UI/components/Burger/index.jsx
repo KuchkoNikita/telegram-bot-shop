@@ -1,5 +1,4 @@
 import cn from 'classnames'
-// import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import styles from './styles.module.scss';
 
 const Burger = ({

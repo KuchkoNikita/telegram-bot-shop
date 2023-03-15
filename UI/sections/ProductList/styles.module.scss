@@ -1,3 +1,4 @@
+@import '@/styles/variables';
 @import '@/styles/mixins';
 
 .container {
@@ -6,5 +7,5 @@
   max-width: 380px;
   margin: 0 auto;
   flex-wrap: wrap;
-  padding: 0 15px;
+  padding: 0 15px $orderButtonHeight;
 }

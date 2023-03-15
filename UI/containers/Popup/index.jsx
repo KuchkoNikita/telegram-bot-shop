@@ -5,6 +5,8 @@ const Popup = ({
   children,
   isOpen,
   className,
+  isShowCloseButton,
+  onCloseButtonClick,
 }) => {
   return (
     <div 
@@ -15,6 +17,14 @@ const Popup = ({
       }
     >
       {children}
+      {isShowCloseButton && (
+        <button 
+          className={styles.closeButton}
+          onClick={onCloseButtonClick}
+        >
+          Close
+        </button>
+      )}
     </div>
   );
 };
