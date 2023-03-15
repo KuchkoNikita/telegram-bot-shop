@@ -25,3 +25,10 @@
 @mixin container {
   padding: 0 15px;
 }
+
+@mixin centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
