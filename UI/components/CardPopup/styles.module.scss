@@ -1,3 +1,12 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
 .popup {
   z-index: 100;
+  background: antiquewhite;
 }
+
+.popupContainer {
+  padding: 15px;
+}
+
