@@ -5,7 +5,8 @@ import TagsList from '@/UI/components/TagsList';
 import CardPopup from '@/UI/components/CardPopup';
 import styles from './styles.module.scss';
 
-const Home = () => {
+const Home = ({ page }) => {
+  console.log('page: ', page);
   const [isActiveCard, setIsActiveCard] = useState(false);
 
   const handleProductClick = () => {

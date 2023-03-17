@@ -1,23 +1,30 @@
 import Image from 'next/image'
+import { useSelector, useDispatch } from 'react-redux'
 import urlImage from '@/assets/images/logo.jpeg';
 import CounterButton from '@/UI/components/CounterButton';
 import { useProductItem } from './utils/useProductItem';
 import styles from './styles.module.scss';
+import { decrement, increment } from '@/redux/actions/counterSlice';
 import { useState } from 'react';
 
 const ProductItem = (props) => {
-  const [countProduct, setCountProduct] = useState(0)
+  const countProduct = useSelector((state) => state.counter.value)
+  const dispatch = useDispatch()
+
+  // const [countProduct, setCountProduct] = useState(0)
   const {
     link,
     onClick
   } = useProductItem(props);
   
   const handlePlusClick = () => {
-    setCountProduct((prevState) => prevState + 1)
+    // setCountProduct((prevState) => prevState + 1)
+    dispatch(increment())
   }
 
   const handleMinusClick = () => {
-    setCountProduct((prevState) => prevState - 1)
+    // setCountProduct((prevState) => prevState - 1)
+    dispatch(decrement())
   }
 
   return (
