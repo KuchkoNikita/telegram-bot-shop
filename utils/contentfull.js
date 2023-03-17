@@ -7,12 +7,11 @@ const client = createClient({
 
 
 export const getEntriesByTypeAndSlug = async (type, slug) => {
-  console.log('type: ', type);
   return (
     await client.getEntries({
       include: 5,
       content_type: type,
-      "fields.slug[in]": slug,
+      "fields.type[in]": slug,
     })
   ).items;
 };
