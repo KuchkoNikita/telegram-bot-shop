@@ -42,9 +42,7 @@ const ProductPopup = ({
               count={countProduct}
               handlePlusClick={handlePlusClick}
               handleMinusClick={handleMinusClick}
-            >
-              ДОБАВИТЬ
-            </CounterButton>
+            />
           </div>
           <div>
             <h2>Vaporesso Luxe QS</h2>

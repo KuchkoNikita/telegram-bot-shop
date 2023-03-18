@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Image from 'next/image'
-import Popup from '@/UI/containers/Popup';
 import CounterButton from '@/UI/components/CounterButton';
 import urlImage from '@/assets/images/logo.jpeg';
 import styles from './styles.module.scss';
@@ -34,9 +33,7 @@ const ProductCard = () => {
           count={countProduct}
           handlePlusClick={handlePlusClick}
           handleMinusClick={handleMinusClick}
-        >
-          Добавить
-        </CounterButton>
+        />
         <p>Сумма: 107.9</p>
       </div>
     </div>

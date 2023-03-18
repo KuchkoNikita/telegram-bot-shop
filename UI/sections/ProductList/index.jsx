@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import ProductItem from '@/UI/components/ProductItem';
 import ProductPopup from '@/UI/components/ProductPopup';
-import { useState } from 'react';
 import styles from './styles.module.scss';
 
-const ProductList = () => {
+const ProductList = ({
+  type,
+  products,
+}) => {
   const [activeProduct, setActiveProduct] = useState(null);
 
   const handleProductClick = () => {
@@ -12,8 +15,12 @@ const ProductList = () => {
 
   return (
     <section className={styles.container}>
-      {[null, null, null, null, null, null, null, null].map(() => 
-        <ProductItem onClick={handleProductClick} />
+      {products.map((product) => 
+        <ProductItem
+          type={type}
+          onClick={handleProductClick}
+          product={product}
+        />
       )}
       <ProductPopup
         isProductActive={activeProduct}

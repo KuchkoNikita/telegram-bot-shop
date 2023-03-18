@@ -9,7 +9,7 @@ const CounterButton = ({
   return (
     <>
       {count === 0 
-        ? <button onClick={handlePlusClick}>{children}</button>
+        ? <button onClick={handlePlusClick}>Добавить</button>
         : (
           <div className={styles.buttonsWrapper}>
             <button onClick={handleMinusClick}>-</button>

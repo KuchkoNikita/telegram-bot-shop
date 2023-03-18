@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import Image from 'next/image'
 import Popup from '@/UI/containers/Popup';
-import CounterButton from '@/UI/components/CounterButton';
 import ProductCard from '@/UI/components/ProductCard';
 import FormLabel from '@/UI/components/FormLabel';
-import urlImage from '@/assets/images/logo.jpeg';
 import styles from './styles.module.scss';
 
 const CardPopup = ({
