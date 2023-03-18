@@ -14,16 +14,30 @@ const TAGS = [
   '1',
 ]
 
-const TagsList = ({ tagsList }) => {
+const TagsList = ({
+  tagsList,
+  onTagClick,
+  onAllTagClick,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.tagsList}>
-        <Tag className={styles.tag}>Все</Tag>
+        <Tag
+          className={styles.tag}
+          onClick={onAllTagClick}
+        >
+          Все
+        </Tag>
         {tagsList?.map((tagsItem) => {
           const { tag, title } = getContentfulFields(tagsItem);
 
           return (
-            <Tag className={styles.tag}>{title}</Tag>
+            <Tag
+              className={styles.tag}
+              onClick={onTagClick}
+            >
+              {title}
+            </Tag>
           )
         })}
       </div>

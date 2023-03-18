@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import { useSelector, useDispatch } from 'react-redux'
-import urlImage from '@/assets/images/logo.jpeg';
 import CounterButton from '@/UI/components/CounterButton';
-import { getContentfulFields } from '@/utils/helpers';
 import styles from './styles.module.scss';
 import { decrement, increment } from '@/redux/actions/counterSlice';
 
@@ -12,25 +10,19 @@ const ProductItem = ({
 }) => {
   const {
     title,
-    description,
     details,
     price,
     image,
-  } = getContentfulFields(product);
-  const { url } = image.fields.file
+  } = product;
 
   const countProduct = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
 
-  // const [countProduct, setCountProduct] = useState(0)
-  
   const handlePlusClick = () => {
-    // setCountProduct((prevState) => prevState + 1)
     dispatch(increment())
   }
 
   const handleMinusClick = () => {
-    // setCountProduct((prevState) => prevState - 1)
     dispatch(decrement())
   }
 
@@ -38,7 +30,7 @@ const ProductItem = ({
     <div className={styles.card}>
       <Image
         onClick={onClick}
-        src={"http:"+url}
+        src={image.src}
         alt="Picture of the author"
         width={165}
         height={165}

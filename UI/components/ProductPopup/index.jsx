@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Popup from '@/UI/containers/Popup';
 import CounterButton from '@/UI/components/CounterButton';
 import urlImage from '@/assets/images/logo.jpeg';
-import { getContentfulFields } from '@/utils/helpers';
 import { getContentfulText } from '@/utils/contentfull';
 import styles from './styles.module.scss';
 
@@ -12,6 +11,11 @@ const ProductPopup = ({
   isProductActive,
   onCloseButtonClick,
 }) => {
+
+  if (!activeProduct) {
+    return null;
+  }
+
   const [countProduct, setCountProduct] = useState(0)
   const {
     title,
@@ -19,7 +23,7 @@ const ProductPopup = ({
     details,
     price,
     image,
-  } = getContentfulFields(activeProduct);
+  } = activeProduct;
   const content = getContentfulText(description);
 
   const handlePlusClick = () => {
@@ -28,10 +32,6 @@ const ProductPopup = ({
 
   const handleMinusClick = () => {
     setCountProduct((prevState) => prevState - 1)
-  }
-
-  if (!activeProduct) {
-    return null;
   }
 
   return (
@@ -43,7 +43,7 @@ const ProductPopup = ({
     >
       <div className={styles.imageWrapper}>
         <Image
-          src={urlImage}
+          src={image.src}
           alt="Picture of the author"
           width={380}
           height={380}
@@ -62,33 +62,17 @@ const ProductPopup = ({
           <div className={styles.productAbout}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.productLables}>
-              <div className={styles.productLable}>
-                <Image
-                  src={urlImage}
-                  alt="Picture of the author"
-                  width={15}
-                  height={15}
-                />
-                <p className={styles.productLableText}>1000 mAh</p>
-              </div>
-              <div className={styles.productLable}>
-                <Image
-                  src={urlImage}
-                  alt="Picture of the author"
-                  width={15}
-                  height={15}
-                />
-                <p className={styles.productLableText}>2 мл.</p>
-              </div>
-              <div className={styles.productLable}>
-                <Image
-                  src={urlImage}
-                  alt="Picture of the author"
-                  width={15}
-                  height={15}
-                />
-                <p className={styles.productLableText}>20 Вт</p>
-              </div>
+              {details.map(({ title }) => (
+                <div className={styles.productLable}>
+                  <Image
+                    src={urlImage}
+                    alt="Picture of the author"
+                    width={15}
+                    height={15}
+                  />
+                  <p className={styles.productLableText}>{title}</p>
+                </div>
+              ))}
             </div>
             <div className={styles.productContent}>
               {content}

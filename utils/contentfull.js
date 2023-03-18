@@ -24,7 +24,7 @@ export const getContentfulText = (content) => {
 };
 
 export const createImage = (image, anchor) => {
-  const file = image?.image?.fields?.file;
+  const file = image?.fields?.file;
 
   return {
     src: "https://" + file?.url.slice(2) || "",
