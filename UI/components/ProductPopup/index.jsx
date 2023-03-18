@@ -3,13 +3,24 @@ import Image from 'next/image'
 import Popup from '@/UI/containers/Popup';
 import CounterButton from '@/UI/components/CounterButton';
 import urlImage from '@/assets/images/logo.jpeg';
+import { getContentfulFields } from '@/utils/helpers';
+import { getContentfulText } from '@/utils/contentfull';
 import styles from './styles.module.scss';
 
 const ProductPopup = ({
+  activeProduct,
   isProductActive,
   onCloseButtonClick,
 }) => {
   const [countProduct, setCountProduct] = useState(0)
+  const {
+    title,
+    description,
+    details,
+    price,
+    image,
+  } = getContentfulFields(activeProduct);
+  const content = getContentfulText(description);
 
   const handlePlusClick = () => {
     setCountProduct((prevState) => prevState + 1)
@@ -19,6 +30,10 @@ const ProductPopup = ({
     setCountProduct((prevState) => prevState - 1)
   }
 
+  if (!activeProduct) {
+    return null;
+  }
+
   return (
     <Popup 
       isShowCloseButton
@@ -26,7 +41,7 @@ const ProductPopup = ({
       isOpen={isProductActive}
       onCloseButtonClick={onCloseButtonClick}
     >
-      <div>
+      <div className={styles.imageWrapper}>
         <Image
           src={urlImage}
           alt="Picture of the author"
@@ -37,15 +52,15 @@ const ProductPopup = ({
       <div className={styles.productInfo}>
         <div className={styles.productContainer}>
           <div className={styles.productHeader}>
-            <p>107.9р</p>
+            <p>{price}</p>
             <CounterButton
               count={countProduct}
               handlePlusClick={handlePlusClick}
               handleMinusClick={handleMinusClick}
             />
           </div>
-          <div>
-            <h2>Vaporesso Luxe QS</h2>
+          <div className={styles.productAbout}>
+            <h2 className={styles.title}>{title}</h2>
             <div className={styles.productLables}>
               <div className={styles.productLable}>
                 <Image
@@ -76,20 +91,7 @@ const ProductPopup = ({
               </div>
             </div>
             <div className={styles.productContent}>
-              <p className={styles.productText}>
-                Vaporesso XROS II Kit – доработанное устройство, оснащённое встроенным аккумулятором на 1000 мАч. Индикатор на корпусе показывает уровень заряда батареи.
-              </p>
-              <p>
-                Картридж вмещает 2 мл жидкости, и представлен в двух модификациях: на 0.8 Ом и на 1.2 Ом. Имеется система регулировки тяги, а также удобная верхняя заправка жидкостью.
-              </p>
-              <ul>
-                <li>Очень хороший</li>
-                <li>Очень хороший</li>
-                <li>Очень хороший</li>
-              </ul>
-              <p className={styles.productFooterText}>
-                Вы можете приобрести этот товар с бесплатной доставкой курьером по городу Минску, или почтовым отправлением по всей территории Беларуси. Просто выберите цвет товара и добавьте его в корзину, затем заполните данные для доставки и нажмите кнопку «Оформить заказ». После оформления, с вами свяжется наш менеджер.
-              </p>
+              {content}
             </div>
           </div>
         </div>

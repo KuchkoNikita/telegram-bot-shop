@@ -9,8 +9,8 @@ const ProductList = ({
 }) => {
   const [activeProduct, setActiveProduct] = useState(null);
 
-  const handleProductClick = () => {
-    setActiveProduct((prevState) => !prevState);
+  const handleProductClick = (product) => () => {
+    setActiveProduct(product);
   };
 
   return (
@@ -18,13 +18,14 @@ const ProductList = ({
       {products.map((product) => 
         <ProductItem
           type={type}
-          onClick={handleProductClick}
+          onClick={handleProductClick(product)}
           product={product}
         />
       )}
       <ProductPopup
-        isProductActive={activeProduct}
-        onCloseButtonClick={handleProductClick}
+        activeProduct={activeProduct}
+        isProductActive={!!activeProduct}
+        onCloseButtonClick={handleProductClick(null)}
       />
     </section>
   )

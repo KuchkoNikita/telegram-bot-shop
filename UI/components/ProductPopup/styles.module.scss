@@ -2,7 +2,7 @@
 @import '@/styles/mixins';
 
 .popup {
-  z-index: 100;
+  z-index: $zindexCardPopup;
 }
 
 .productContainer {
@@ -28,4 +28,22 @@
 
 .productLableText {
   margin-left: 5px;
+}
+
+.imageWrapper {
+  @include flex(row, center)
+}
+
+.productContent {
+  h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
 }

@@ -2,7 +2,7 @@
 @import '@/styles/mixins';
 
 .popup {
-  z-index: 100;
+  z-index: $zindexTextPopup;
 
   .popupContainer {
     @include container;

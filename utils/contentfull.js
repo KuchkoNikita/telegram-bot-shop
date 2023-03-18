@@ -1,4 +1,5 @@
 import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID || "",
@@ -14,4 +15,22 @@ export const getEntriesByTypeAndSlug = async (type, slug) => {
       "fields.type[in]": slug,
     })
   ).items;
+};
+
+export const getContentfulText = (content) => {
+  return content
+    ? documentToReactComponents(content)
+    : "";
+};
+
+export const createImage = (image, anchor) => {
+  const file = image?.image?.fields?.file;
+
+  return {
+    src: "https://" + file?.url.slice(2) || "",
+    height: file?.details?.image?.height || 0,
+    width: file?.details?.image?.width || 0,
+    alt: file?.fileName || "",
+    href: anchor,
+  };
 };
