@@ -17,13 +17,16 @@ const TAGS = [
 const TagsList = ({ tagsList }) => {
   return (
     <div className={styles.container}>
-      {tagsList.map((tagsItem) => {
-        const { tag, title } = getContentfulFields(tagsItem);
+      <div className={styles.tagsList}>
+        <Tag className={styles.tag}>Все</Tag>
+        {tagsList?.map((tagsItem) => {
+          const { tag, title } = getContentfulFields(tagsItem);
 
-        return (
-          <Tag className={styles.tag}>{title}</Tag>
-        )
-      })}
+          return (
+            <Tag className={styles.tag}>{title}</Tag>
+          )
+        })}
+      </div>
     </div>
   )
 };
