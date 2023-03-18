@@ -7,8 +7,10 @@ import { getContentfulFields } from '@/utils/helpers';
 import styles from './styles.module.scss';
 
 const Home = ({ page }) => {
+  console.log('page: ', page);
   const {
     type,
+    tags,
     products,
   } = getContentfulFields(page)
   const [isActiveCard, setIsActiveCard] = useState(false);
@@ -19,7 +21,7 @@ const Home = ({ page }) => {
 
   return (
     <main className={styles.main}>
-      <TagsList />
+      <TagsList tagsList={tags} />
       <ProductList
         products={products}
       />

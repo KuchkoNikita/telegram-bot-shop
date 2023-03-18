@@ -18,7 +18,6 @@ const ProductItem = ({
     image,
   } = getContentfulFields(product);
   const { url } = image.fields.file
-  console.log('product: ', product);
 
   const countProduct = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
@@ -34,8 +33,6 @@ const ProductItem = ({
     // setCountProduct((prevState) => prevState - 1)
     dispatch(decrement())
   }
-
-  console.log("URL", "http:"+url);
 
   return (
     <div className={styles.card}>

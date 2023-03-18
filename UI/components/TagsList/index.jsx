@@ -1,4 +1,5 @@
 import Tag from '@/UI/components/Tag';
+import { getContentfulFields } from '@/utils/helpers';
 import styles from './styles.module.scss';
 
 const TAGS = [
@@ -13,13 +14,16 @@ const TAGS = [
   '1',
 ]
 
-const TagsList = () => {
-
+const TagsList = ({ tagsList }) => {
   return (
     <div className={styles.container}>
-      {TAGS.map((tag) => (
-        <Tag className={styles.tag}>{tag}</Tag>
-      ))}
+      {tagsList.map((tagsItem) => {
+        const { tag, title } = getContentfulFields(tagsItem);
+
+        return (
+          <Tag className={styles.tag}>{title}</Tag>
+        )
+      })}
     </div>
   )
 };
