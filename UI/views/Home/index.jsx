@@ -11,7 +11,6 @@ const Home = ({ page }) => {
     type,
     products,
   } = getContentfulFields(page)
-  console.log('products', products);
   const [isActiveCard, setIsActiveCard] = useState(false);
 
   const handleProductClick = () => {
