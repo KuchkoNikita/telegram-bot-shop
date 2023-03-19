@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import IconButton from '@mui/material/IconButton';
 import styles from './styles.module.scss';
 
 const CounterButton = ({
@@ -20,13 +21,21 @@ const CounterButton = ({
           </Button>
         : (
           <div className={styles.buttonsWrapper}>
-            <Button variant="text" onClick={handleMinusClick}>
+            <IconButton 
+              variant="text"
+              onClick={handleMinusClick}
+              className={styles.controllButton}
+            >
               <RemoveIcon/>
-            </Button>
+            </IconButton>
             <p>{count}</p>
-            <Button variant="text" onClick={handlePlusClick}>
+            <IconButton
+              variant="text"
+              onClick={handlePlusClick}
+              className={styles.controllButton}
+            >
               <AddIcon/>
-            </Button>
+            </IconButton>
           </div>
         )
       }
