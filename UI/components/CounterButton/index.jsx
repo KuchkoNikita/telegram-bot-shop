@@ -26,7 +26,7 @@ const CounterButton = ({
               onClick={handleMinusClick}
               className={styles.controllButton}
             >
-              <RemoveIcon/>
+              <RemoveIcon className={styles.icon} />
             </IconButton>
             <p>{count}</p>
             <IconButton
@@ -34,7 +34,7 @@ const CounterButton = ({
               onClick={handlePlusClick}
               className={styles.controllButton}
             >
-              <AddIcon/>
+              <AddIcon className={styles.icon} />
             </IconButton>
           </div>
         )

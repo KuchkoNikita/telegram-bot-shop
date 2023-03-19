@@ -2,14 +2,22 @@
 @import '@/styles/mixins';
 
 .button {
-  background: var(--tg-theme-button-color);
-  color: var(--tg-theme-button-text-color);
+  background: var(--tg-theme-button-color) !important;
+  color: var(--tg-theme-button-text-color) !important;
+  height: 40px;
 }
 
 .buttonsWrapper {
-  @include flex(row, center, center);
+  @include flex(row, space-between, center);
+
+  background: var(--tg-theme-button-color);
+  width: 112px;
 }
 
 .controllButton {
   color: var(--tg-theme-button-text-color);
+}
+
+.icon {
+  fill: var(--tg-theme-button-color);
 }
