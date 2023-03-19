@@ -2,7 +2,8 @@
 @import '@/styles/mixins';
 
 .button {
-  
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
 }
 
 .buttonsWrapper {
