@@ -1,18 +1,9 @@
-import Tag from '@/UI/components/Tag';
-import { getContentfulFields } from '@/utils/helpers';
-import styles from './styles.module.scss';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
-const TAGS = [
-  'Smoant',
-  'YKAP',
-  'FORD',
-  'Mersedes',
-  '1',
-  'YKAP',
-  'FORD',
-  'Mersedes',
-  '1',
-]
+import Tag from '@/UI/components/Tag';
+import styles from './styles.module.scss';
 
 const TagsList = ({
   tagsList,
