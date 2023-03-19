@@ -1,10 +1,15 @@
+import Button from '@mui/material/Button';
 import styles from './styles.module.scss';
 
 const CardButton = ({ count, onClick }) => {
   return (
-    <button onClick={onClick} className={styles.button}>
+    <Button
+      variant="contained"
+      onClick={onClick}
+      className={styles.button}
+    >
       Купить {count}
-    </button>
+    </Button>
   )
 };
 
