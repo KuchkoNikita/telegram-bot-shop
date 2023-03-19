@@ -28,13 +28,11 @@ const TagsList = ({
         >
           Все
         </Tag>
-        {tagsList?.map((tagsItem) => {
-          const { tag, title } = getContentfulFields(tagsItem);
-
+        {tagsList?.map(({ tag, title }) => {
           return (
             <Tag
               className={styles.tag}
-              onClick={onTagClick}
+              onClick={onTagClick(tag)}
             >
               {title}
             </Tag>

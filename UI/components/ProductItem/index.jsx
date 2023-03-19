@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useSelector, useDispatch } from 'react-redux'
 import CounterButton from '@/UI/components/CounterButton';
 import styles from './styles.module.scss';
-import { decrement, increment } from '@/redux/actions/counterSlice';
+import { decrement, increment, addProduct } from '@/redux/actions/basketSlice';
 
 const ProductItem = ({
   product,
@@ -15,11 +15,11 @@ const ProductItem = ({
     image,
   } = product;
 
-  const countProduct = useSelector((state) => state.counter.value)
+  const countProduct = useSelector((state) => state.basket.value)
   const dispatch = useDispatch()
 
   const handlePlusClick = () => {
-    dispatch(increment())
+    dispatch(addProduct(product));
   }
 
   const handleMinusClick = () => {

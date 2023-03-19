@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 import Popup from '@/UI/containers/Popup';
 import CounterButton from '@/UI/components/CounterButton';
-import urlImage from '@/assets/images/logo.jpeg';
 import { getContentfulText } from '@/utils/contentfull';
+import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
 
 const ProductPopup = ({
@@ -62,14 +62,9 @@ const ProductPopup = ({
           <div className={styles.productAbout}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.productLables}>
-              {details.map(({ title }) => (
+              {details.map(({ title }, index) => (
                 <div className={styles.productLable}>
-                  <Image
-                    src={urlImage}
-                    alt="Picture of the author"
-                    width={15}
-                    height={15}
-                  />
+                  {DETAILS_ICON[index]}
                   <p className={styles.productLableText}>{title}</p>
                 </div>
               ))}
