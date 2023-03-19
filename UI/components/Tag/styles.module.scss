@@ -2,6 +2,7 @@
 @import '@/styles/colors';
 
 .tag {
+  color: var(--tg-theme-text-color);
   border-color: var(--tg-theme-button-color);
   white-space: nowrap;
 }
