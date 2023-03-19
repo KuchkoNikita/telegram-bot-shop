@@ -3,7 +3,7 @@
 
 .popup {
   z-index: $zindexCardPopup;
-  background: antiquewhite;
+  background: var(--tg-theme-secondary-bg-color) !important;
 }
 
 .popupContainer {
