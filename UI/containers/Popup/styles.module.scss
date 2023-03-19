@@ -3,12 +3,12 @@
 
 .paper {
   width: 100%;
+  background: var(--tg-theme-bg-color);
 }
 
 .popup {
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: var(--tg-theme-bg-color);
   z-index: $zindexNavigation;
 }
 
