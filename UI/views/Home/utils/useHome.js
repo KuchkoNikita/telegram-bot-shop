@@ -20,7 +20,7 @@ export const useHome = ({ page }) => {
     setTagActive(null);
   };
 
-  const formatProducts = products.map((product) => {
+  const formatProducts = products.map((product, index) => {
     const {
       details,
       image,
@@ -34,6 +34,7 @@ export const useHome = ({ page }) => {
 
     return {
       ...props,
+      id: index,
       tag: newTag,
       details: newDetails,
       image: newImage,
@@ -49,16 +50,16 @@ export const useHome = ({ page }) => {
       return formatProduct?.tag.tag === tagActive;
     })
 
-  const currentProducts = tagActive ? filterProducts : formatProducts
+  const currentProducts = tagActive ? filterProducts : formatProducts;
 
   return {
     page,
-    tags: formatTags,
     tagActive,
     isActiveCard,
-    products: currentProducts,
     handleTagClick,
     handleProductClick,
     handleAllTagClick,
+    tags: formatTags,
+    products: currentProducts,
   }
 };

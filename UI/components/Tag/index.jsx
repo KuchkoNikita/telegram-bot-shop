@@ -1,15 +1,15 @@
+import Chip from '@mui/material/Chip';
 import cn from 'classnames';
 import styles from './styles.module.scss';
 
-const Tag = ({ children, className, onClick, ...props }) => {
+const Tag = ({ label, className, onClick }) => {
   return (
-    <button 
+    <Chip 
+      label={label}
+      variant="outlined"
       onClick={onClick}
       className={cn(styles.tag, className)}
-      {...props}
-    >
-      {children}
-    </button>
+    />
   );
 };
 

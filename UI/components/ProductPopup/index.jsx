@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
 import CounterButton from '@/UI/components/CounterButton';
 import { getContentfulText } from '@/utils/contentfull';
@@ -62,11 +63,13 @@ const ProductPopup = ({
           <div className={styles.productAbout}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.productLables}>
-              {details.map(({ title }, index) => (
-                <div className={styles.productLable}>
-                  {DETAILS_ICON[index]}
-                  <p className={styles.productLableText}>{title}</p>
-                </div>
+              {details.map(({ title, text }, index) => (
+                <Tooltip title={text} arrow>
+                  <div className={styles.productLable}>
+                    {DETAILS_ICON[index]}
+                    <p className={styles.productLableText}>{title}</p>
+                  </div>
+                </Tooltip>
               ))}
             </div>
             <div className={styles.productContent}>

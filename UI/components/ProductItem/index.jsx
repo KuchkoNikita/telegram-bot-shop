@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import Image from 'next/image'
 import { useSelector, useDispatch } from 'react-redux'
 import CounterButton from '@/UI/components/CounterButton';
 import styles from './styles.module.scss';
-import { decrement, increment, addProduct } from '@/redux/actions/basketSlice';
+import {
+  addToCart,
+  removeItem,
+} from '@/redux/actions/cartSlice';
 
 const ProductItem = ({
   product,
@@ -15,16 +19,18 @@ const ProductItem = ({
     image,
   } = product;
 
-  const countProduct = useSelector((state) => state.basket.value)
   const dispatch = useDispatch()
+  const [countProduct, setcountProduct] = useState(0);
 
   const handlePlusClick = () => {
-    dispatch(addProduct(product));
-  }
+    dispatch(addToCart(product));
+    setcountProduct((prevState => prevState + 1));
+  };
 
   const handleMinusClick = () => {
-    dispatch(decrement())
-  }
+    dispatch(removeItem(product));
+    setcountProduct((prevState => prevState - 1));
+  };
 
   return (
     <div className={styles.card}>
@@ -38,7 +44,10 @@ const ProductItem = ({
       <div className={styles.cardInfo}>
         <p className={styles.productPrice}>{price}</p>
         <p>{title}</p>
-        <p>1500 mAh 5 мл.</p>
+        <p>
+          <span>{details[0].title}</span>   
+          <span>{details[1].title}</span>
+        </p>
         <CounterButton
           count={countProduct}
           handlePlusClick={handlePlusClick}

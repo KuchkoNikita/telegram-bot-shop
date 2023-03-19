@@ -4,5 +4,5 @@
 .container {
   @include flex(row, space-between, center);
 
-  padding: 0 $sideSectionPadding;
+  padding: 0 $sideSectionPadding $orderButtonHeight + 20px;
 }

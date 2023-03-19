@@ -2,13 +2,6 @@
 @import '@/styles/colors';
 
 .tag {
-  @include fontSize(14px, 100%);
-
-  cursor: pointer;
-  padding: 5px 10px;
-  outline: 0;
-  border: 0;
-  background: var(--tg-theme-button-color);
-  border-radius: 21px;
+  border-color: var(--tg-theme-button-color);
   white-space: nowrap;
 }

@@ -23,6 +23,7 @@ const TagsList = ({
     <div className={styles.container}>
       <div className={styles.tagsList}>
         <Tag
+          label="Все"
           className={styles.tag}
           onClick={onAllTagClick}
         >
@@ -31,11 +32,10 @@ const TagsList = ({
         {tagsList?.map(({ tag, title }) => {
           return (
             <Tag
+              label={title}
               className={styles.tag}
               onClick={onTagClick(tag)}
-            >
-              {title}
-            </Tag>
+            />
           )
         })}
       </div>
