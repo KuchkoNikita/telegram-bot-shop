@@ -2,31 +2,41 @@ import { useState } from 'react';
 import Image from 'next/image'
 import CounterButton from '@/UI/components/CounterButton';
 import urlImage from '@/assets/images/logo.jpeg';
+import { addToCart, removeItem } from '@/redux/actions/cartSlice';
 import styles from './styles.module.scss';
 
-const ProductCard = () => {
-  const [countProduct, setCountProduct] = useState(0)
+const ProductCard = ({ product }) => {
+  console.log('product: ', product);
+  const {
+    price,
+    title,
+    quantity,
+    image,
+  } = product;
+  const [countProduct, setCountProduct] = useState(quantity)
 
   const handlePlusClick = () => {
-    setCountProduct((prevState) => prevState + 1)
-  }
+    dispatch(addToCart(product));
+    setCountProduct((prevState => prevState + 1));
+  };
 
   const handleMinusClick = () => {
-    setCountProduct((prevState) => prevState - 1)
-  }
+    dispatch(removeItem(product));
+    setCountProduct((prevState => prevState - 1));
+  };
 
   return (
     <div className={styles.productCard}>
       <Image
-        src={urlImage}
+        src={image.src}
         alt="Picture of the author"
         width={165}
         height={165}
       />
       <div className={styles.productCardInfo}>
         <div>
-          <h3>107.9р</h3>
-          <p>Vaporesso Luxe QS</p>
+          <h3>{price}</h3>
+          <p>{title}</p>
           <p>Черный</p>
         </div>
         <CounterButton
@@ -34,7 +44,7 @@ const ProductCard = () => {
           handlePlusClick={handlePlusClick}
           handleMinusClick={handleMinusClick}
         />
-        <p>Сумма: 107.9</p>
+        <p>Сумма: {price}</p>
       </div>
     </div>
   );

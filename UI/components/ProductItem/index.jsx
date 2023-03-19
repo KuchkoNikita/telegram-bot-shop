@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import CounterButton from '@/UI/components/CounterButton';
 import styles from './styles.module.scss';
 import {
@@ -20,16 +20,16 @@ const ProductItem = ({
   } = product;
 
   const dispatch = useDispatch()
-  const [countProduct, setcountProduct] = useState(0);
+  const [countProduct, setCountProduct] = useState(0);
 
   const handlePlusClick = () => {
     dispatch(addToCart(product));
-    setcountProduct((prevState => prevState + 1));
+    setCountProduct((prevState => prevState + 1));
   };
 
   const handleMinusClick = () => {
     dispatch(removeItem(product));
-    setcountProduct((prevState => prevState - 1));
+    setCountProduct((prevState => prevState - 1));
   };
 
   return (
