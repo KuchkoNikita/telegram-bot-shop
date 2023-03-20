@@ -19,6 +19,7 @@ const Home = (props) => {
   return (
     <main className={styles.main}>
       <TagsList
+        tagActive={tagActive}
         tagsList={tags}
         onTagClick={handleTagClick}
         onAllTagClick={handleAllTagClick}
