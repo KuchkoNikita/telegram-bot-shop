@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className={styles.container}>
       <Burger isNavigationOpen={isBurgerMenu} onClick={handleOnClick} />
-      <NavigationMenu isBurgerMenu={isBurgerMenu} />
+      <NavigationMenu isBurgerMenu={isBurgerMenu} onCloseClick={handleOnClick} />
     </header>
   )
 };

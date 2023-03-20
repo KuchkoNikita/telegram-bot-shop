@@ -10,7 +10,7 @@ const TextPopup = ({
     <Popup 
       isShowCloseButton
       className={styles.popup}
-      isOpen={true}
+      isOpen={isOpen}
       onCloseButtonClick={onCloseButtonClick}
     >
       <div className={styles.popupContainer}>

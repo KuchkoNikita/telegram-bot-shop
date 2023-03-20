@@ -3,6 +3,7 @@ export const SVG_IMAGES_TYPES = {
 };
 
 export const CONTENTFUL_CONTENT_TYPE = {
+  text: 'text',
   page: 'page',
   product: 'product',
 };

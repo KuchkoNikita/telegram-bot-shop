@@ -19,7 +19,7 @@
 }
 
 .closeButton {
-  border: 1px solid var(--tg-theme-button-color);
+  border: 1px solid var(--tg-theme-button-color) !important;
   position: absolute;
   top: 15px;
   right: 15px;

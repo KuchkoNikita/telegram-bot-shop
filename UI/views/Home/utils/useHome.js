@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { getContentfulFields } from '@/utils/helpers';
 import { createImage } from '@/utils/contentfull';
 
-export const useHome = ({ page }) => {
+export const useHome = ({ page, text }) => {
+  console.log('text: ', text);
   const { tags, products } = getContentfulFields(page);
 
   const [isActiveCard, setIsActiveCard] = useState(false);

@@ -10,3 +10,23 @@
   padding: 15px;
 }
 
+.popupMain {
+  padding: 15px;
+}
+
+.textField {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.button {
+  width: 100%;
+}
+
+.link {
+  color: var(--tg-theme-link-color);
+}
+

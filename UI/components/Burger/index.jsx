@@ -12,15 +12,9 @@ const Burger = ({
   
   return (
     <>
-      {isNavigationOpen ? (
-        <IconButton className={styles.burger} onClick={onClick}>
-          <CloseIcon />
-        </IconButton>
-      ): (
-        <IconButton className={styles.burger} onClick={onClick}>
-          <MenuIcon />
-        </IconButton>
-      )}
+      <IconButton className={styles.burger} onClick={onClick}>
+        <MenuIcon />
+      </IconButton>
     </>
   );
 };
