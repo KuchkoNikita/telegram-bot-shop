@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image'
 import CounterButton from '@/UI/components/CounterButton';
-import urlImage from '@/assets/images/logo.jpeg';
 import { addToCart, removeItem } from '@/redux/actions/cartSlice';
 import styles from './styles.module.scss';
 

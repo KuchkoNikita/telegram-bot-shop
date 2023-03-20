@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Burger from '@/UI/components/Burger'
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import NavigationMenu from '@/UI/components/NavigationMenu'
 import styles from './styles.module.scss';
 
@@ -12,7 +13,9 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
-      <Burger isNavigationOpen={isBurgerMenu} onClick={handleOnClick} />
+      <IconButton className={styles.burger} onClick={handleOnClick}>
+        <MenuIcon />
+      </IconButton>
       <NavigationMenu isBurgerMenu={isBurgerMenu} onCloseClick={handleOnClick} />
     </header>
   )

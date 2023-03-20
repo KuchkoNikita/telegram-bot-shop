@@ -1,9 +1,0 @@
-@import '@/styles/variables';
-@import '@/styles/mixins';
-
-.burger {
-  @include flex(column, space-between);
-
-  cursor: pointer;
-  z-index: $zindexBurger,
-}

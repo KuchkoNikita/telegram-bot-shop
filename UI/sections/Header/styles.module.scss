@@ -7,3 +7,10 @@
   padding: 0 $sideSectionPadding;
   height: $headerHeight;
 }
+
+.burger {
+  @include flex(column, space-between);
+
+  cursor: pointer;
+  z-index: $zindexBurger,
+}
