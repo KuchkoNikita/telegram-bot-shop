@@ -13,3 +13,7 @@ a {
   color: var(--tg-theme-text-color);
   text-decoration: none;
 }
+
+svg {
+  fill: var(--tg-theme-button-color) !important;
+}
