@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 
-const Home = () => (
+const Footer = () => (
   <footer className={styles.container}>
     <span>
       СВЯЗАТЬСЯ С МЕНЕДЖЕРОМ
@@ -11,4 +11,4 @@ const Home = () => (
   </footer>
 );
 
-export default Home;
+export default Footer;
