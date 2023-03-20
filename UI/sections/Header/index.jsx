@@ -13,10 +13,16 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
-      <IconButton className={styles.burger} onClick={handleOnClick}>
-        <MenuIcon />
+      <IconButton
+        className={styles.burger}
+        onClick={handleOnClick}
+      >
+        <MenuIcon className={styles.icon} />
       </IconButton>
-      <NavigationMenu isBurgerMenu={isBurgerMenu} onCloseClick={handleOnClick} />
+      <NavigationMenu
+        isBurgerMenu={isBurgerMenu}
+        onCloseClick={handleOnClick}
+      />
     </header>
   )
 };

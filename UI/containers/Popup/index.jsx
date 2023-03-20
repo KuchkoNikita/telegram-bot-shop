@@ -28,7 +28,7 @@ const Popup = ({
           className={styles.closeButton}
           onClick={onCloseButtonClick}
         >
-          <CloseIcon />
+          <CloseIcon className={styles.icon} />
         </IconButton>
       )}
     </Drawer>
