@@ -1,17 +1,18 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux'
 import Image from 'next/image'
 import CounterButton from '@/UI/components/CounterButton';
 import { addToCart, removeItem } from '@/redux/actions/cartSlice';
 import styles from './styles.module.scss';
 
 const ProductCard = ({ product }) => {
-  console.log('product: ', product);
   const {
     price,
     title,
     quantity,
     image,
   } = product;
+  const dispatch = useDispatch()
   const [countProduct, setCountProduct] = useState(quantity)
 
   const handlePlusClick = () => {
@@ -34,7 +35,7 @@ const ProductCard = ({ product }) => {
       />
       <div className={styles.productCardInfo}>
         <div>
-          <h3>{price}</h3>
+          <h3>{price} р.</h3>
           <p>{title}</p>
           <p>Черный</p>
         </div>
@@ -43,7 +44,7 @@ const ProductCard = ({ product }) => {
           handlePlusClick={handlePlusClick}
           handleMinusClick={handleMinusClick}
         />
-        <p>Сумма: {price}</p>
+        <p>Сумма: {(price * quantity).toFixed(2)} р.</p>
       </div>
     </div>
   );
