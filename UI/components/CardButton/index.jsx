@@ -8,7 +8,7 @@ const CardButton = ({ onClick }) => {
 
   return (
     <>
-      {count && (
+      {count ? (
         <Button
           variant="contained"
           onClick={onClick}
@@ -16,7 +16,7 @@ const CardButton = ({ onClick }) => {
         >
           Купить {count}
         </Button>
-      )}
+      ) : null}
     </>
   )
 };

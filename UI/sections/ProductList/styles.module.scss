@@ -8,3 +8,9 @@
   margin: 0 auto;
   flex-wrap: wrap;
 }
+
+.buttonWrapper {
+  @include flex(row, center, center);
+
+  margin-top: 15px;
+}

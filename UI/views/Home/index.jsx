@@ -24,7 +24,9 @@ const Home = (props) => {
         onAllTagClick={handleAllTagClick}
       />
       <ProductList
+        tagActive={tagActive}
         products={products}
+        onAllTagClick={handleAllTagClick}
       />
       <CardButton
         count={10}
