@@ -3,11 +3,8 @@ import { useSelector } from 'react-redux';
 
 import Popup from '@/UI/containers/Popup';
 import ProductCard from '@/UI/components/ProductCard';
-import Button from '@mui/material/Button';
 import TextPopup from '@/UI/components/TextPopup';
-import RadioForm from '@/UI/components/Forms/RadioForm';
-import TextFieldForm from '@/UI/components/Forms/TextFieldForm';
-import CheckboxForm from '@/UI/components/Forms/CheckboxForm';
+import Form from '@/UI/components/Forms';
 
 import styles from './styles.module.scss';
 
@@ -43,16 +40,7 @@ const CardPopup = ({
       <div className={styles.popupMain}>
         <p>Выберите способ доставки</p>
         <p>Доставляете осуществляется бесплатно, заказ оплачивется при получении наличными или картой</p>
-        <RadioForm />
-        <TextFieldForm />
-        <CheckboxForm />
-        <p>Для подтверждения возраста с вами через Telegram свяжется наш менеджер</p>
-        <Button
-          variant="contained"
-          className={styles.button}
-        >
-          ОФОРМИТЬ ЗАКАЗ
-        </Button>
+        <Form />
       </div>
       <TextPopup
         isOpen={isOpenPopup}

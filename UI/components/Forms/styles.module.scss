@@ -1,0 +1,30 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.popup {
+  z-index: $zindexCardPopup;
+  background: var(--tg-theme-secondary-bg-color) !important;
+}
+
+.popupContainer {
+  padding: 15px;
+}
+
+.popupMain {
+  padding: 15px;
+}
+
+.textField {
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.button {
+  width: 100%;
+}
+
+.link {
+  color: var(--tg-theme-link-color);
+}
+
