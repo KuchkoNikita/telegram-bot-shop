@@ -13,10 +13,8 @@ const TextPopup = ({
       isOpen={isOpen}
       onCloseButtonClick={onCloseButtonClick}
     >
-      <div className={styles.popupContainer}>
-        <h2 className={styles.title}>Пользовательское соглашение</h2>
-        {TEXT_DATA.map((text) => (<p className={styles.text}>{text}</p>))}
-      </div>
+      <h2 className={styles.title}>Пользовательское соглашение</h2>
+      {TEXT_DATA.map((text) => (<p className={styles.text}>{text}</p>))}
     </Popup>
   );
 };

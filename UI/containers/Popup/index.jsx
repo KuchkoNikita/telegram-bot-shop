@@ -19,7 +19,9 @@ const Popup = ({
         cn(styles.popup, className, { [styles.popupActive]: isOpen })
       }
     >
-      {children}
+      <div className={styles.popupContainer}>
+        {children}
+      </div>
       {isShowCloseButton && (
         <IconButton 
           size="small"

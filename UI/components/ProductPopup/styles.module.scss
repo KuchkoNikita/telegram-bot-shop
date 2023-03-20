@@ -32,8 +32,9 @@
 }
 
 .imageWrapper {
-  @include flex(row, center)
+  @include flex(row, center);
 }
+
 
 .productContent {
   h2, h3, h4, h5, h6 {
