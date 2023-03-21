@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import ProductItem from '@/UI/components/ProductItem';
-import ProductPopup from '@/UI/components/ProductPopup';
+import ProductInformationPopup from '@/UI/components/Popups/ProductInformationPopup';
 import styles from './styles.module.scss';
 
 const ProductList = ({
@@ -36,7 +36,7 @@ const ProductList = ({
           </Button>
         </div>
       )}
-      <ProductPopup
+      <ProductInformationPopup
         activeProduct={activeProduct}
         isProductActive={!!activeProduct}
         onCloseButtonClick={handleProductClick(null)}

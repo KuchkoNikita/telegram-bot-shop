@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 
 import Popup from '@/UI/containers/Popup';
 import ProductCard from '@/UI/components/ProductCard';
-import TextPopup from '@/UI/components/TextPopup';
+import InformativePopup from '@/UI/components/Popups/InformativePopup';
 import Form from '@/UI/components/Forms';
 import styles from './styles.module.scss';
 
-const CardPopup = ({
+const BasketPopup = ({
   isOpen,
   onCloseButtonClick,
   contenTextPopup,
@@ -47,11 +47,11 @@ const CardPopup = ({
       </div>
       {contenTextPopup.map(({ type, title, text }) => {
         return (
-          <TextPopup
+          <InformativePopup
             isOpen={typeTextPopup === type}
-            onCloseButtonClick={handlePopupChange(null)}
             title={title}
             text={text}
+            onCloseButtonClick={handlePopupChange(null)}
           />
         );
       })}
@@ -59,4 +59,4 @@ const CardPopup = ({
   );
 };
 
-export default CardPopup;
+export default BasketPopup;

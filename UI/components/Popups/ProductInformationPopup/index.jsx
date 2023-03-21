@@ -7,7 +7,7 @@ import { getContentfulText } from '@/utils/contentfull';
 import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
 
-const ProductPopup = ({
+const ProductInformationPopup = ({
   activeProduct,
   isProductActive,
   onCloseButtonClick,
@@ -82,4 +82,4 @@ const ProductPopup = ({
   );
 };
 
-export default ProductPopup;
+export default ProductInformationPopup;

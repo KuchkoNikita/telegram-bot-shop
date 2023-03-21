@@ -1,7 +1,7 @@
 import Popup from '@/UI/containers/Popup';
 import styles from './styles.module.scss';
 
-const TextPopup = ({
+const InformativePopup = ({
   title,
   text,
   isOpen,
@@ -24,4 +24,4 @@ const TextPopup = ({
   );
 };
 
-export default TextPopup;
+export default InformativePopup;

@@ -1,7 +1,7 @@
 import ProductList from '@/UI/sections/ProductList';
 import CardButton from '@/UI/components/CardButton';
 import TagsList from '@/UI/components/TagsList';
-import CardPopup from '@/UI/components/CardPopup';
+import BasketPopup from '@/UI/components/Popups/BasketPopup';
 import { useHome } from './utils/useHome';
 import styles from './styles.module.scss';
 
@@ -34,7 +34,7 @@ const Home = (props) => {
         count={10}
         onClick={handleProductClick}
       />
-      <CardPopup
+      <BasketPopup
         isOpen={isActiveCard}
         onCloseButtonClick={handleProductClick}
         contenTextPopup={contenTextPopup}
