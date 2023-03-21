@@ -7,6 +7,7 @@ export const useProductItem = ({
   onClick,
 }) => {
   const {
+    type,
     title,
     details,
     price,
@@ -27,6 +28,7 @@ export const useProductItem = ({
   };
 
   return {
+    type,
     title,
     details,
     price,

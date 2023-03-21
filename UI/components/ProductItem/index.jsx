@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
+import Button from '@mui/material/Button';
 import { useProductItem } from './utils/useProductItem';
+import { PRODUCTS_TYPE_FOR_VIEWING_ONLY } from './utils/constant';
 import styles from './styles.module.scss';
 
 const ProductItem = (props) => {
   const {
+    type,
     title,
     details,
     price,
@@ -14,6 +17,8 @@ const ProductItem = (props) => {
     handlePlusClick,
     handleMinusClick,
   } = useProductItem(props);
+
+  console.log('PRODUCTS_TYPE_FOR_VIEWING_ONLY', {PRODUCTS_TYPE_FOR_VIEWING_ONLY, type});
 
   return (
     <div className={styles.card}>
@@ -29,17 +34,30 @@ const ProductItem = (props) => {
         <p className={styles.productTitle}>{title}</p>
         <p className={styles.productDetails}>
           <span className={styles.productDetail}>
-            {details[0].title}
+            {details[0]?.title}
           </span>   
           <span className={styles.productDetail}>
-            {details[1].title}
+            {details[1]?.title}
           </span>
         </p>
-        <AddProductButton
-          count={countProduct}
-          handlePlusClick={handlePlusClick}
-          handleMinusClick={handleMinusClick}
-        />
+        {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type) 
+          ? (
+            <Button
+              variant="contained"
+              onClick={handlePlusClick}
+              className={styles.button}
+            >
+              Написать нам
+            </Button>
+          )
+          : (
+            <AddProductButton
+              count={countProduct}
+              handlePlusClick={handlePlusClick}
+              handleMinusClick={handleMinusClick}
+            />
+          )
+        }
       </div>
     </div>
   )

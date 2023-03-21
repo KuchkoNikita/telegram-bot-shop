@@ -23,7 +23,7 @@ export const useHome = ({ page, contenTextPopup }) => {
 
   const formatProducts = products.map((product, index) => {
     const {
-      details,
+      details = [],
       image,
       tag,
       ...props
