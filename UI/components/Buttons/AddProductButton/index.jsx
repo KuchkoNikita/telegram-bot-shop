@@ -4,7 +4,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import IconButton from '@mui/material/IconButton';
 import styles from './styles.module.scss';
 
-const CounterButton = ({
+const AddProductButton = ({
   count,
   handlePlusClick,
   handleMinusClick,
@@ -43,4 +43,4 @@ const CounterButton = ({
   );
 }
 
-export default CounterButton;
+export default AddProductButton;

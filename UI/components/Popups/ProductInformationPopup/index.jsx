@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
-import CounterButton from '@/UI/components/CounterButton';
+import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { getContentfulText } from '@/utils/contentfull';
 import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
@@ -54,7 +54,7 @@ const ProductInformationPopup = ({
         <div className={styles.productContainer}>
           <div className={styles.productHeader}>
             <h2>{price} р.</h2>
-            <CounterButton
+            <AddProductButton
               count={countProduct}
               handlePlusClick={handlePlusClick}
               handleMinusClick={handleMinusClick}

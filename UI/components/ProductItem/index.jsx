@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
-import CounterButton from '@/UI/components/CounterButton';
+import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import styles from './styles.module.scss';
 import {
   addToCart,
@@ -52,7 +52,7 @@ const ProductItem = ({
             {details[1].title}
           </span>
         </p>
-        <CounterButton
+        <AddProductButton
           count={countProduct}
           handlePlusClick={handlePlusClick}
           handleMinusClick={handleMinusClick}

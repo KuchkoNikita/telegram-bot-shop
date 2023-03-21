@@ -1,5 +1,5 @@
 import ProductList from '@/UI/sections/ProductList';
-import CardButton from '@/UI/components/CardButton';
+import BasketButton from '@/UI/components/Buttons/BasketButton';
 import TagsList from '@/UI/components/TagsList';
 import BasketPopup from '@/UI/components/Popups/BasketPopup';
 import { useHome } from './utils/useHome';
@@ -30,7 +30,7 @@ const Home = (props) => {
         products={products}
         onAllTagClick={handleAllTagClick}
       />
-      <CardButton
+      <BasketButton
         count={10}
         onClick={handleProductClick}
       />
