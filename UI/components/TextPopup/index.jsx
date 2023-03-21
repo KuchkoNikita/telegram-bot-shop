@@ -1,8 +1,9 @@
 import Popup from '@/UI/containers/Popup';
-import { TEXT_DATA } from './utils/data';
 import styles from './styles.module.scss';
 
 const TextPopup = ({
+  title,
+  text,
   isOpen,
   onCloseButtonClick,
 }) => {
@@ -13,8 +14,12 @@ const TextPopup = ({
       isOpen={isOpen}
       onCloseButtonClick={onCloseButtonClick}
     >
-      <h2 className={styles.title}>Пользовательское соглашение</h2>
-      {TEXT_DATA.map((text) => (<p className={styles.text}>{text}</p>))}
+      <h2 className={styles.title}>
+        {title}
+      </h2>
+      <div className={styles.content}>
+        {text}
+      </div>
     </Popup>
   );
 };

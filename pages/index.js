@@ -8,16 +8,14 @@ export const getStaticProps = async () => {
     CONTENTFUL_PRODUCT_TYPE.pod,
   );
 
-  const text = await getEntriesByTypeAndSlug(
+  const contenTextPopup = await getEntriesByTypeAndSlug(
     CONTENTFUL_CONTENT_TYPE.text,
   );
-
-  console.log('text: ', text);
 
   return {
     props: {
       page,
-      text
+      contenTextPopup,
     },
   };
 };

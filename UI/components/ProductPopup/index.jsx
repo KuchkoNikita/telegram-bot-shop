@@ -53,7 +53,7 @@ const ProductPopup = ({
       <div className={styles.productInfo}>
         <div className={styles.productContainer}>
           <div className={styles.productHeader}>
-            <p>{price} р.</p>
+            <h2>{price} р.</h2>
             <CounterButton
               count={countProduct}
               handlePlusClick={handlePlusClick}

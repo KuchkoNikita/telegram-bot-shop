@@ -12,3 +12,8 @@ export const CONTENTFUL_PRODUCT_TYPE = {
   pod: 'pod',
   hookah: 'hookah',
 }
+
+export const TYPE_TEXT_POPUP = {
+  termsOfUse: "termsOfUse",
+  privacyPolicy: "privacyPolicy",
+}

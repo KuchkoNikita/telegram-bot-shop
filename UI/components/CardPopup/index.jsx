@@ -5,18 +5,19 @@ import Popup from '@/UI/containers/Popup';
 import ProductCard from '@/UI/components/ProductCard';
 import TextPopup from '@/UI/components/TextPopup';
 import Form from '@/UI/components/Forms';
-
 import styles from './styles.module.scss';
 
 const CardPopup = ({
   isOpen,
   onCloseButtonClick,
+  contenTextPopup,
 }) => {
-  const [isOpenPopup, setIsOpenPopup] = useState(false);
+  console.log('contenTextPopup: ', contenTextPopup);
+  const [typeTextPopup, setTypeTextPopup] = useState(null);
   const cart = useSelector((state) => state.cart.cart);
   
-  const handlePopupChange = () => {
-    setIsOpenPopup((prevState) => !prevState);
+  const handlePopupChange = (typePopup) => () => {
+    setTypeTextPopup(typePopup);
   }
 
   return (
@@ -40,12 +41,20 @@ const CardPopup = ({
       <div className={styles.popupMain}>
         <p>Выберите способ доставки</p>
         <p>Доставляете осуществляется бесплатно, заказ оплачивется при получении наличными или картой</p>
-        <Form />
+        <Form
+          onLinkClick={handlePopupChange}
+        />
       </div>
-      <TextPopup
-        isOpen={isOpenPopup}
-        onCloseButtonClick={handlePopupChange}
-      />
+      {contenTextPopup.map(({ type, title, text }) => {
+        return (
+          <TextPopup
+            isOpen={typeTextPopup === type}
+            onCloseButtonClick={handlePopupChange(null)}
+            title={title}
+            text={text}
+          />
+        );
+      })}
     </Popup>
   );
 };

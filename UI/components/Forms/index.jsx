@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
+import { TYPE_TEXT_POPUP } from '@/utils/constants';
 
 import styles from './styles.module.scss';
 
@@ -46,7 +47,7 @@ const validationSchema = yup.object({
     .required('Password is required'),
 });
 
-const Form = ({ onChange }) => {
+const Form = ({ onLinkClick }) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -108,9 +109,19 @@ const Form = ({ onChange }) => {
             label={
               <span>
                 <span>Принимаю </span>
-                <span className={styles.link} onClick={onChange}>пользовательское соглашение </span>
+                <span
+                  className={styles.link}
+                  onClick={onLinkClick(TYPE_TEXT_POPUP.privacyPolicy)}
+                >
+                  пользовательское соглашение 
+                </span>
                 <span>и даю согласие на </span>
-                <span className={styles.link} onClick={onChange}>обработку персональных данных</span>
+                <span
+                  className={styles.link}
+                  onClick={onLinkClick(TYPE_TEXT_POPUP.termsOfUse)}
+                >
+                  обработку персональных данных
+                </span>
               </span>
             }
           />

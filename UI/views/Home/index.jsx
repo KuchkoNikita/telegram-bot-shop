@@ -14,6 +14,7 @@ const Home = (props) => {
     handleTagClick,
     handleProductClick,
     handleAllTagClick,
+    contenTextPopup,
   } = useHome(props);
 
   return (
@@ -36,6 +37,7 @@ const Home = (props) => {
       <CardPopup
         isOpen={isActiveCard}
         onCloseButtonClick={handleProductClick}
+        contenTextPopup={contenTextPopup}
       />
     </main>
   )

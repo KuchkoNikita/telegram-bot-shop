@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { getContentfulText } from '@/utils/contentfull';
 import { getContentfulFields } from '@/utils/helpers';
 import { createImage } from '@/utils/contentfull';
 
-export const useHome = ({ page, text }) => {
-  console.log('text: ', text);
+export const useHome = ({ page, contenTextPopup }) => {
   const { tags, products } = getContentfulFields(page);
 
   const [isActiveCard, setIsActiveCard] = useState(false);
@@ -53,6 +53,15 @@ export const useHome = ({ page, text }) => {
 
   const currentProducts = tagActive ? filterProducts : formatProducts;
 
+  const contentPopup = contenTextPopup.map((content) => {
+    const { text, ...props } = getContentfulFields(content);
+
+    return {
+      ...props,
+      text: getContentfulText(text),
+    }
+  });
+
   return {
     page,
     tagActive,
@@ -62,5 +71,6 @@ export const useHome = ({ page, text }) => {
     handleAllTagClick,
     tags: formatTags,
     products: currentProducts,
+    contenTextPopup: contentPopup,
   }
 };

@@ -42,7 +42,7 @@ const ProductItem = ({
         height={165}
       />
       <div className={styles.cardInfo}>
-        <h3 className={styles.productPrice}>{price}</h3>
+        <h3 className={styles.productPrice}>{price} р.</h3>
         <p className={styles.productTitle}>{title}</p>
         <p className={styles.productDetails}>
           <span className={styles.productDetail}>
