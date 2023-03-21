@@ -1,10 +1,9 @@
 import Button from '@mui/material/Button';
-import { useSelector } from 'react-redux'
+import { useBasketButton } from './utils/useBasketButton';
 import styles from './styles.module.scss';
 
-const BasketButton = ({ onClick }) => {
-  const cart = useSelector((state) => state.cart.cart);
-  const count = cart?.reduce((acc, { quantity }) => acc + quantity, 0);
+const BasketButton = (props) => {
+  const { count, onClick } = useBasketButton(props)
 
   return (
     <>

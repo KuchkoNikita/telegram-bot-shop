@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-
 import Popup from '@/UI/containers/Popup';
 import ProductCard from '@/UI/components/ProductCard';
 import InformativePopup from '@/UI/components/Popups/InformativePopup';
-import Form from '@/UI/components/Forms';
+import Form from '@/UI/components/FeedbackForm';
+import { getAllCartsSelector } from '@/redux/selectorss/cartSelectors';
 import styles from './styles.module.scss';
 
 const BasketPopup = ({
@@ -12,9 +12,8 @@ const BasketPopup = ({
   onCloseButtonClick,
   contenTextPopup,
 }) => {
-  console.log('contenTextPopup: ', contenTextPopup);
   const [typeTextPopup, setTypeTextPopup] = useState(null);
-  const cart = useSelector((state) => state.cart.cart);
+  const cart = useSelector(getAllCartsSelector);
   
   const handlePopupChange = (typePopup) => () => {
     setTypeTextPopup(typePopup);

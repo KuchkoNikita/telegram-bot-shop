@@ -1,13 +1,11 @@
 import Popup from '@/UI/containers/Popup';
-import { NAVIGATION_MENU_ITEM } from './utils/constant';
 import styles from './styles.module.scss';
 
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+const NavigationMenuItem = ({ link, title }) => (
+  <div className={styles.navigationWrapperItem}>
+    <a className={styles.navigationItem} href={link}>{title}</a>
+  </div>
+)
 
 const NavigationMenu = ({ isBurgerMenu, onCloseClick }) => (
   <Popup
@@ -17,40 +15,20 @@ const NavigationMenu = ({ isBurgerMenu, onCloseClick }) => (
   >
     <div className={styles.navigationContainer}>
       <nav>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography>Устроиства</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            {NAVIGATION_MENU_ITEM.map(({ title, link }) => (
-              <div
-                key={`${title}-${link}`}
-                className={styles.navigationWrapperItem}
-              >
-                <a className={styles.navigationItem} href={link}>{title}</a>
-              </div>
-            ))}
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-          >
-            <Typography>Accordion 2</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+        <h2>Подсистемы</h2>
+        <NavigationMenuItem link='/' title='Под-системы' />
+        <NavigationMenuItem link='/' title='Расходники' />
+        <h2>Кальяны</h2>
+        <NavigationMenuItem link='/hookah' title='Шахты' />
+        <NavigationMenuItem link='/hookah' title='Колбы' />
+        <NavigationMenuItem link='/hookah' title='Шланги' />
+        <NavigationMenuItem link='/hookah' title='Калауды' />
+        <NavigationMenuItem link='/hookah' title='Чаши' />
+        <h2>Жидкости</h2>
+        <NavigationMenuItem link='/e-liquid' title='Жидкости' />
+        <NavigationMenuItem link='/e-liquid' title='Основы' />
+        <h2>Напитки</h2>
+        <h2>О нас</h2>
       </nav>
     </div>
   </Popup>

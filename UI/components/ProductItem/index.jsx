@@ -1,36 +1,19 @@
-import { useState } from 'react';
 import Image from 'next/image'
-import { useDispatch } from 'react-redux'
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
+import { useProductItem } from './utils/useProductItem';
 import styles from './styles.module.scss';
-import {
-  addToCart,
-  removeItem,
-} from '@/redux/actions/cartSlice';
 
-const ProductItem = ({
-  product,
-  onClick,
-}) => {
+const ProductItem = (props) => {
   const {
     title,
     details,
     price,
     image,
-  } = product;
-
-  const dispatch = useDispatch()
-  const [countProduct, setCountProduct] = useState(0);
-
-  const handlePlusClick = () => {
-    dispatch(addToCart(product));
-    setCountProduct((prevState => prevState + 1));
-  };
-
-  const handleMinusClick = () => {
-    dispatch(removeItem(product));
-    setCountProduct((prevState => prevState - 1));
-  };
+    onClick,
+    countProduct,
+    handlePlusClick,
+    handleMinusClick,
+  } = useProductItem(props);
 
   return (
     <div className={styles.card}>

@@ -4,7 +4,7 @@ import { getContentfulFields } from '@/utils/helpers';
 import { createImage } from '@/utils/contentfull';
 
 export const useHome = ({ page, contenTextPopup }) => {
-  const { tags, products } = getContentfulFields(page);
+  const { tags = [], products = [] } = getContentfulFields(page);
 
   const [isActiveCard, setIsActiveCard] = useState(false);
   const [tagActive, setTagActive] = useState(null);
@@ -42,7 +42,7 @@ export const useHome = ({ page, contenTextPopup }) => {
     }
   });
 
-  const formatTags = tags.map((tagsItem) => {
+  const formatTags = tags?.map((tagsItem) => {
     return getContentfulFields(tagsItem);
   })
 

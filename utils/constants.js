@@ -11,6 +11,7 @@ export const CONTENTFUL_CONTENT_TYPE = {
 export const CONTENTFUL_PRODUCT_TYPE = {
   pod: 'pod',
   hookah: 'hookah',
+  eLiquid: 'e-liquid'
 }
 
 export const TYPE_TEXT_POPUP = {
