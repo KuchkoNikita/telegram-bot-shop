@@ -3,6 +3,15 @@
   background-color: var(--tg-theme-bg-color);
   border-radius: 10px;
 
-  .cardPrice {
+  .productDetails,
+  .productTitle,
+  .productPrice {
+    margin-bottom: 10px;
+  }
+
+  .productDetail {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
   }
 }

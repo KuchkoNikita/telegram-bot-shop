@@ -42,11 +42,15 @@ const ProductItem = ({
         height={165}
       />
       <div className={styles.cardInfo}>
-        <p className={styles.productPrice}>{price}</p>
-        <p>{title}</p>
-        <p>
-          <span>{details[0].title}</span>   
-          <span>{details[1].title}</span>
+        <h3 className={styles.productPrice}>{price}</h3>
+        <p className={styles.productTitle}>{title}</p>
+        <p className={styles.productDetails}>
+          <span className={styles.productDetail}>
+            {details[0].title}
+          </span>   
+          <span className={styles.productDetail}>
+            {details[1].title}
+          </span>
         </p>
         <CounterButton
           count={countProduct}
