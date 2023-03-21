@@ -1,10 +1,28 @@
+import cn from 'classnames';
+
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import PropaneTankIcon from '@mui/icons-material/PropaneTank';
 import BoltIcon from '@mui/icons-material/Bolt';
+
+import HeightIcon from '@mui/icons-material/Height';
+import ScaleIcon from '@mui/icons-material/Scale';
+
 import styles from '../styles.module.scss';
 
-export const DETAILS_ICON = [
+export const DETAILS_PODS_ICON = [
   <BatteryChargingFullIcon className={styles.icon} />,
   <PropaneTankIcon className={styles.icon} />,
   <BoltIcon className={styles.icon} />
 ];
+
+export const DETAILS_HOOKAH_ICON = [
+  <HeightIcon className={styles.icon} />,
+  <HeightIcon className={cn(styles.icon, styles.iconAngle)} />,
+  <ScaleIcon className={styles.icon} />,
+];
+
+export const DETAILS_ICON = {
+  pods: DETAILS_PODS_ICON,
+  hookah: DETAILS_HOOKAH_ICON,
+  eLiquid: DETAILS_HOOKAH_ICON
+}

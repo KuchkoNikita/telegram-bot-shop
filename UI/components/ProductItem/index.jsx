@@ -44,7 +44,6 @@ const ProductItem = (props) => {
           ? (
             <Button
               variant="contained"
-              onClick={handlePlusClick}
               className={styles.button}
             >
               Написать нам

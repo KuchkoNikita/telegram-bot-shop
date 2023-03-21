@@ -19,6 +19,7 @@ const ProductInformationPopup = ({
 
   const [countProduct, setCountProduct] = useState(0)
   const {
+    type,
     title,
     description,
     details,
@@ -51,30 +52,28 @@ const ProductInformationPopup = ({
         />
       </div>
       <div className={styles.productInfo}>
-        <div className={styles.productContainer}>
-          <div className={styles.productHeader}>
-            <h2>{price} р.</h2>
-            <AddProductButton
-              count={countProduct}
-              handlePlusClick={handlePlusClick}
-              handleMinusClick={handleMinusClick}
-            />
+        <div className={styles.productHeader}>
+          <h2>{price} р.</h2>
+          <AddProductButton
+            count={countProduct}
+            handlePlusClick={handlePlusClick}
+            handleMinusClick={handleMinusClick}
+          />
+        </div>
+        <div className={styles.productAbout}>
+          <h2 className={styles.title}>{title}</h2>
+          <div className={styles.productLables}>
+            {details.map(({ title, text }, index) => (
+              <Tooltip title={text} arrow>
+                <div className={styles.productLable}>
+                  {DETAILS_ICON?.[type]?.[index]}
+                  <p className={styles.productLableText}>{title}</p>
+                </div>
+              </Tooltip>
+            ))}
           </div>
-          <div className={styles.productAbout}>
-            <h2 className={styles.title}>{title}</h2>
-            <div className={styles.productLables}>
-              {details.map(({ title, text }, index) => (
-                <Tooltip title={text} arrow>
-                  <div className={styles.productLable}>
-                    {DETAILS_ICON[index]}
-                    <p className={styles.productLableText}>{title}</p>
-                  </div>
-                </Tooltip>
-              ))}
-            </div>
-            <div className={styles.productContent}>
-              {content}
-            </div>
+          <div className={styles.productContent}>
+            {content}
           </div>
         </div>
       </div>
