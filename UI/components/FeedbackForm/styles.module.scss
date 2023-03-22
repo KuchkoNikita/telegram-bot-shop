@@ -7,6 +7,16 @@
   }
 }
 
+.textFieldInput {
+  &::after {
+    border-color: var(--tg-theme-button-color) !important;
+  }
+}
+
+.textFieldLabel {
+  color: var(--tg-theme-button-color) !important;
+}
+
 .button {
   background: var(--tg-theme-button-color) !important;
   color: var(--tg-theme-button-text-color) !important;

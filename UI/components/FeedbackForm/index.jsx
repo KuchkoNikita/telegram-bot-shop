@@ -63,6 +63,14 @@ const FeedbackForm = ({ onLinkClick }) => {
             onChange={formik.handleChange}
             error={formik.touched?.[id] && Boolean(formik.errors?.[id])}
             helperText={formik.touched?.[id] && formik.errors?.[id]}
+            InputProps={{
+              className: styles.textFieldInput,
+            }}
+            InputLabelProps={{
+              classes: {
+                focused: styles.textFieldLabel,
+              }
+            }}
           />
         ))}
       </div>
