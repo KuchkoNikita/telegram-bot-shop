@@ -18,8 +18,6 @@ const ProductItem = (props) => {
     handleMinusClick,
   } = useProductItem(props);
 
-  console.log('PRODUCTS_TYPE_FOR_VIEWING_ONLY', {PRODUCTS_TYPE_FOR_VIEWING_ONLY, type});
-
   return (
     <div className={styles.card}>
       <Image
