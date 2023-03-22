@@ -14,6 +14,11 @@ const BasketPopup = ({
 }) => {
   const [typeTextPopup, setTypeTextPopup] = useState(null);
   const cart = useSelector(getAllCartsSelector);
+  const totalAmountProducts = cart
+    ?.reduce((acc, { quantity, price }) => acc + quantity * price, 0)
+    .toFixed(2);
+  const totalCountProducts = cart?.reduce((acc, { quantity }) => acc + quantity, 0);
+
   
   const handlePopupChange = (typePopup) => () => {
     setTypeTextPopup(typePopup);
@@ -33,8 +38,8 @@ const BasketPopup = ({
           ))}
         </div>
         <div>
-          <p>Итого 107.9р</p>
-          <p>1 шт.</p>
+          <p>Итого {totalAmountProducts} р.</p>
+          <p>{totalCountProducts} шт.</p>
         </div>
       </div>
       <div className={styles.popupMain}>
