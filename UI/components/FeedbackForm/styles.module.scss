@@ -8,10 +8,14 @@
 }
 
 .button {
-  width: 100%;
+  background: var(--tg-theme-button-color) !important;
+  color: var(--tg-theme-button-text-color) !important;
 }
 
 .link {
   color: var(--tg-theme-link-color);
 }
 
+.checkbox {
+  color: var(--tg-theme-button-text-color) !important;
+}

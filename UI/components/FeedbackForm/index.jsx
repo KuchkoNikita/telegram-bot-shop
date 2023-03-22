@@ -36,17 +36,17 @@ const FeedbackForm = ({ onLinkClick }) => {
         >
           <FormControlLabel 
             value="courier"
-            control={<Radio />}
+            control={<Radio classes={{ root: styles.checkbox, checked: styles.checkbox }} />}
             label="Доставка курьером по Полоцку и Новополоцку"
           />
           <FormControlLabel
             value="mail"
-            control={<Radio />}
+            control={<Radio classes={{ root: styles.checkbox, checked: styles.checkbox }} />}
             label="Доставка почтой"
           />
           <FormControlLabel
             value="europost"
-            control={<Radio />}
+            control={<Radio classes={{ root: styles.checkbox, checked: styles.checkbox }} />}
             label="Доставка европочтой"
           />
         </RadioGroup>
@@ -69,7 +69,9 @@ const FeedbackForm = ({ onLinkClick }) => {
       <div>
         <FormGroup>
           <FormControlLabel
-            control={<Checkbox />}
+            control={
+              <Checkbox classes={{ root: styles.checkbox, checked: styles.checkbox }} />
+            }
             label={
               <span>
                 <span>Принимаю </span>
@@ -90,13 +92,16 @@ const FeedbackForm = ({ onLinkClick }) => {
             }
           />
           <FormControlLabel
-            control={<Checkbox />}
+            control={
+              <Checkbox classes={{ root: styles.checkbox, checked: styles.checkbox }} />
+            }
             label="Подтверждаю, что мне больше 18-ти лет" 
           />
         </FormGroup>
       </div>
       <p>Для подтверждения возраста с вами через Telegram свяжется наш менеджер</p>
       <Button
+          fullWidth
           type='submit'
           variant="contained"
           className={styles.button}

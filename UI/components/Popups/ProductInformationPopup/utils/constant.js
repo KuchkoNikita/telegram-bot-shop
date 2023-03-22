@@ -1,12 +1,12 @@
 import cn from 'classnames';
-
+// Pods icons
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import PropaneTankIcon from '@mui/icons-material/PropaneTank';
 import BoltIcon from '@mui/icons-material/Bolt';
-
+// Hookah icons
 import HeightIcon from '@mui/icons-material/Height';
 import ScaleIcon from '@mui/icons-material/Scale';
-
+// E-liquid icon
 import styles from '../styles.module.scss';
 
 export const DETAILS_PODS_ICON = [
