@@ -12,5 +12,6 @@
 .productCardInfo {
   @include flex(column, space-around);
 
+  padding: 5px;
   margin-left: 15px;
 }
