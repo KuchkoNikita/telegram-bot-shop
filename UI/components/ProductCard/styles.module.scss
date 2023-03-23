@@ -1,34 +1,27 @@
-@import '@/styles/variables';
-@import '@/styles/mixins';
-
 .card {
-  @include flex(row);
+  width: 165px;
+  background-color: var(--tg-theme-bg-color);
+  border-radius: 10px;
 
-  &:not(:last-child) {
-    margin-bottom: 20px;
+  .productDetails,
+  .productTitle,
+  .productPrice {
+    margin-bottom: 10px;
+  }
+
+  .productDetail {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
   }
 
   .cardInfo {
-    @include flex(column, space-between);
-  
-    flex-grow: 1;
-    margin-left: 15px;
+    padding: 5px;
   }
+}
 
-  .cardTotalPrice {
-    margin-top: 10px;
-    text-align: end;
-  }
-
-  .cardPrice {
-    margin-bottom: 5px;
-  }
-  
-  .cardTitle {
-    margin-bottom: 5px;
-  }
-  
-  .cardColor {
-    margin-bottom: 10px;
-  }
+.button {
+  background: var(--tg-theme-button-color) !important;
+  color: var(--tg-theme-button-text-color) !important;
+  height: 40px;
 }

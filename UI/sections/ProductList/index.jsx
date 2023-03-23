@@ -1,25 +1,23 @@
-import { useState } from 'react';
 import Button from '@mui/material/Button';
-import ProductItem from '@/UI/components/ProductItem';
+import ProductCard from '@/UI/components/ProductCard';
 import ProductInformationPopup from '@/UI/components/Popups/ProductInformationPopup';
+import { useProductList } from './utils/useProductList';
 import styles from './styles.module.scss';
 
-const ProductList = ({
-  products,
-  tagActive,
-  onAllTagClick,
-}) => {
-  const [activeProduct, setActiveProduct] = useState(null);
-
-  const handleProductClick = (product) => () => {
-    setActiveProduct(product);
-  };
+const ProductList = (props) => {
+  const {
+    products,
+    tagActive,
+    onAllTagClick,
+    activeProduct,
+    handleProductClick
+  } = useProductList(props)
 
   return (
     <section>
       <div className={styles.container}>
         {products.map((product) => 
-          <ProductItem
+          <ProductCard
             onClick={handleProductClick(product)}
             product={product}
           />

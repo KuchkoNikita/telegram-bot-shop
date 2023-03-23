@@ -1,0 +1,34 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.card {
+  @include flex(row);
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .cardInfo {
+    @include flex(column, space-between);
+  
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+
+  .cardTotalPrice {
+    margin-top: 10px;
+    text-align: end;
+  }
+
+  .cardPrice {
+    margin-bottom: 5px;
+  }
+  
+  .cardTitle {
+    margin-bottom: 5px;
+  }
+  
+  .cardColor {
+    margin-bottom: 10px;
+  }
+}

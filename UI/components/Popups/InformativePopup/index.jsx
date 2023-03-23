@@ -6,22 +6,20 @@ const InformativePopup = ({
   text,
   isOpen,
   onCloseButtonClick,
-}) => {
-  return (
-    <Popup 
-      isShowCloseButton
-      className={styles.popup}
-      isOpen={isOpen}
-      onCloseButtonClick={onCloseButtonClick}
-    >
-      <h2 className={styles.title}>
-        {title}
-      </h2>
-      <div className={styles.content}>
-        {text}
-      </div>
-    </Popup>
-  );
-};
+}) => (
+  <Popup 
+    isShowCloseButton
+    className={styles.popup}
+    isOpen={isOpen}
+    onCloseButtonClick={onCloseButtonClick}
+  >
+    <h2 className={styles.title}>
+      {title}
+    </h2>
+    <div className={styles.content}>
+      {text}
+    </div>
+  </Popup>
+);
 
 export default InformativePopup;

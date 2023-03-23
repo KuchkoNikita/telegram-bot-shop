@@ -1,28 +1,20 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import Popup from '@/UI/containers/Popup';
-import ProductCard from '@/UI/components/ProductCard';
-import InformativePopup from '@/UI/components/Popups/InformativePopup';
 import Form from '@/UI/components/FeedbackForm';
-import { getAllCartsSelector } from '@/redux/selectorss/cartSelectors';
+import BasketProductCard from '@/UI/components/BasketProductCard';
+import InformativePopup from '@/UI/components/Popups/InformativePopup';
+import { useBasketPopup } from './utils/useBasketPopup';
 import styles from './styles.module.scss';
 
-const BasketPopup = ({
-  isOpen,
-  onCloseButtonClick,
-  contenTextPopup,
-}) => {
-  const [typeTextPopup, setTypeTextPopup] = useState(null);
-  const cart = useSelector(getAllCartsSelector);
-  const totalAmountProducts = cart
-    ?.reduce((acc, { quantity, price }) => acc + quantity * price, 0)
-    .toFixed(2);
-  const totalCountProducts = cart?.reduce((acc, { quantity }) => acc + quantity, 0);
-
-  
-  const handlePopupChange = (typePopup) => () => {
-    setTypeTextPopup(typePopup);
-  }
+const BasketPopup = (props) => {
+  const {
+    isOpen,
+    onCloseButtonClick,
+    contenTextPopup,
+    typeTextPopup,
+    totalAmountProducts,
+    totalCountProducts,
+    handlePopupChange,
+  } = useBasketPopup(props)
 
   return (
     <Popup 
@@ -34,7 +26,7 @@ const BasketPopup = ({
       <div className={styles.popupHeader}>
         <div className={styles.productCardList}>
           {cart.map((product) => (
-            <ProductCard product={product} />
+            <BasketProductCard product={product} />
           ))}
         </div>
         <div className={styles.productTotalInfo}>

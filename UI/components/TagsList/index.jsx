@@ -6,33 +6,31 @@ const TagsList = ({
   tagsList,
   onTagClick,
   onAllTagClick,
-}) => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.tagsList}>
-        <Tag
-          tagActive={tagActive}
-          label="Все"
-          tag={null}
-          className={styles.tag}
-          onClick={onAllTagClick}
-        >
-          Все
-        </Tag>
-        {tagsList?.map(({ tag, title }) => {
-          return (
-            <Tag
-              tagActive={tagActive}
-              label={title}
-              tag={tag}
-              className={styles.tag}
-              onClick={onTagClick(tag)}
-            />
-          )
-        })}
-      </div>
+}) => (
+  <div className={styles.container}>
+    <div className={styles.tagsList}>
+      <Tag
+        tagActive={tagActive}
+        label="Все"
+        tag={null}
+        className={styles.tag}
+        onClick={onAllTagClick}
+      >
+        Все
+      </Tag>
+      {tagsList?.map(({ tag, title }) => {
+        return (
+          <Tag
+            tagActive={tagActive}
+            label={title}
+            tag={tag}
+            className={styles.tag}
+            onClick={onTagClick(tag)}
+          />
+        )
+      })}
     </div>
-  )
-};
+  </div>
+);
 
 export default TagsList;

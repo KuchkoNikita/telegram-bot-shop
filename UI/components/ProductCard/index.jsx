@@ -1,55 +1,63 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux'
 import Image from 'next/image'
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
-import { addToCart, removeItem } from '@/redux/actions/cartSlice';
+import Button from '@mui/material/Button';
+import { useProductItem } from './utils/useProductItem';
+import { PRODUCTS_TYPE_FOR_VIEWING_ONLY } from './utils/constant';
 import styles from './styles.module.scss';
 
-const ProductCard = ({ product }) => {
+const ProductCard = (props) => {
   const {
-    price,
+    type,
     title,
-    quantity,
+    details,
+    price,
     image,
-  } = product;
-  const dispatch = useDispatch()
-  const [countProduct, setCountProduct] = useState(quantity)
-
-  const handlePlusClick = () => {
-    dispatch(addToCart(product));
-    setCountProduct((prevState => prevState + 1));
-  };
-
-  const handleMinusClick = () => {
-    dispatch(removeItem(product));
-    setCountProduct((prevState => prevState - 1));
-  };
+    onClick,
+    countProduct,
+    handlePlusClick,
+    handleMinusClick,
+  } = useProductItem(props);
 
   return (
     <div className={styles.card}>
       <Image
+        onClick={onClick}
         src={image.src}
         alt="Picture of the author"
         width={165}
         height={165}
       />
       <div className={styles.cardInfo}>
-        <div className={styles.cardProductInfo}>
-          <h4 className={styles.cardPrice}>{price} р.</h4>
-          <h3 className={styles.cardTitle}>{title}</h3>
-          <p className={styles.cardColor}>Черный</p>
-        </div>
-        <AddProductButton
-          count={countProduct}
-          handlePlusClick={handlePlusClick}
-          handleMinusClick={handleMinusClick}
-        />
-        <p className={styles.cardTotalPrice}>
-          Сумма: {(price * quantity).toFixed(2)} р.
+        <h3 className={styles.productPrice}>{price} р.</h3>
+        <p className={styles.productTitle}>{title}</p>
+        <p className={styles.productDetails}>
+          <span className={styles.productDetail}>
+            {details[0]?.title}
+          </span>   
+          <span className={styles.productDetail}>
+            {details[1]?.title}
+          </span>
         </p>
+        {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type) 
+          ? (
+            <Button
+              variant="contained"
+              className={styles.button}
+            >
+              Написать нам
+            </Button>
+          )
+          : (
+            <AddProductButton
+              count={countProduct}
+              handlePlusClick={handlePlusClick}
+              handleMinusClick={handleMinusClick}
+            />
+          )
+        }
       </div>
     </div>
-  );
+  )
 };
 
 export default ProductCard;
