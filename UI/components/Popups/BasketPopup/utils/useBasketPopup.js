@@ -21,6 +21,7 @@ export const useBasketPopup = ({
   }
 
   return {
+    cart,
     isOpen,
     onCloseButtonClick,
     contenTextPopup,

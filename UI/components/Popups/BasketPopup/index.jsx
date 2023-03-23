@@ -7,6 +7,7 @@ import styles from './styles.module.scss';
 
 const BasketPopup = (props) => {
   const {
+    cart,
     isOpen,
     onCloseButtonClick,
     contenTextPopup,
