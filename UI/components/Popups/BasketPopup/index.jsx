@@ -37,8 +37,8 @@ const BasketPopup = ({
             <ProductCard product={product} />
           ))}
         </div>
-        <div>
-          <p>Итого {totalAmountProducts} р.</p>
+        <div className={styles.productTotalInfo}>
+          <h2 className={styles.productTotalAmount}>Итого {totalAmountProducts} р.</h2>
           <p>{totalCountProducts} шт.</p>
         </div>
       </div>
@@ -46,6 +46,7 @@ const BasketPopup = ({
         <p>Выберите способ доставки</p>
         <p>Доставляете осуществляется бесплатно, заказ оплачивется при получении наличными или картой</p>
         <Form
+          className={styles.form}
           onLinkClick={handlePopupChange}
         />
       </div>

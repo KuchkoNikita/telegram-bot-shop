@@ -26,25 +26,27 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className={styles.productCard}>
+    <div className={styles.card}>
       <Image
         src={image.src}
         alt="Picture of the author"
         width={165}
         height={165}
       />
-      <div className={styles.productCardInfo}>
-        <div>
-          <h3>{price} р.</h3>
-          <p>{title}</p>
-          <p>Черный</p>
+      <div className={styles.cardInfo}>
+        <div className={styles.cardProductInfo}>
+          <h4 className={styles.cardPrice}>{price} р.</h4>
+          <h3 className={styles.cardTitle}>{title}</h3>
+          <p className={styles.cardColor}>Черный</p>
         </div>
         <AddProductButton
           count={countProduct}
           handlePlusClick={handlePlusClick}
           handleMinusClick={handleMinusClick}
         />
-        <p>Сумма: {(price * quantity).toFixed(2)} р.</p>
+        <p className={styles.cardTotalPrice}>
+          Сумма: {(price * quantity).toFixed(2)} р.
+        </p>
       </div>
     </div>
   );

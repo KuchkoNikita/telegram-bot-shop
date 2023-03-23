@@ -7,7 +7,21 @@
   }
 }
 
+.textFieldBlock {
+  margin: 10px 0;
+}
+
+.controlLabel {
+  margin-bottom: 10px;
+}
+
+.feedbackFormText {
+  margin-bottom: 10px;
+}
+
 .textFieldInput {
+  color: var(--tg-theme-button-text-color) !important;
+
   &::after {
     border-color: var(--tg-theme-button-color) !important;
   }

@@ -11,7 +11,7 @@ import { TYPE_TEXT_POPUP } from '@/utils/constants';
 import { TEXTFIELD_DATA, validationSchema } from './utils/constant';
 import styles from './styles.module.scss';
 
-const FeedbackForm = ({ onLinkClick }) => {
+const FeedbackForm = ({ onLinkClick, className }) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -27,7 +27,7 @@ const FeedbackForm = ({ onLinkClick }) => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className={className} onSubmit={formik.handleSubmit}>
       <FormControl>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
@@ -51,7 +51,7 @@ const FeedbackForm = ({ onLinkClick }) => {
           />
         </RadioGroup>
       </FormControl>
-      <div>
+      <div className={styles.textFieldBlock}>
         {TEXTFIELD_DATA.map(({ id, title }) => (
           <TextField
             fullWidth
@@ -77,6 +77,7 @@ const FeedbackForm = ({ onLinkClick }) => {
       <div>
         <FormGroup>
           <FormControlLabel
+            className={styles.controlLabel}
             control={
               <Checkbox classes={{ root: styles.checkbox, checked: styles.checkbox }} />
             }
@@ -100,6 +101,7 @@ const FeedbackForm = ({ onLinkClick }) => {
             }
           />
           <FormControlLabel
+            className={styles.controlLabel}
             control={
               <Checkbox classes={{ root: styles.checkbox, checked: styles.checkbox }} />
             }
@@ -107,7 +109,7 @@ const FeedbackForm = ({ onLinkClick }) => {
           />
         </FormGroup>
       </div>
-      <p>Для подтверждения возраста с вами через Telegram свяжется наш менеджер</p>
+      <p className={styles.feedbackFormText}>Для подтверждения возраста с вами через Telegram свяжется наш менеджер</p>
       <Button
           fullWidth
           type='submit'
