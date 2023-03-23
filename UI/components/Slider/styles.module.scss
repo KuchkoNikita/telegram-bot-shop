@@ -1,0 +1,27 @@
+@import '@/styles/mixins';
+
+.dotsWrapper {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dotsList {
+  @include flex;
+
+  margin: 0;
+
+  li {
+    margin: 0 5px 0 0;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.dots {
+  color: blue;
+  border: 1px blue solid;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}

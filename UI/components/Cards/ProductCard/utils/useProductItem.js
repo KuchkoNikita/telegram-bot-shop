@@ -14,26 +14,10 @@ export const useProductItem = ({
     images,
   } = product;
 
-  // Temp
-  const imageArray = [
-    {
-      ...images[0],
-      color: 'Черный'
-    },
-    {
-      ...images[0],
-      color: 'Белый'
-    },
-    {
-      ...images[0],
-      color: 'Коричневый'
-    }
-  ];
-
-  const isImageSlider = imageArray.length > 1;
+  const isImageSlider = images.length > 1;
   const dispatch = useDispatch()
   const [countProduct, setCountProduct] = useState(0);
-  const [activeImageProduct, setActiveImageProduct] = useState(imageArray?.[0]);
+  const [activeImageProduct, setActiveImageProduct] = useState(images?.[0]);
   console.log('activeImageProduct: ', activeImageProduct);
 
   const handlePlusClick = () => {
@@ -55,7 +39,7 @@ export const useProductItem = ({
     title,
     details,
     price,
-    images: imageArray,
+    images,
     onClick,
     isImageSlider,
     countProduct,
