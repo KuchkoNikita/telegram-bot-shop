@@ -30,7 +30,12 @@ export const useHome = ({ page, contenTextPopup }) => {
     } = getContentfulFields(product);
 
     const newDetails = details.map((detail) => getContentfulFields(detail));
-    const newImages = images.map(image => createImage(image));
+
+    const newImages = images.map(imageWrapper => {
+      const { title, image } = getContentfulFields(imageWrapper);
+      return { ...createImage(image), title };
+    });
+
     const newTag = getContentfulFields(tag);
 
     return {

@@ -27,6 +27,8 @@ const ProductCard = (props) => {
         ? (
           <Slider
             images={images}
+            imageWidth={165}
+            imageHeight={165}
             onClick={onClick}
             onImageChange={handleImageChange}
           />

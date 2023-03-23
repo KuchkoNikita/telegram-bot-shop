@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
+import Slider from '@/UI/components/Slider';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { getContentfulText } from '@/utils/contentfull';
 import { DETAILS_ICON } from './utils/constant';
@@ -50,7 +51,9 @@ const ProductInformationPopup = ({
           ? (
             <Slider
               images={images}
-              onImageChange={handleImageChange}
+              onImageChange={() => {}}
+              imageWidth={380}
+              imageHeight={380}
             />
           )
           : (

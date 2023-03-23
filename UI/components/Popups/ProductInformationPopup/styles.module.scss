@@ -33,6 +33,10 @@
 
 .imageWrapper {
   @include flex(row, center);
+
+  & > div {
+    max-width: 350px;
+  }
 }
 
 
