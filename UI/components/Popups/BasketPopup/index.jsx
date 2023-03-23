@@ -1,6 +1,6 @@
 import Popup from '@/UI/containers/Popup';
 import Form from '@/UI/components/FeedbackForm';
-import BasketProductCard from '@/UI/components/BasketProductCard';
+import BasketProductCard from '@/UI/components/Cards/BasketProductCard';
 import InformativePopup from '@/UI/components/Popups/InformativePopup';
 import { useBasketPopup } from './utils/useBasketPopup';
 import styles from './styles.module.scss';

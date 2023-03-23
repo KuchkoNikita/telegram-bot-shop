@@ -24,9 +24,11 @@ const ProductInformationPopup = ({
     description,
     details,
     price,
-    image,
+    images,
   } = activeProduct;
   const content = getContentfulText(description);
+  const isImageSlider = images.length > 1;
+  console.log('ProductInformationPopup images: ', images);
 
   const handlePlusClick = () => {
     setCountProduct((prevState) => prevState + 1)
@@ -44,12 +46,22 @@ const ProductInformationPopup = ({
       onCloseButtonClick={onCloseButtonClick}
     >
       <div className={styles.imageWrapper}>
-        <Image
-          src={image.src}
-          alt="Picture of the author"
-          width={380}
-          height={380}
-        />
+        {isImageSlider 
+          ? (
+            <Slider
+              images={images}
+              onImageChange={handleImageChange}
+            />
+          )
+          : (
+            <Image
+              src={images[0].src}
+              alt="Picture of the author"
+              width={380}
+              height={380}
+            />
+          )
+        }
       </div>
       <div className={styles.productInfo}>
         <div className={styles.productHeader}>

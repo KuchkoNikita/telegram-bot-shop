@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import Button from '@mui/material/Button';
+import Slider from '@/UI/components/Slider';
+import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { useProductItem } from './utils/useProductItem';
 import { PRODUCTS_TYPE_FOR_VIEWING_ONLY } from './utils/constant';
 import styles from './styles.module.scss';
@@ -11,22 +12,35 @@ const ProductCard = (props) => {
     title,
     details,
     price,
-    image,
+    images,
     onClick,
+    isImageSlider,
     countProduct,
     handlePlusClick,
     handleMinusClick,
+    handleImageChange,
   } = useProductItem(props);
 
   return (
     <div className={styles.card}>
-      <Image
-        onClick={onClick}
-        src={image.src}
-        alt="Picture of the author"
-        width={165}
-        height={165}
-      />
+      {isImageSlider 
+        ? (
+          <Slider
+            images={images}
+            onClick={onClick}
+            onImageChange={handleImageChange}
+          />
+        )
+        : (
+          <Image
+            onClick={onClick}
+            src={images[0].src}
+            alt="Picture of the author"
+            width={165}
+            height={165}
+          />
+        )
+      }
       <div className={styles.cardInfo}>
         <h3 className={styles.productPrice}>{price} р.</h3>
         <p className={styles.productTitle}>{title}</p>

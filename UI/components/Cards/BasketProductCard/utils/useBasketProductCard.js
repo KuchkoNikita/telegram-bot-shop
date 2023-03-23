@@ -2,20 +2,15 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { addToCart, removeItem } from '@/redux/actions/cartSlice';
 
-export const useProductItem = ({
-  product,
-  onClick,
-}) => {
+export const useBasketProductCard = ({ product }) => {
   const {
-    type,
-    title,
-    details,
     price,
+    title,
+    quantity,
     image,
   } = product;
-
   const dispatch = useDispatch()
-  const [countProduct, setCountProduct] = useState(0);
+  const [countProduct, setCountProduct] = useState(quantity)
 
   const handlePlusClick = () => {
     dispatch(addToCart(product));
@@ -28,14 +23,12 @@ export const useProductItem = ({
   };
 
   return {
-    type,
-    title,
-    details,
     price,
+    title,
+    quantity,
     image,
-    onClick,
     countProduct,
     handlePlusClick,
     handleMinusClick,
   };
-};
+}

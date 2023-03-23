@@ -24,13 +24,13 @@ export const useHome = ({ page, contenTextPopup }) => {
   const formatProducts = products.map((product, index) => {
     const {
       details = [],
-      image,
+      images,
       tag,
       ...props
     } = getContentfulFields(product);
 
     const newDetails = details.map((detail) => getContentfulFields(detail));
-    const newImage = createImage(image)
+    const newImages = images.map(image => createImage(image));
     const newTag = getContentfulFields(tag);
 
     return {
@@ -38,7 +38,7 @@ export const useHome = ({ page, contenTextPopup }) => {
       id: index,
       tag: newTag,
       details: newDetails,
-      image: newImage,
+      images: newImages,
     }
   });
 

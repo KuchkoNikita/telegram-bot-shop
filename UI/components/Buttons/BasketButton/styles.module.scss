@@ -2,6 +2,7 @@
 @import '@/styles/mixins';
 
 .button {
+  z-index: $zindexBasketButton;
   position: fixed !important;
   border-radius: 0 !important;
   background-color: var(--tg-theme-button-color) !important;

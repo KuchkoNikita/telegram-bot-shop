@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import ProductCard from '@/UI/components/ProductCard';
+import ProductCard from '@/UI/components/Cards/ProductCard';
 import ProductInformationPopup from '@/UI/components/Popups/ProductInformationPopup';
 import { useProductList } from './utils/useProductList';
 import styles from './styles.module.scss';

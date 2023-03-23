@@ -1,29 +1,18 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux'
 import Image from 'next/image'
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
-import { addToCart, removeItem } from '@/redux/actions/cartSlice';
+import { useBasketProductCard } from './utils/useBasketProductCard';
 import styles from './styles.module.scss';
 
-const BasketProductCard = ({ product }) => {
+const BasketProductCard = (props) => {
   const {
     price,
     title,
     quantity,
     image,
-  } = product;
-  const dispatch = useDispatch()
-  const [countProduct, setCountProduct] = useState(quantity)
-
-  const handlePlusClick = () => {
-    dispatch(addToCart(product));
-    setCountProduct((prevState => prevState + 1));
-  };
-
-  const handleMinusClick = () => {
-    dispatch(removeItem(product));
-    setCountProduct((prevState => prevState - 1));
-  };
+    countProduct,
+    handlePlusClick,
+    handleMinusClick,
+  } = useBasketProductCard(props)
 
   return (
     <div className={styles.card}>
