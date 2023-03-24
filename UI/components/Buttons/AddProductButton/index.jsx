@@ -1,7 +1,9 @@
+import cn from 'classnames';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import IconButton from '@mui/material/IconButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styles from './styles.module.scss';
 
 const AddProductButton = ({
@@ -17,7 +19,8 @@ const AddProductButton = ({
             onClick={handlePlusClick}
             className={styles.button}
           >
-            Добавить
+            <ShoppingCartIcon className={cn(styles.iconCart, styles.icon)} />
+            <span>Добавить</span>
           </Button>
         : (
           <div className={styles.buttonsWrapper}>

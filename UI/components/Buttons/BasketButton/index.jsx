@@ -1,4 +1,6 @@
+import Badge from '@mui/material/Badge';
 import Button from '@mui/material/Button';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { useBasketButton } from './utils/useBasketButton';
 import styles from './styles.module.scss';
 
@@ -13,7 +15,10 @@ const BasketButton = (props) => {
           onClick={onClick}
           className={styles.button}
         >
-          Купить {count}
+          <Badge badgeContent={count} color="secondary">
+            <LocalMallIcon />
+          </Badge>
+          <span className={styles.buttonText}>КОРЗИНА</span>
         </Button>
       ) : null}
     </>

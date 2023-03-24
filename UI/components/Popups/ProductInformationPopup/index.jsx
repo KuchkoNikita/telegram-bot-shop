@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { useSelector } from 'react-redux'
 import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
 import Slider from '@/UI/components/Slider';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { getContentfulText } from '@/utils/contentfull';
+import { getAllCartsSelector } from '@/redux/selectorss/cartSelectors';
 import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
 
@@ -18,7 +20,9 @@ const ProductInformationPopup = ({
     return null;
   }
 
-  const [countProduct, setCountProduct] = useState(0)
+  const cart = useSelector(getAllCartsSelector);
+  console.log('cart: ', cart);
+  const [countProduct, setCountProduct] = useState(0);
   const {
     type,
     title,
@@ -29,15 +33,16 @@ const ProductInformationPopup = ({
   } = activeProduct;
   const content = getContentfulText(description);
   const isImageSlider = images.length > 1;
-  console.log('ProductInformationPopup images: ', images);
 
   const handlePlusClick = () => {
     setCountProduct((prevState) => prevState + 1)
-  }
+  };
 
   const handleMinusClick = () => {
     setCountProduct((prevState) => prevState - 1)
-  }
+  };
+
+  const handleImageChange = () => {};
 
   return (
     <Popup 
@@ -51,9 +56,9 @@ const ProductInformationPopup = ({
           ? (
             <Slider
               images={images}
-              onImageChange={() => {}}
               imageWidth={380}
               imageHeight={380}
+              onImageChange={handleImageChange}
             />
           )
           : (
