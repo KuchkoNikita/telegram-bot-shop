@@ -1,82 +1,41 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import Slider from "react-slick";
+import cn from 'classnames';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import styles from './styles.module.scss';
 
-const AppendDots = ({ children }) => (
-  <div
-    style={{
-      backgroundColor: "#ddd",
-      borderRadius: "10px",
-      padding: "10px"
-    }}
-  >
-    <ul style={{ margin: "0px" }}>
-      {children}
-    </ul>
-  </div>
-);
-
-const CustomPaging = ({ children }) => (
-  <div
-    style={{
-      width: "30px",
-      color: "blue",
-      border: "1px blue solid"
-    }}
-  >
-    {children}
-  </div>
-);
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  appendDots: dots => (
-    <div className={styles.dotsWrapper}           style={{
-      padding: "3px", position: 'static'
-    }}>
-      <ul className={styles.dotsList}> {dots} </ul>
-    </div>
-  ),
-  customPaging: i => (
-    <div
-      className={styles.dots}
-    />
-  )
-};
-
-const ImageSlider = ({
+const Slider = ({
   images,
   imageWidth,
   imageHeight,
   onClick,
   onImageChange,
+  className,
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const beforeChange = (_, newIndex) => {
-    setCurrentIndex(newIndex);
-    onImageChange(images[currentIndex].color);
+  const onSlideChange = ({ activeIndex }) => {
+    onImageChange(images[activeIndex].color);
   };
-
-  const afterChange = (current) => {
-    console.log('& afterChange current: ', current);
-  };
-
 
   return (
-    <Slider
-      {...settings}
-      beforeChange={beforeChange}
-      afterChange={afterChange}
+    <Swiper
+      slidesPerView={1}
+      modules={[Pagination, A11y]}
+      onSlideChange={onSlideChange}
+      className={cn(className, styles.slider)}
+      pagination={{
+        type: 'bullets',
+        clickable: true,
+        bulletClass: styles.swiperBullet,
+        bulletActiveClass: styles.swiperBulletActive,
+      }}
     >
       {images.map((image) => (
-        <div>
+        <SwiperSlide>
           <Image
             onClick={onClick}
             src={image.src}
@@ -84,10 +43,10 @@ const ImageSlider = ({
             width={imageWidth}
             height={imageHeight}
           />
-        </div>
+        </SwiperSlide>
       ))}
-    </Slider>
+    </Swiper>
   );
-}
+};
 
-export default ImageSlider
+export default Slider;

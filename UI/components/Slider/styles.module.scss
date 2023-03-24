@@ -1,27 +1,22 @@
 @import '@/styles/mixins';
 
-.dotsWrapper {
-  background-color: #ddd;
-  border-radius: 10px;
-  padding: 10px;
-}
+.slider {
+  :global(.swiper-pagination) {
+    @include flex;
 
-.dotsList {
-  @include flex;
-
-  margin: 0;
-
-  li {
-    margin: 0 5px 0 0;
-    width: 12px;
-    height: 12px;
+    position: static;
   }
-}
 
-.dots {
-  color: blue;
-  border: 1px blue solid;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+  .swiperBullet {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    border-radius: 100%;
+    border: 1px solid black;
+  }
+  
+  .swiperBulletActive {
+    background-color: black;
+  }
 }
