@@ -13,10 +13,10 @@
     height: 11px;
     margin: 0 4px;
     border-radius: 100%;
-    border: 1px solid black;
+    border: 1px solid var(--tg-theme-button-color);
   }
   
   .swiperBulletActive {
-    background-color: black;
+    background-color: var(--tg-theme-button-color);
   }
 }

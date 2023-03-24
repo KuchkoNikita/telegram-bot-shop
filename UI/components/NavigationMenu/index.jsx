@@ -15,9 +15,11 @@ const NavigationMenu = ({ isBurgerMenu, onCloseClick }) => (
   >
     <div className={styles.navigationContainer}>
       <nav>
-        <h2>Подсистемы</h2>
+        <h2>Устроиства</h2>
         <NavigationMenuItem link='/' title='Под-системы' />
+        <NavigationMenuItem link='/' title='Моды' />
         <NavigationMenuItem link='/' title='Расходники' />
+        <NavigationMenuItem link='/' title='Атомайзеры' />
         <h2>Кальяны</h2>
         <NavigationMenuItem link='/hookah' title='Шахты' />
         <NavigationMenuItem link='/hookah' title='Колбы' />

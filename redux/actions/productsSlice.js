@@ -8,8 +8,11 @@ const productsSlice = createSlice({
     liquid: []
   }],
   reducers: {
+    load: () => {
+      state[action.payload.type] = action.payload.state;
+    },
     addToCart: (state, action) => {
-      state.cart.push({ ...action.payload, quantity: 0 });
+      state.pods.push({ ...action.payload, quantity: 0 });
     },
   },
 });
