@@ -68,6 +68,7 @@ const FeedbackForm = ({ onLinkClick, className }) => {
             }}
             InputLabelProps={{
               classes: {
+                root: styles.textFieldLabel,
                 focused: styles.textFieldLabel,
               }
             }}

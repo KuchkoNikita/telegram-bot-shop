@@ -25,6 +25,14 @@
   &::after {
     border-color: var(--tg-theme-button-color) !important;
   }
+
+  &::before {
+    border-color: var(--tg-theme-button-text-color) !important;
+  }
+
+  &::placeholder {
+    color: red;
+  }
 }
 
 .textFieldLabel {
