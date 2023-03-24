@@ -40,6 +40,7 @@ const ProductCard = (props) => {
             alt="Picture of the author"
             width={165}
             height={165}
+            className={styles.cardImage}
           />
         )
       }
