@@ -18,7 +18,6 @@ export const useProductItem = ({
   const dispatch = useDispatch()
   const [countProduct, setCountProduct] = useState(0);
   const [activeImageProduct, setActiveImageProduct] = useState(images?.[0]);
-  console.log('activeImageProduct: ', activeImageProduct);
 
   const handlePlusClick = () => {
     dispatch(addToCart({ ...product, image: activeImageProduct }));
@@ -26,7 +25,7 @@ export const useProductItem = ({
   };
 
   const handleMinusClick = () => {
-    dispatch(removeItem({ product, image: activeImageProduct }));
+    dispatch(removeItem({ ...product, image: activeImageProduct }));
     setCountProduct((prevState => prevState - 1));
   };
 
