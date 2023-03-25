@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState , useCallback, useMemo } from 'react';
 import {
   createImage,
   getContentfulFields,
-  getContentfulText,
 } from '@/utils/contentfull';
 
 export const useHome = ({ page, contenTextPopup, className }) => {
@@ -11,63 +10,51 @@ export const useHome = ({ page, contenTextPopup, className }) => {
   const [isActiveCard, setIsActiveCard] = useState(false);
   const [tagActive, setTagActive] = useState(null);
 
-  const handleProductClick = () => {
+  const handleProductClick = useCallback(() => {
     setIsActiveCard((prevState) => !prevState);
-  };
+  }, []);
 
-  const handleTagClick = (tag) => () => {
+  const handleTagClick = useCallback((tag) => () => {
     setTagActive(tag);
-  };
+  }, []);
 
-  const handleAllTagClick = () => {
-    setTagActive(null);
-  };
+  const formatProducts = useMemo(() =>
+    products.map((product, index) => {
+      const {
+        details = [],
+        images,
+        tag,
+        ...props
+      } = getContentfulFields(product);
 
-  const formatProducts = products.map((product, index) => {
-    const {
-      details = [],
-      images,
-      tag,
-      ...props
-    } = getContentfulFields(product);
+      const newDetails = details.map((detail) => getContentfulFields(detail));
 
-    const newDetails = details.map((detail) => getContentfulFields(detail));
+      const newImages = images.map(imageWrapper => {
+        const { title, image } = getContentfulFields(imageWrapper);
+        return { ...createImage(image), title };
+      });
 
-    const newImages = images.map(imageWrapper => {
-      const { title, image } = getContentfulFields(imageWrapper);
-      return { ...createImage(image), title };
-    });
+      const newTag = getContentfulFields(tag);
 
-    const newTag = getContentfulFields(tag);
+      return {
+        ...props,
+        id: index,
+        tag: newTag,
+        details: newDetails,
+        images: newImages,
+      }
+    }),
+    [products]
+  );
 
-    return {
-      ...props,
-      id: index,
-      tag: newTag,
-      details: newDetails,
-      images: newImages,
-    }
-  });
-
-  const formatTags = tags?.map((tagsItem) => {
-    return getContentfulFields(tagsItem);
-  })
-
-  const filterProducts = 
+  const filterProducts = useMemo(() =>
     formatProducts.filter((formatProduct) => {
       return formatProduct?.tag.tag === tagActive;
-    })
+    }),
+    [formatProducts, tagActive]
+  );
 
   const currentProducts = tagActive ? filterProducts : formatProducts;
-
-  const contentPopup = contenTextPopup.map((content) => {
-    const { text, ...props } = getContentfulFields(content);
-
-    return {
-      ...props,
-      text: getContentfulText(text),
-    }
-  });
 
   return {
     page,
@@ -76,9 +63,8 @@ export const useHome = ({ page, contenTextPopup, className }) => {
     isActiveCard,
     handleTagClick,
     handleProductClick,
-    handleAllTagClick,
-    tags: formatTags,
+    tags,
     products: currentProducts,
-    contenTextPopup: contentPopup,
+    contenTextPopup,
   }
 };

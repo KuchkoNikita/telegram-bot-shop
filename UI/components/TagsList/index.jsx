@@ -5,7 +5,6 @@ const TagsList = ({
   tagActive,
   tagsList,
   onTagClick,
-  onAllTagClick,
 }) => (
   <div className={styles.container}>
     <div className={styles.tagsList}>
@@ -14,19 +13,19 @@ const TagsList = ({
         label="Все"
         tag={null}
         className={styles.tag}
-        onClick={onAllTagClick}
+        onClick={onTagClick(null)}
       >
         Все
       </Tag>
-      {tagsList?.map(({ tag, title }) => {
+      {tagsList?.map(({ fields }) => {
         return (
           <Tag
-            key={`${tag}-${title}`}
+            key={`${fields.tag}-${fields.title}`}
             tagActive={tagActive}
-            label={title}
-            tag={tag}
+            label={fields.title}
+            tag={fields.tag}
             className={styles.tag}
-            onClick={onTagClick(tag)}
+            onClick={onTagClick(fields.tag)}
           />
         )
       })}

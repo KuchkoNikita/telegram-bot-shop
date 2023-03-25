@@ -49,13 +49,13 @@ const BasketPopup = (props) => {
             onLinkClick={handlePopupChange}
           />
         </div>
-        {contenTextPopup.map(({ type, title, text }) => {
+        {contenTextPopup.map(({ fields }) => {
           return (
             <InformativePopup
-              key={type + title}
-              isOpen={typeTextPopup === type}
-              title={title}
-              text={text}
+              key={fields.type + fields.title}
+              isOpen={typeTextPopup === fields.type}
+              title={fields.title}
+              text={fields.text}
               onCloseButtonClick={handlePopupChange(null)}
             />
           );

@@ -17,7 +17,6 @@ const Home = (props) => {
     products,
     handleTagClick,
     handleProductClick,
-    handleAllTagClick,
     contenTextPopup,
   } = useHome(props);
 
@@ -28,12 +27,11 @@ const Home = (props) => {
         tagActive={tagActive}
         tagsList={tags}
         onTagClick={handleTagClick}
-        onAllTagClick={handleAllTagClick}
       />
       <ProductList
         tagActive={tagActive}
         products={products}
-        onAllTagClick={handleAllTagClick}
+        onAllTagClick={handleTagClick(null)}
       />
       <BasketButton
         count={10}

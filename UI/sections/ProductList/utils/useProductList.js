@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 export const useProductList = ({
   products,
@@ -7,9 +7,9 @@ export const useProductList = ({
 }) => {
   const [activeProduct, setActiveProduct] = useState(null);
 
-  const handleProductClick = (product) => () => {
+  const handleProductClick = useCallback((product) => () => {
     setActiveProduct(product);
-  };
+  }, []);
 
   return {
     products,

@@ -1,4 +1,5 @@
 import Popup from '@/UI/containers/Popup';
+import { getContentfulText } from '@/utils/contentfull';
 import styles from './styles.module.scss';
 
 const InformativePopup = ({
@@ -18,7 +19,7 @@ const InformativePopup = ({
         {title}
       </h2>
       <div className={styles.content}>
-        {text}
+        {getContentfulText(text)}
       </div>
     </div>
   </Popup>
