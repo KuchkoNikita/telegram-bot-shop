@@ -3,12 +3,11 @@
 
 .popup {
   z-index: $zindexCardPopup;
-  background: var(--tg-theme-secondary-bg-color) !important;
 }
 
 .popupHeader {
   padding: 20px 0;
-  background: var(--tg-theme-bg-color) !important;
+  background: var(--tg-theme-secondary-bg-color) !important;
 }
 
 .popupContainer {
