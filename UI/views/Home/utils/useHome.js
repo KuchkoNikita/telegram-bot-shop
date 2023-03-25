@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { getContentfulText } from '@/utils/contentfull';
-import { getContentfulFields } from '@/utils/helpers';
-import { createImage } from '@/utils/contentfull';
+import {
+  createImage,
+  getContentfulFields,
+  getContentfulText,
+} from '@/utils/contentfull';
 
 export const useHome = ({ page, contenTextPopup }) => {
   const { tags = [], products = [] } = getContentfulFields(page);

@@ -23,6 +23,10 @@ export const getContentfulText = (content) => {
     : "";
 };
 
+export const getContentfulFields = (props) => (
+  props ? { ...props.fields } : {}
+);
+
 export const createImage = (image, anchor) => {
   const file = image?.fields?.file;
 

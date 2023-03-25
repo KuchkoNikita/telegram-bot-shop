@@ -29,14 +29,10 @@
   &::before {
     border-color: var(--tg-theme-button-text-color) !important;
   }
-
-  &::placeholder {
-    color: red;
-  }
 }
 
 .textFieldLabel {
-  color: var(--tg-theme-button-color) !important;
+  color: var(--tg-theme-button-text-color) !important;
 }
 
 .button {
