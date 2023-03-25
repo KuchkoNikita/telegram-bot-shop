@@ -16,9 +16,7 @@ const cartSlice = createSlice({
       }
     },
     removeItem: (state, action) => {
-      console.log('action: ', action);
       const itemInCart = state.cart.find((item) => item.id === action.payload.id);
-      console.log('itemInCart: ', itemInCart);
 
       if (itemInCart.quantity === 1) {
         const removeItem = state.cart.filter((item) => item.id !== action.payload.id);

@@ -19,7 +19,6 @@ import { useState } from 'react';
 
 const FeedbackForm = ({ onLinkClick, className }) => {
   const [shippingOption, setShippingOption] = useState(RADIO_CONTROL_DATA[0].value);
-  console.log('shippingOption: ', shippingOption);
 
   const formik = useFormik({
     initialValues: {

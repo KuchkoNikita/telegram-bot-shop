@@ -21,8 +21,6 @@ const Slider = ({
     onImageChange(images[activeIndex].color);
   };
 
-  console.log('images: ', images);
-
   return (
     <Swiper
       slidesPerView={1}

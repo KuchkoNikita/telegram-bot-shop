@@ -22,7 +22,7 @@ const ProductInformationPopup = ({
   }
 
   const cart = useSelector(getAllCartsSelector);
-  console.log('cart: ', cart);
+
   const [countProduct, setCountProduct] = useState(0);
   const {
     type,
