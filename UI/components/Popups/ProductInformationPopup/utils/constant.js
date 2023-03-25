@@ -22,7 +22,7 @@ export const DETAILS_HOOKAH_ICON = [
 ];
 
 export const DETAILS_ICON = {
-  pods: DETAILS_PODS_ICON,
+  pod: DETAILS_PODS_ICON,
   hookah: DETAILS_HOOKAH_ICON,
-  eLiquid: DETAILS_HOOKAH_ICON
+  'e-liquid': DETAILS_HOOKAH_ICON
 }

@@ -45,6 +45,8 @@ const ProductInformationPopup = ({
 
   const handleImageChange = () => {};
 
+  console.log('type', type);
+
   return (
     <Popup 
       isShowCloseButton
