@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import ProductList from '@/UI/sections/ProductList';
 import BasketButton from '@/UI/components/Buttons/BasketButton';
 import TagsList from '@/UI/components/TagsList';
@@ -8,6 +9,7 @@ import styles from './styles.module.scss';
 const Home = (props) => {
   const {
     tags,
+    className,
     tagActive,
     isActiveCard,
     products,
@@ -18,7 +20,7 @@ const Home = (props) => {
   } = useHome(props);
 
   return (
-    <main className={styles.main}>
+    <main className={cn(styles.main, className)}>
       <TagsList
         tagActive={tagActive}
         tagsList={tags}

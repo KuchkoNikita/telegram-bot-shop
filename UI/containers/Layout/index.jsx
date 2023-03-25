@@ -6,7 +6,7 @@ const MetaTags = dynamic(() => import('@/UI/components/MetaTags'));
 const Header = dynamic(() => import('UI/sections/Header'));
 const Footer = dynamic(() => import('UI/sections/Footer'));
 
-const Layout = ({ children }) => (
+const Layout = ({ children, className }) => (
   <>
     <MetaTags
       metaTitle="Create Next App"

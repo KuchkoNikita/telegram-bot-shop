@@ -101,7 +101,7 @@ const FeedbackForm = ({ onLinkClick, className }) => {
                 >
                   пользовательское соглашение 
                 </span>
-                <span>и даю согласие на </span>
+                <span> и даю согласие на </span>
                 <span
                   className={styles.link}
                   onClick={onLinkClick(TYPE_TEXT_POPUP.termsOfUse)}
@@ -120,15 +120,17 @@ const FeedbackForm = ({ onLinkClick, className }) => {
           />
         </FormGroup>
       </div>
-      <Typography className={styles.feedbackFormText}>Для подтверждения возраста с вами через Telegram свяжется наш менеджер</Typography>
+      <Typography className={styles.feedbackFormText}>
+        Для подтверждения возраста с вами через Telegram свяжется наш менеджер
+      </Typography>
       <Button
-          fullWidth
-          type='submit'
-          variant="contained"
-          className={styles.button}
-        >
-          ОФОРМИТЬ ЗАКАЗ
-        </Button>
+        fullWidth
+        type='submit'
+        variant="contained"
+        className={styles.button}
+      >
+        ОФОРМИТЬ ЗАКАЗ
+      </Button>
     </form>
   );
 }

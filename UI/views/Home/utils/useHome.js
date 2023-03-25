@@ -5,7 +5,7 @@ import {
   getContentfulText,
 } from '@/utils/contentfull';
 
-export const useHome = ({ page, contenTextPopup }) => {
+export const useHome = ({ page, contenTextPopup, className }) => {
   const { tags = [], products = [] } = getContentfulFields(page);
 
   const [isActiveCard, setIsActiveCard] = useState(false);
@@ -71,6 +71,7 @@ export const useHome = ({ page, contenTextPopup }) => {
 
   return {
     page,
+    className,
     tagActive,
     isActiveCard,
     handleTagClick,
