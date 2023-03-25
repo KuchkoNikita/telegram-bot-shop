@@ -25,9 +25,7 @@ const Popup = ({
         cn(styles.popup, roboto.className, className, { [styles.popupActive]: isOpen })
       }
     >
-      <div className={styles.popupContainer}>
-        {children}
-      </div>
+      {children}
       {isShowCloseButton && (
         <IconButton 
           size="small"

@@ -7,15 +7,15 @@
 
   margin: 0 auto;
   flex-wrap: wrap;
-}
 
-.buttonWrapper {
-  @include flex(row, center, center);
-
-  margin-top: 15px;
-}
-
-.button {
-  border-color: var(--tg-theme-button-color) !important;
-  color: var(--tg-theme-button-text-color) !important;
+  .buttonWrapper {
+    @include flex(row, center, center);
+  
+    margin-top: 15px;
+  }
+  
+  .button {
+    border-color: var(--tg-theme-button-color) !important;
+    color: var(--tg-theme-button-text-color) !important;
+  }
 }

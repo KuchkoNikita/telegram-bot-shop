@@ -18,8 +18,8 @@ const productsSlice = createSlice({
 });
 
 export const {
+  load,
   addToCart,
-  removeItem,
 } = productsSlice.actions;
 
 export const productsReducer = productsSlice.reducer;

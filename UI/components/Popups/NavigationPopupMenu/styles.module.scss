@@ -7,10 +7,15 @@
   & > div {
     padding-top: 40px;
   }
+
+  .popupContainer {
+    @include container;
+  }
+
+  .list {
+    width: 100%;
+    max-width: 360px;
+    padding: 0;
+  };
 }
 
-.root {
-  width: 100%;
-  max-width: 360px;
-  padding: 0;
-};

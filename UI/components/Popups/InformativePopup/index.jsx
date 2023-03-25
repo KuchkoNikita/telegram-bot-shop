@@ -13,11 +13,13 @@ const InformativePopup = ({
     isOpen={isOpen}
     onCloseButtonClick={onCloseButtonClick}
   >
-    <h2 className={styles.title}>
-      {title}
-    </h2>
-    <div className={styles.content}>
-      {text}
+    <div className={styles.popupContainer}>
+      <h2 className={styles.title}>
+        {title}
+      </h2>
+      <div className={styles.content}>
+        {text}
+      </div>
     </div>
   </Popup>
 );

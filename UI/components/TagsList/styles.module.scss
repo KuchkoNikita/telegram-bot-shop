@@ -6,18 +6,10 @@
 
   overflow-x: scroll;
   padding: 10px 15px;
-}
 
-.inputWrapper {
-  @include flex(row, flex-start, center);
-}
-
-.input {
-  width: 120px;
-}
-
-.tagsList {
-  @include flex;
+  .tagsList {
+    @include flex;
+  }
 
   .tag {
     &:not(:last-child) {

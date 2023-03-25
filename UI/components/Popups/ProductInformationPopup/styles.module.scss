@@ -4,65 +4,60 @@
 .popup {
   z-index: $zindexCardPopup;
   background-color: var(--tg-theme-secondary-bg-color) !important;
-}
 
-.productHeader {
-  @include flex(row, space-between, center);
-
-  margin-top: 15px;
-}
-
-.productLables,
-.productLable {
-  @include flex(row, initial, center);
-}
-
-.productLables {
-  margin-bottom: 10px;
-}
-
-.productLable {
-  &:not(:last-child) {
-    margin-right: 10px;
+  .popupContainer {
+    @include container;
   }
-}
 
-.productLableText {
-  margin-left: 5px;
-}
-
-.imageWrapper {
-  @include flex(row, center);
-
-  & > div {
-    max-width: 350px;
-  }
-}
-
-
-.productContent {
-  h2, h3, h4, h5, h6 {
+  .title {
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 
-  p {
+  .productLables,
+  .productLable {
+    @include flex(row, initial, center);
+  }
+
+  .productLables {
     margin-bottom: 10px;
   }
 
-  ul {
-    padding-left: 15px;
+  .productLable {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
   }
-}
 
-.icon {
-  fill: var(--tg-theme-button-text-color) !important;
-}
+  .productHeader {
+    @include flex(row, space-between, center);
 
-.iconAngle {
-  transform: rotate(90deg);
-}
+    margin-top: 15px;
+  }
 
-.title {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  .productLableText {
+    margin-left: 5px;
+  }
+
+  .imageWrapper {
+    @include flex(row, center);
+
+    & > div {
+      max-width: 350px;
+    }
+  }
+
+  .productContent {
+    h2, h3, h4, h5, h6 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 15px;
+    }
+  }
 }

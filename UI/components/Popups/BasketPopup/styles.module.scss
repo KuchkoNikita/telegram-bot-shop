@@ -11,6 +11,10 @@
   background: var(--tg-theme-bg-color) !important;
 }
 
+.popupContainer {
+  @include container;
+}
+
 .productTotalInfo {
   margin-top: 10px;
 }

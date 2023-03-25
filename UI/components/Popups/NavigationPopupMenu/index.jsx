@@ -30,32 +30,34 @@ const NavigationPopupMenu = ({ isBurgerMenu, onCloseClick }) => {
       onCloseButtonClick={onCloseClick}
       className={styles.popup}
     >
-      <List
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-        className={styles.root}
-      >
-        <NavigationSubMenu
-          title="Устроиства" 
-          list={POD}
-          isOpen={isOpenPods}
-          onClick={handlPodsMenuClick}
-        />
-        <NavigationSubMenu
-          title="Кальяны" 
-          list={HOOKAH}
-          isOpen={isOpenHookah}
-          onClick={handlHookahMenuClick}
-        />
-        <NavigationSubMenu
-          title="Жидкости" 
-          list={E_LIQUID}
-          isOpen={isOpenEliquid}
-          onClick={handleEliquidSecondLevel}
-        />
-        <NavigationItem title="Напитки" link="/about-us" />
-        <NavigationItem title="О нас" link="/" />
-      </List>
+      <div className={styles.popupContainer}>
+        <List
+          component="nav"
+          aria-labelledby="nested-list-subheader"
+          className={styles.list}
+        >
+          <NavigationSubMenu
+            title="Устроиства" 
+            list={POD}
+            isOpen={isOpenPods}
+            onClick={handlPodsMenuClick}
+          />
+          <NavigationSubMenu
+            title="Кальяны" 
+            list={HOOKAH}
+            isOpen={isOpenHookah}
+            onClick={handlHookahMenuClick}
+          />
+          <NavigationSubMenu
+            title="Жидкости" 
+            list={E_LIQUID}
+            isOpen={isOpenEliquid}
+            onClick={handleEliquidSecondLevel}
+          />
+          <NavigationItem title="Напитки" link="/about-us" />
+          <NavigationItem title="О нас" link="/" />
+        </List>
+      </div>
     </Popup>
   )
 };

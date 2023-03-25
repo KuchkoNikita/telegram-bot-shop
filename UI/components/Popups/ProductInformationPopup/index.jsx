@@ -52,53 +52,55 @@ const ProductInformationPopup = ({
       isOpen={isProductActive}
       onCloseButtonClick={onCloseButtonClick}
     >
-      <div className={styles.imageWrapper}>
-        {isImageSlider 
-          ? (
-            <Slider
-              images={images}
-              imageWidth={380}
-              imageHeight={380}
-              onImageChange={handleImageChange}
-            />
-          )
-          : (
-            <Image
-              src={images[0].src}
-              alt="Picture of the author"
-              width={380}
-              height={380}
-            />
-          )
-        }
-      </div>
-      <div className={styles.productInfo}>
-        <div className={styles.productHeader}>
-          <h2>{price} р.</h2>
-          <AddProductButton
-            count={countProduct}
-            handlePlusClick={handlePlusClick}
-            handleMinusClick={handleMinusClick}
-          />
+      <div className={styles.popupContainer}>
+        <div className={styles.imageWrapper}>
+          {isImageSlider 
+            ? (
+              <Slider
+                images={images}
+                imageWidth={380}
+                imageHeight={380}
+                onImageChange={handleImageChange}
+              />
+            )
+            : (
+              <Image
+                src={images[0].src}
+                alt="Picture of the author"
+                width={380}
+                height={380}
+              />
+            )
+          }
         </div>
-        <div className={styles.productAbout}>
-          <h2 className={styles.title}>{title}</h2>
-          <div className={styles.productLables}>
-            {details.map(({ title, text }, index) => (
-              <Tooltip
-                arrow
-                key={`${title}=${text}`}
-                title={text}
-              >
-                <div className={styles.productLable}>
-                  {DETAILS_ICON?.[type]?.[index]}
-                  <Typography className={styles.productLableText}>{title}</Typography>
-                </div>
-              </Tooltip>
-            ))}
+        <div className={styles.productInfo}>
+          <div className={styles.productHeader}>
+            <h2>{price} р.</h2>
+            <AddProductButton
+              count={countProduct}
+              handlePlusClick={handlePlusClick}
+              handleMinusClick={handleMinusClick}
+            />
           </div>
-          <div className={styles.productContent}>
-            {content}
+          <div className={styles.productAbout}>
+            <h2 className={styles.title}>{title}</h2>
+            <div className={styles.productLables}>
+              {details.map(({ title, text }, index) => (
+                <Tooltip
+                  arrow
+                  key={`${title}=${text}`}
+                  title={text}
+                >
+                  <div className={styles.productLable}>
+                    {DETAILS_ICON?.[type]?.[index]}
+                    <Typography className={styles.productLableText}>{title}</Typography>
+                  </div>
+                </Tooltip>
+              ))}
+            </div>
+            <div className={styles.productContent}>
+              {content}
+            </div>
           </div>
         </div>
       </div>
