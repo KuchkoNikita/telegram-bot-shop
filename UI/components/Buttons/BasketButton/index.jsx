@@ -15,7 +15,10 @@ const BasketButton = (props) => {
           onClick={onClick}
           className={styles.button}
         >
-          <Badge badgeContent={count} color="secondary">
+          <Badge
+            badgeContent={count}
+            classes={{ badge: styles.badge }}
+          >
             <LocalMallIcon />
           </Badge>
           <span className={styles.buttonText}>КОРЗИНА</span>
