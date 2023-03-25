@@ -8,15 +8,21 @@ const Tag = ({
   tag,
   className,
   onClick,
-}) => (
-  <Chip 
-    label={label}
-    variant={
-      tagActive === tag ? "filled" :"outlined"
-    }
-    onClick={onClick}
-    className={cn(styles.tag, className)}
-  />
-);
+}) => {
+  const isTagActive = tagActive === tag;
+
+  return (
+    <Chip 
+      label={label}
+      variant={
+        isTagActive ? "filled" :"outlined"
+      }
+      onClick={onClick}
+      className={
+        cn(styles.tag, className, { [styles.activeTag]: isTagActive })
+      }
+    />
+  )
+};
 
 export default Tag;
