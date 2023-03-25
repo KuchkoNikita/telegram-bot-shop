@@ -1,0 +1,21 @@
+.textField { 
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.textFieldInput {
+  color: var(--tg-theme-button-text-color) !important;
+
+  &::after {
+    border-color: var(--tg-theme-button-color) !important;
+  }
+
+  &::before {
+    border-color: var(--tg-theme-button-text-color) !important;
+  }
+}
+
+.textFieldLabel {
+  color: var(--tg-theme-button-text-color) !important;
+}

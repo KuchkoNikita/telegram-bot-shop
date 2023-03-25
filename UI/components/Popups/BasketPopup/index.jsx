@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import Popup from '@/UI/containers/Popup';
-import Form from '@/UI/components/FeedbackForm';
+import FeedbackForm from '@/UI/components/FormComponents/FeedbackForm';
 import BasketProductCard from '@/UI/components/Cards/BasketProductCard';
 import InformativePopup from '@/UI/components/Popups/InformativePopup';
 import { useBasketPopup } from './utils/useBasketPopup';
@@ -42,7 +42,7 @@ const BasketPopup = (props) => {
         <div className={styles.popupMain}>
           <Typography>Выберите способ доставки</Typography>
           <Typography>Доставляете осуществляется бесплатно, заказ оплачивется при получении наличными или картой</Typography>
-          <Form
+          <FeedbackForm
             className={styles.form}
             onLinkClick={handlePopupChange}
           />

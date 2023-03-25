@@ -1,0 +1,11 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.feedbackFormText {
+  margin-bottom: 10px;
+}
+
+.button {
+  background: var(--tg-theme-button-color) !important;
+  color: var(--tg-theme-button-text-color) !important;
+}

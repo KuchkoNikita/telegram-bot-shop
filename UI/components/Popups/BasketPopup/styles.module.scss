@@ -2,7 +2,7 @@
 @import '@/styles/mixins';
 
 .popup {
-  z-index: $zindexCardPopup;
+  z-index: 1100;
 }
 
 .popupHeader {
