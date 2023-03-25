@@ -2,10 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const cors = require('cors');
 
-const token = '5894520273:AAFQNneXUjpiFoqab1KNCamJ2rhhG1oqPt0';
-const webAppUrl = 'https://master--celadon-rabanadas-6e8c54.netlify.app/';
-
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(process.env.TELEGRAM_TOKEN_BOT, {polling: true});
 const app = express();
 
 app.use(express.json());
@@ -19,7 +16,7 @@ bot.on('message', async (msg) => {
         await bot.sendMessage(chatId, 'Ниже появится кнопка, заполни форму', {
             reply_markup: {
                 keyboard: [
-                    [{text: 'Заполнить форму', web_app: {url: webAppUrl + '/form'}}]
+                    [{text: 'Заполнить форму', web_app: {url: process.env.TELEGRAM_WEB_APP + '/form'}}]
                 ]
             }
         })
@@ -27,7 +24,7 @@ bot.on('message', async (msg) => {
         await bot.sendMessage(chatId, 'Заходи в наш интернет магазин по кнопке ниже', {
             reply_markup: {
                 inline_keyboard: [
-                    [{text: 'Сделать заказ', web_app: {url: webAppUrl}}]
+                    [{text: 'Сделать заказ', web_app: {url: process.env.TELEGRAM_WEB_APP}}]
                 ]
             }
         })

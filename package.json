@@ -13,7 +13,6 @@
     "lint:style:fix": "yarn lint:style -- --fix"
   },
   "dependencies": {
-    "@contentful/rich-text-html-renderer": "^16.0.3",
     "@contentful/rich-text-react-renderer": "^15.16.3",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -28,17 +27,16 @@
     "formik": "^2.2.9",
     "next": "13.1.6",
     "node-telegram-bot-api": "^0.61.0",
-    "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
-    "slick-carousel": "^1.8.1",
     "swiper": "^9.1.1",
     "yup": "^1.0.2"
   },
   "devDependencies": {
+    "prop-types": "^15.8.1",
     "@svgr/webpack": "^6.5.1",
     "eslint": "8.34.0",
     "eslint-config-airbnb": "^19.0.4",
