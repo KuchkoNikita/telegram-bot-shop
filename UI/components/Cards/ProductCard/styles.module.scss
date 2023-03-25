@@ -1,4 +1,5 @@
 .card {
+  overflow: hidden;
   width: 165px;
   background-color: var(--tg-theme-bg-color);
   border-radius: 10px;
@@ -20,6 +21,7 @@
   }
 
   .cardImage {
+    background-color: white;
     margin-bottom: 11px;
     object-fit: contain;
   }
