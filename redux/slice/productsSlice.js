@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const productsSlice = createSlice({
   name: 'products',
-  initialState: [{
+  initialState: {
     pods: [],
     hookah: [],
     liquid: []
-  }],
+  },
   reducers: {
     load: () => {
       state[action.payload.type] = action.payload.state;

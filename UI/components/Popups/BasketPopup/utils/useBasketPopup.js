@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { getAllCartsSelector } from '@/redux/selectorss/cartSelectors';
+import { getAllCartsSelector } from '@/redux/selectors';
 
 export const useBasketPopup = ({
   isOpen,

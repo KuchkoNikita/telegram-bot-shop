@@ -7,7 +7,7 @@ import Popup from '@/UI/containers/Popup';
 import Slider from '@/UI/components/Slider';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { getContentfulText } from '@/utils/contentfull';
-import { getAllCartsSelector } from '@/redux/selectorss/cartSelectors';
+import { getAllCartsSelector } from '@/redux/selectors';
 import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
 
