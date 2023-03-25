@@ -1,0 +1,16 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.popup {  
+  width: 100%;
+
+  & > div {
+    padding-top: 40px;
+  }
+}
+
+.root {
+  width: 100%;
+  max-width: 360px;
+  padding: 0;
+};

@@ -1,6 +1,6 @@
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import NavigationMenu from '@/UI/components/NavigationMenu'
+import NavigationPopupMenu from '@/UI/components/Popups/NavigationPopupMenu'
 import { useHeader } from './utils/useHeader';
 import styles from './styles.module.scss';
 
@@ -15,7 +15,7 @@ const Header = () => {
       >
         <MenuIcon className={styles.icon} />
       </IconButton>
-      <NavigationMenu
+      <NavigationPopupMenu
         isBurgerMenu={isBurgerMenu}
         onCloseClick={handleBurgerClick}
       />
