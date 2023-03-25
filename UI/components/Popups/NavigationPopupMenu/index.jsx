@@ -41,21 +41,24 @@ const NavigationPopupMenu = ({ isBurgerMenu, onCloseClick }) => {
             list={POD}
             isOpen={isOpenPods}
             onClick={handlPodsMenuClick}
+            onCloseClick={onCloseClick}
           />
           <NavigationSubMenu
             title="Кальяны" 
             list={HOOKAH}
             isOpen={isOpenHookah}
             onClick={handlHookahMenuClick}
+            onCloseClick={onCloseClick}
           />
           <NavigationSubMenu
             title="Жидкости" 
             list={E_LIQUID}
             isOpen={isOpenEliquid}
             onClick={handleEliquidSecondLevel}
+            onCloseClick={onCloseClick}
           />
-          <NavigationItem title="Напитки" link="/about-us" />
-          <NavigationItem title="О нас" link="/" />
+          <NavigationItem title="Напитки" link="/" onClick={onCloseClick} />
+          <NavigationItem title="О нас" link="/about-us" onClick={onCloseClick} />
         </List>
       </div>
     </Popup>

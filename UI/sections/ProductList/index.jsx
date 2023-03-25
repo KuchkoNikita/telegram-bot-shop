@@ -1,8 +1,10 @@
+import dynamic from 'next/dynamic';
 import Button from '@mui/material/Button';
 import ProductCard from '@/UI/components/Cards/ProductCard';
-import ProductInformationPopup from '@/UI/components/Popups/ProductInformationPopup';
 import { useProductList } from './utils/useProductList';
 import styles from './styles.module.scss';
+
+const ProductInformationPopup = dynamic(() => import('@/UI/components/Popups/ProductInformationPopup'));
 
 const ProductList = (props) => {
   const {

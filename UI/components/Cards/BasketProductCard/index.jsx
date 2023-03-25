@@ -22,6 +22,7 @@ const BasketProductCard = (props) => {
         alt="Picture of the author"
         width={165}
         height={165}
+        className={styles.image}
       />
       <div className={styles.cardInfo}>
         <div className={styles.cardProductInfo}>

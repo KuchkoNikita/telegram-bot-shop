@@ -8,6 +8,10 @@
     margin-bottom: 20px;
   }
 
+  .image {
+    object-fit: contain
+  }
+
   .cardInfo {
     @include flex(column, space-between);
   

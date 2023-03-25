@@ -42,6 +42,7 @@ const Slider = ({
             alt="Picture of the author"
             width={imageWidth}
             height={imageHeight}
+            className={styles.image}
           />
         </SwiperSlide>
       ))}

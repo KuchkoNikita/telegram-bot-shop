@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic';
 import Typography from '@mui/material/Typography';
 import Popup from '@/UI/containers/Popup';
 import FeedbackForm from '@/UI/components/FormComponents/FeedbackForm';
-import BasketProductCard from '@/UI/components/Cards/BasketProductCard';
-import InformativePopup from '@/UI/components/Popups/InformativePopup';
 import { useBasketPopup } from './utils/useBasketPopup';
 import styles from './styles.module.scss';
+
+const InformativePopup = dynamic(() => import('@/UI/components/Popups/InformativePopup'));
+const BasketProductCard = dynamic(() => import('@/UI/components/Cards/BasketProductCard'));
 
 const BasketPopup = (props) => {
   const {

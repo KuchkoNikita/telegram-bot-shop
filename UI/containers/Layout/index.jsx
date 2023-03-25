@@ -1,6 +1,6 @@
+import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
 
 const MetaTags = dynamic(() => import('@/UI/components/MetaTags'));
 const Header = dynamic(() => import('UI/sections/Header'));
