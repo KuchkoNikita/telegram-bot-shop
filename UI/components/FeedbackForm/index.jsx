@@ -8,15 +8,24 @@ import FormGroup from '@mui/material/FormGroup';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 import { TYPE_TEXT_POPUP } from '@/utils/constants';
-import { TEXTFIELD_DATA, validationSchema } from './utils/constant';
+import {
+  TEXTFIELD_DATA,
+  RADIO_CONTROL_DATA,
+  validationSchema,
+} from './utils/constant';
 import styles from './styles.module.scss';
+import { useState } from 'react';
 
 const FeedbackForm = ({ onLinkClick, className }) => {
+  const [shippingOption, setShippingOption] = useState(RADIO_CONTROL_DATA[0].value);
+  console.log('shippingOption: ', shippingOption);
+
   const formik = useFormik({
     initialValues: {
       name: '',
       phone: '',
       email: '',
+      index: '',
       address: '',
       comment: '',
     },
@@ -26,34 +35,36 @@ const FeedbackForm = ({ onLinkClick, className }) => {
     },
   });
 
+  const handleRadioButtonChange = (event) => {
+    setShippingOption(event.target.value)
+  };
+
   return (
     <form className={className} onSubmit={formik.handleSubmit}>
       <FormControl>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="courier"
+          defaultValue={RADIO_CONTROL_DATA[0].value}
           name="radio-buttons-group"
+          onChange={handleRadioButtonChange}
         >
-          <FormControlLabel 
-            value="courier"
-            control={<Radio classes={{ root: styles.checkbox, checked: styles.checkbox }} />}
-            label="Доставка курьером по Полоцку и Новополоцку"
-          />
-          <FormControlLabel
-            value="mail"
-            control={<Radio classes={{ root: styles.checkbox, checked: styles.checkbox }} />}
-            label="Доставка почтой"
-          />
-          <FormControlLabel
-            value="europost"
-            control={<Radio classes={{ root: styles.checkbox, checked: styles.checkbox }} />}
-            label="Доставка европочтой"
-          />
+          {RADIO_CONTROL_DATA.map(({ value, label }) => (
+            <FormControlLabel
+              key={value}
+              value={value}
+              label={label}
+              control={
+                <Radio classes={{ root: styles.checkbox, checked: styles.checkbox }} />
+              }
+            />
+          ))}
         </RadioGroup>
       </FormControl>
       <div className={styles.textFieldBlock}>
-        {TEXTFIELD_DATA.map(({ id, title }) => (
+        {TEXTFIELD_DATA[shippingOption].map(({ id, title, required }) => (
           <TextField
+            key={id}
+            required={required}
             fullWidth
             id={id}
             label={title}
@@ -63,9 +74,7 @@ const FeedbackForm = ({ onLinkClick, className }) => {
             onChange={formik.handleChange}
             error={formik.touched?.[id] && Boolean(formik.errors?.[id])}
             helperText={formik.touched?.[id] && formik.errors?.[id]}
-            InputProps={{
-              className: styles.textFieldInput,
-            }}
+            InputProps={{ className: styles.textFieldInput }}
             InputLabelProps={{
               classes: {
                 root: styles.textFieldLabel,
@@ -103,10 +112,10 @@ const FeedbackForm = ({ onLinkClick, className }) => {
           />
           <FormControlLabel
             className={styles.controlLabel}
+            label="Подтверждаю, что мне больше 18-ти лет" 
             control={
               <Checkbox classes={{ root: styles.checkbox, checked: styles.checkbox }} />
             }
-            label="Подтверждаю, что мне больше 18-ти лет" 
           />
         </FormGroup>
       </div>

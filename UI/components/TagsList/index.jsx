@@ -21,6 +21,7 @@ const TagsList = ({
       {tagsList?.map(({ tag, title }) => {
         return (
           <Tag
+            key={`${tag}-${title}`}
             tagActive={tagActive}
             label={title}
             tag={tag}

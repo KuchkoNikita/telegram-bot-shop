@@ -21,6 +21,8 @@ const Slider = ({
     onImageChange(images[activeIndex].color);
   };
 
+  console.log('images: ', images);
+
   return (
     <Swiper
       slidesPerView={1}
@@ -34,11 +36,11 @@ const Slider = ({
         bulletActiveClass: styles.swiperBulletActive,
       }}
     >
-      {images.map((image) => (
-        <SwiperSlide>
+      {images.map(({ src, title }) => (
+        <SwiperSlide key={`${src}-${title}`}>
           <Image
             onClick={onClick}
-            src={image.src}
+            src={src}
             alt="Picture of the author"
             width={imageWidth}
             height={imageHeight}

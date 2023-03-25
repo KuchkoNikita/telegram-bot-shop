@@ -84,7 +84,11 @@ const ProductInformationPopup = ({
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.productLables}>
             {details.map(({ title, text }, index) => (
-              <Tooltip title={text} arrow>
+              <Tooltip
+                arrow
+                key={`${title}=${text}`}
+                title={text}
+              >
                 <div className={styles.productLable}>
                   {DETAILS_ICON?.[type]?.[index]}
                   <p className={styles.productLableText}>{title}</p>

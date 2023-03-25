@@ -27,7 +27,7 @@ const BasketPopup = (props) => {
       <div className={styles.popupHeader}>
         <div className={styles.productCardList}>
           {cart.map((product) => (
-            <BasketProductCard product={product} />
+            <BasketProductCard key={product.id} product={product} />
           ))}
         </div>
         <div className={styles.productTotalInfo}>
@@ -46,6 +46,7 @@ const BasketPopup = (props) => {
       {contenTextPopup.map(({ type, title, text }) => {
         return (
           <InformativePopup
+            key={type + title}
             isOpen={typeTextPopup === type}
             title={title}
             text={text}

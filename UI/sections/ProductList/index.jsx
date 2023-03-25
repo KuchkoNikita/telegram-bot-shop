@@ -18,6 +18,7 @@ const ProductList = (props) => {
       <div className={styles.container}>
         {products.map((product) => 
           <ProductCard
+            key={product.id}
             onClick={handleProductClick(product)}
             product={product}
           />
