@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useSelector } from 'react-redux'
+import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
 import Slider from '@/UI/components/Slider';
@@ -91,7 +92,7 @@ const ProductInformationPopup = ({
               >
                 <div className={styles.productLable}>
                   {DETAILS_ICON?.[type]?.[index]}
-                  <p className={styles.productLableText}>{title}</p>
+                  <Typography className={styles.productLableText}>{title}</Typography>
                 </div>
               </Tooltip>
             ))}

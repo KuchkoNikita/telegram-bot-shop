@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Slider from '@/UI/components/Slider';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
@@ -46,15 +47,15 @@ const ProductCard = (props) => {
       }
       <div className={styles.cardInfo}>
         <h3 className={styles.productPrice}>{price} р.</h3>
-        <p className={styles.productTitle}>{title}</p>
-        <p className={styles.productDetails}>
+        <Typography className={styles.productTitle}>{title}</Typography>
+        <Typography className={styles.productDetails}>
           <span className={styles.productDetail}>
             {details[0]?.title}
           </span>   
           <span className={styles.productDetail}>
             {details[1]?.title}
           </span>
-        </p>
+        </Typography>
         {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type) 
           ? (
             <Button

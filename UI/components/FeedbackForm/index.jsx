@@ -1,4 +1,5 @@
 import { useFormik } from 'formik';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -119,7 +120,7 @@ const FeedbackForm = ({ onLinkClick, className }) => {
           />
         </FormGroup>
       </div>
-      <p className={styles.feedbackFormText}>Для подтверждения возраста с вами через Telegram свяжется наш менеджер</p>
+      <Typography className={styles.feedbackFormText}>Для подтверждения возраста с вами через Telegram свяжется наш менеджер</Typography>
       <Button
           fullWidth
           type='submit'

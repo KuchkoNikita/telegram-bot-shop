@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Typography from '@mui/material/Typography';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { useBasketProductCard } from './utils/useBasketProductCard';
 import styles from './styles.module.scss';
@@ -26,16 +27,16 @@ const BasketProductCard = (props) => {
         <div className={styles.cardProductInfo}>
           <h4 className={styles.cardPrice}>{price} р.</h4>
           <h3 className={styles.cardTitle}>{title}</h3>
-          <p className={styles.cardColor}>Черный</p>
+          <Typography className={styles.cardColor}>Черный</Typography>
         </div>
         <AddProductButton
           count={countProduct}
           handlePlusClick={handlePlusClick}
           handleMinusClick={handleMinusClick}
         />
-        <p className={styles.cardTotalPrice}>
+        <Typography className={styles.cardTotalPrice}>
           Сумма: {(price * quantity).toFixed(2)} р.
-        </p>
+        </Typography>
       </div>
     </div>
   );

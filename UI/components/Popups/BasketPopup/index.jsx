@@ -1,3 +1,4 @@
+import Typography from '@mui/material/Typography';
 import Popup from '@/UI/containers/Popup';
 import Form from '@/UI/components/FeedbackForm';
 import BasketProductCard from '@/UI/components/Cards/BasketProductCard';
@@ -32,12 +33,12 @@ const BasketPopup = (props) => {
         </div>
         <div className={styles.productTotalInfo}>
           <h2 className={styles.productTotalAmount}>Итого {totalAmountProducts} р.</h2>
-          <p>{totalCountProducts} шт.</p>
+          <Typography>{totalCountProducts} шт.</Typography>
         </div>
       </div>
       <div className={styles.popupMain}>
-        <p>Выберите способ доставки</p>
-        <p>Доставляете осуществляется бесплатно, заказ оплачивется при получении наличными или картой</p>
+        <Typography>Выберите способ доставки</Typography>
+        <Typography>Доставляете осуществляется бесплатно, заказ оплачивется при получении наличными или картой</Typography>
         <Form
           className={styles.form}
           onLinkClick={handlePopupChange}

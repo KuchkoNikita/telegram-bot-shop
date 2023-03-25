@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -31,7 +32,7 @@ const AddProductButton = ({
             >
               <RemoveIcon className={styles.icon} />
             </IconButton>
-            <p>{count}</p>
+            <Typography>{count}</Typography>
             <IconButton
               variant="text"
               onClick={handlePlusClick}
