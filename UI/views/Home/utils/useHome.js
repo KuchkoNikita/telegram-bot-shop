@@ -42,6 +42,7 @@ export const useHome = ({ page, contenTextPopup, className }) => {
         tag: newTag,
         details: newDetails,
         images: newImages,
+        quantity: 0,
       }
     }),
     [products]

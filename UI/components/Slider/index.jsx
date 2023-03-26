@@ -18,7 +18,7 @@ const Slider = ({
   className,
 }) => {
   const onSlideChange = ({ activeIndex }) => {
-    onImageChange(images[activeIndex].color);
+    onImageChange && onImageChange(images[activeIndex].color);
   };
 
   return (

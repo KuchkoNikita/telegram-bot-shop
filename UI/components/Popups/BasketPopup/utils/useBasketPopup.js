@@ -1,7 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { getAllCartsSelector } from '@/redux/selectors';
-import { getContentfulText, getContentfulFields } from '@/utils/contentfull';
 
 export const useBasketPopup = ({
   isOpen,
@@ -20,12 +19,12 @@ export const useBasketPopup = ({
   
   const totalCountProducts = useMemo(
     () => cart?.reduce((acc, { quantity }) => acc + quantity, 0),
-    []
+    [cart]
   );
 
   const handlePopupChange = useCallback((typePopup) => () => {
     setTypeTextPopup(typePopup);
-  }, [])
+  }, []);
 
   return {
     cart,

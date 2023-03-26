@@ -1,9 +1,10 @@
+import cn from 'classnames';
 import TextField from '@mui/material/TextField';
 import { TEXTFIELD_DATA } from './utils/constant';
 import styles from './styles.module.scss';
 
-const TextFieldGroup = ({ formik, shippingOption }) => (
-  <div className={styles.textFieldBlock}>
+const TextFieldGroup = ({ formik, shippingOption, className }) => (
+  <div className={cn(styles.textFieldBlock, className)}>
     {TEXTFIELD_DATA[shippingOption].map(({ id, title }) => (
       <TextField
         key={id}

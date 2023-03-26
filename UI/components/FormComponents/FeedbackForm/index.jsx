@@ -23,7 +23,11 @@ const FeedbackForm = (props) => {
   return (
     <form className={className} onSubmit={formik.handleSubmit}>
       <RadioGroup onChange={handleRadioButtonChange} />
-      <TextFieldGroup formik={formik} shippingOption={shippingOption} />
+      <TextFieldGroup
+        formik={formik}
+        className={styles.textFieldGroup}
+        shippingOption={shippingOption}
+      />
       <CheckboxGroup
         isOverEighteenChange={isOverEighteenChange}
         isPrivacyPolicyChecked={isPrivacyPolicyChecked}

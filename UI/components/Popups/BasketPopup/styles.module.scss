@@ -1,7 +1,8 @@
 @import '@/styles/mixins';
+@import '@/styles/variables';
 
 .popup {
-  z-index: 1100;
+  z-index: $zindexBasketPopup;
 }
 
 .popupHeader {

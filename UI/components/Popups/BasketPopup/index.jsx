@@ -49,18 +49,18 @@ const BasketPopup = (props) => {
             onLinkClick={handlePopupChange}
           />
         </div>
-        {contenTextPopup.map(({ fields }) => {
-          return (
-            <InformativePopup
-              key={fields.type + fields.title}
-              isOpen={typeTextPopup === fields.type}
-              title={fields.title}
-              text={fields.text}
-              onCloseButtonClick={handlePopupChange(null)}
-            />
-          );
-        })}
       </div>
+      {contenTextPopup.map(({ fields }) => {
+        return (
+          <InformativePopup
+            key={fields.type + fields.title}
+            isOpen={typeTextPopup === fields.type}
+            title={fields.title}
+            text={fields.text}
+            onCloseButtonClick={handlePopupChange(null)}
+          />
+        );
+      })}
     </Popup>
   );
 };

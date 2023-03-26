@@ -43,10 +43,6 @@ const ProductInformationPopup = ({
     setCountProduct((prevState) => prevState - 1)
   };
 
-  const handleImageChange = () => {};
-
-  console.log('type', type);
-
   return (
     <Popup 
       isShowCloseButton
@@ -62,7 +58,6 @@ const ProductInformationPopup = ({
                 images={images}
                 imageWidth={380}
                 imageHeight={380}
-                onImageChange={handleImageChange}
               />
             )
             : (
