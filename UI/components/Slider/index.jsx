@@ -34,11 +34,11 @@ const Slider = ({
         bulletActiveClass: styles.swiperBulletActive,
       }}
     >
-      {images.map(({ src, title }) => (
-        <SwiperSlide key={`${src}-${title}`}>
+      {images.map(({ image, title }) => (
+        <SwiperSlide key={`${image.src}-${title}`}>
           <Image
             onClick={onClick}
-            src={src}
+            src={image.src}
             alt="Picture of the author"
             width={imageWidth}
             height={imageHeight}

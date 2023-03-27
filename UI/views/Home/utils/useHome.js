@@ -5,6 +5,7 @@ import {
 } from '@/utils/contentfull';
 
 export const useHome = ({ page, contenTextPopup, className }) => {
+  console.log('page: ', page);
   const { tags = [], products = [] } = getContentfulFields(page);
 
   const [isActiveCard, setIsActiveCard] = useState(false);
@@ -22,16 +23,16 @@ export const useHome = ({ page, contenTextPopup, className }) => {
     products.map((product, index) => {
       const {
         details = [],
-        images,
+        productOptions,
         tag,
         ...props
       } = getContentfulFields(product);
 
       const newDetails = details.map((detail) => getContentfulFields(detail));
 
-      const newImages = images.map(imageWrapper => {
-        const { title, image } = getContentfulFields(imageWrapper);
-        return { ...createImage(image), title };
+      const newProductOptions = productOptions.map(productOption => {
+        const { slug, texture, image } = getContentfulFields(productOption);
+        return { texture, slug, image: { ...createImage(image) } };
       });
 
       const newTag = getContentfulFields(tag);
@@ -41,12 +42,14 @@ export const useHome = ({ page, contenTextPopup, className }) => {
         id: index,
         tag: newTag,
         details: newDetails,
-        images: newImages,
+        productOptions: newProductOptions,
         quantity: 0,
       }
     }),
     [products]
   );
+
+  console.log('formatProducts', formatProducts);
 
   const filterProducts = useMemo(() =>
     formatProducts.filter((formatProduct) => {
@@ -68,4 +71,6 @@ export const useHome = ({ page, contenTextPopup, className }) => {
     products: currentProducts,
     contenTextPopup,
   }
+
+  return { className: '' }
 };

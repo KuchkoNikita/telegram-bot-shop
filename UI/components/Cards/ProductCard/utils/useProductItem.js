@@ -11,16 +11,17 @@ export const useProductItem = ({
     title,
     details,
     price,
-    images,
+    productOptions,
   } = product;
 
-  const isImageSlider = images.length > 1;
+  const isImageSlider = productOptions.length > 1;
   const dispatch = useDispatch()
   const [countProduct, setCountProduct] = useState(0);
-  const [activeImageProduct, setActiveImageProduct] = useState(images?.[0]);
+  const [activeImageProduct, setActiveImageProduct] = useState(productOptions?.[0]);
+  console.log('& activeImageProduct: ', activeImageProduct);
 
   const handlePlusClick = () => {
-    dispatch(addToCart({ ...product, image: activeImageProduct }));
+    dispatch(addToCart({ ...product, productOption: activeImageProduct }));
     setCountProduct((prevState => prevState + 1));
   };
 
@@ -38,7 +39,7 @@ export const useProductItem = ({
     title,
     details,
     price,
-    images,
+    productOptions,
     onClick,
     isImageSlider,
     countProduct,

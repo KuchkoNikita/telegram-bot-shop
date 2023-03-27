@@ -27,7 +27,7 @@ export const getContentfulFields = (props) => (
   props ? { ...props.fields } : {}
 );
 
-export const createImage = (image, anchor) => {
+export const createImage = (image) => {
   const file = image?.fields?.file;
 
   return {
@@ -35,6 +35,5 @@ export const createImage = (image, anchor) => {
     height: file?.details?.image?.height || 0,
     width: file?.details?.image?.width || 0,
     alt: file?.fileName || "",
-    href: anchor,
   };
 };

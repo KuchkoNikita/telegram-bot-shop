@@ -9,7 +9,7 @@ const BasketProductCard = (props) => {
     price,
     title,
     quantity,
-    image,
+    productOption,
     countProduct,
     handlePlusClick,
     handleMinusClick,
@@ -18,7 +18,7 @@ const BasketProductCard = (props) => {
   return (
     <div className={styles.card}>
       <Image
-        src={image.src}
+        src={productOption.image.src}
         alt="Picture of the author"
         width={165}
         height={165}

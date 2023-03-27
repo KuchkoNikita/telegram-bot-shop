@@ -13,7 +13,7 @@ const ProductCard = (props) => {
     title,
     details,
     price,
-    images,
+    productOptions,
     onClick,
     isImageSlider,
     countProduct,
@@ -22,12 +22,14 @@ const ProductCard = (props) => {
     handleImageChange,
   } = useProductItem(props);
 
+  console.log('productOptions', productOptions[0].image.src);
+
   return (
     <div className={styles.card}>
       {isImageSlider 
         ? (
           <Slider
-            images={images}
+            images={productOptions}
             imageWidth={165}
             imageHeight={165}
             onClick={onClick}
@@ -37,7 +39,7 @@ const ProductCard = (props) => {
         : (
           <Image
             onClick={onClick}
-            src={images[0].src}
+            src={productOptions[0].image.src}
             alt="Picture of the author"
             width={165}
             height={165}

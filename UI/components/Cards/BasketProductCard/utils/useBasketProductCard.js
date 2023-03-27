@@ -7,7 +7,7 @@ export const useBasketProductCard = ({ product }) => {
     price,
     title,
     quantity,
-    image,
+    productOption,
   } = product;
   const dispatch = useDispatch()
   const [countProduct, setCountProduct] = useState(quantity)
@@ -26,7 +26,7 @@ export const useBasketProductCard = ({ product }) => {
     price,
     title,
     quantity,
-    image,
+    productOption,
     countProduct,
     handlePlusClick,
     handleMinusClick,

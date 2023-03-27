@@ -20,6 +20,8 @@ const BasketPopup = (props) => {
     handlePopupChange,
   } = useBasketPopup(props)
 
+  console.log('& cart', cart);
+
   return (
     <Popup 
       isShowCloseButton
