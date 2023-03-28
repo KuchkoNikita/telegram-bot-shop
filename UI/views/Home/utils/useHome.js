@@ -1,8 +1,6 @@
 import { useState , useCallback, useMemo } from 'react';
-import {
-  createImage,
-  getContentfulFields,
-} from '@/utils/contentfull';
+import { getContentfulFields } from '@/utils/contentfull';
+import { formatArrayProducts } from './helpers';
 
 export const useHome = ({ page, contenTextPopup, className }) => {
   const { tags = [], products = [] } = getContentfulFields(page);
@@ -18,40 +16,10 @@ export const useHome = ({ page, contenTextPopup, className }) => {
     setTagActive(tag);
   }, []);
 
-  const formatProducts = useMemo(() =>
-    products.map((product, index) => {
-      const {
-        details = [],
-        productOptions,
-        tag,
-        ...props
-      } = getContentfulFields(product);
-
-      const newDetails = details.map((detail) => getContentfulFields(detail));
-
-      const newProductOptions = productOptions.map(productOption => {
-        const { slug, texture, image } = getContentfulFields(productOption);
-        return { texture, slug, image: { ...createImage(image) } };
-      });
-
-      const newTag = getContentfulFields(tag);
-
-      return {
-        ...props,
-        id: index,
-        tag: newTag,
-        details: newDetails,
-        productOptions: newProductOptions,
-        quantity: 0,
-      }
-    }),
-    [products]
-  );
+  const formatProducts = useMemo(() => formatArrayProducts(products), [products]);
 
   const filterProducts = useMemo(() =>
-    formatProducts.filter((formatProduct) => {
-      return formatProduct?.tag.tag === tagActive;
-    }),
+    formatProducts.filter((formatProduct) => formatProduct?.tag.tag === tagActive),
     [formatProducts, tagActive]
   );
 
@@ -68,6 +36,4 @@ export const useHome = ({ page, contenTextPopup, className }) => {
     products: currentProducts,
     contenTextPopup,
   }
-
-  return { className: '' }
 };

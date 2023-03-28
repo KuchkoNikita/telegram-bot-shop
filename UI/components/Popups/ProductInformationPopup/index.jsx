@@ -1,13 +1,13 @@
-import { useState } from 'react';
 import Image from 'next/image';
-import { useSelector } from 'react-redux'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
 import Slider from '@/UI/components/Slider';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { getContentfulText } from '@/utils/contentfull';
-import { getAllCartsSelector } from '@/redux/selectors';
+import { addToCart, removeItem } from '@/redux/slice/cartSlice';
 import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
 
@@ -21,9 +21,6 @@ const ProductInformationPopup = ({
     return null;
   }
 
-  const cart = useSelector(getAllCartsSelector);
-
-  const [countProduct, setCountProduct] = useState(0);
   const {
     type,
     title,
@@ -32,15 +29,33 @@ const ProductInformationPopup = ({
     price,
     productOptions,
   } = activeProduct;
+
+  const dispatch = useDispatch();
+
+  const [activeProductOption, setActiveProductOption] = useState(productOptions?.[0]);
+  const [countProduct, setCountProduct] = useState(0);
+ 
   const content = getContentfulText(description);
   const isImageSlider = productOptions.length > 1;
 
   const handlePlusClick = () => {
-    setCountProduct((prevState) => prevState + 1)
+    setCountProduct((prevState) => prevState + 1);
+    dispatch(addToCart({
+      ...activeProduct,
+      productOption: activeProductOption,
+    }));
   };
 
   const handleMinusClick = () => {
     setCountProduct((prevState) => prevState - 1)
+    dispatch(removeItem({ 
+      ...activeProduct, 
+      productOption: activeProductOption,
+    }));
+  };
+
+  const handleProductOptionChange = (newImage) => {
+    setActiveProductOption(newImage);
   };
 
   return (
@@ -58,11 +73,12 @@ const ProductInformationPopup = ({
                 list={productOptions}
                 imageWidth={380}
                 imageHeight={380}
+                onImageChange={handleProductOptionChange}
               />
             )
             : (
               <Image
-                src={productOptions[0].src}
+                src={productOptions[0].image.src}
                 alt="Picture of the author"
                 width={380}
                 height={380}

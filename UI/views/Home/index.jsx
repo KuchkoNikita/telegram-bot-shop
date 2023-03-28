@@ -33,10 +33,7 @@ const Home = (props) => {
         products={products}
         onAllTagClick={handleTagClick(null)}
       />
-      <BasketButton
-        count={10}
-        onClick={handleProductClick}
-      />
+      <BasketButton onClick={handleProductClick} />
       <BasketPopup
         isOpen={isActiveCard}
         onCloseButtonClick={handleProductClick}

@@ -2,24 +2,22 @@ import Image from 'next/image';
 import cn from 'classnames';
 import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { useSlider } from './utils/useSlider';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import styles from './styles.module.scss';
 
-const Slider = ({
-  list,
-  imageWidth,
-  imageHeight,
-  onClick,
-  onImageChange,
-  className,
-}) => {
-  const onSlideChange = ({ activeIndex }) => {
-    onImageChange && onImageChange(list[activeIndex].color);
-  };
+const Slider = (props) => {
+  const {
+    list,
+    imageWidth,
+    imageHeight,
+    onClick,
+    className,
+    onSlideChange,
+  } = useSlider(props);
 
   return (
     <Swiper

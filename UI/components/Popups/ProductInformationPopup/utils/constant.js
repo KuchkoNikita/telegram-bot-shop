@@ -26,3 +26,7 @@ export const DETAILS_ICON = {
   hookah: DETAILS_HOOKAH_ICON,
   'e-liquid': DETAILS_HOOKAH_ICON
 }
+
+export const DEFAULT_ACTIVE_PRODUCT = {
+  
+}

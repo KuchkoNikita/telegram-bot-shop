@@ -3,7 +3,7 @@ import { getAllCartsSelector } from '@/redux/selectors';
 
 export const useBasketButton = ({ onClick }) => {
   const cart = useSelector(getAllCartsSelector);
-  const count = cart?.reduce((acc, { quantity }) => acc + quantity, 0);
+  const count = cart?.reduce((acc, { productOption }) => acc + productOption.quantity, 0);
 
   return {
     cart,

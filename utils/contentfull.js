@@ -23,9 +23,13 @@ export const getContentfulText = (content) => {
     : "";
 };
 
-export const getContentfulFields = (props) => (
-  props ? { ...props.fields } : {}
-);
+export const getContentfulFields = (props) => {
+  if (props) {
+    null
+  }
+
+  return { ...props.fields, id: props.sys.id }
+};
 
 export const createImage = (image) => {
   const file = image?.fields?.file;

@@ -20,7 +20,7 @@ const ProductCard = (props) => {
     countProduct,
     handlePlusClick,
     handleMinusClick,
-    handleImageChange,
+    handleProductOptionChange,
   } = useProductItem(props);
 
   return (
@@ -32,7 +32,7 @@ const ProductCard = (props) => {
             imageWidth={165}
             imageHeight={165}
             onClick={onClick}
-            onImageChange={handleImageChange}
+            onImageChange={handleProductOptionChange}
           />
         )
         : (
@@ -48,7 +48,7 @@ const ProductCard = (props) => {
       }
       <div className={styles.cardInfo}>
         <h3 className={styles.productPrice}>{price} р.</h3>
-        <Tooltip arrow title={title}>
+        <Tooltip arrow title={title} enterTouchDelay={0}>
           <Typography noWrap className={styles.productTitle}>
             {title}
           </Typography>

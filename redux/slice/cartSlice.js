@@ -7,22 +7,36 @@ const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-      const itemInCart = state.cart.find((item) => item.productOption.id === action.payload.productOption.id);
+      const productOption = action.payload.productOption
+
+      const itemInCart = state.cart.find(
+        (item) => item.productOption.productId === productOption.productId
+      );
 
       if (itemInCart) {
-        itemInCart.quantity++;
+        itemInCart.productOption.quantity++;
       } else {
-        state.cart.push({ ...action.payload, quantity: 1 });
+        state.cart.push({ 
+          ...action.payload, 
+          productOption: { ...productOption, quantity: 1 },
+        });
       }
     },
     removeItem: (state, action) => {
-      const itemInCart = state.cart.find((item) => item.productOption.id === action.payload.productOption.id);
+      const productOption = action.payload.productOption;
 
-      if (itemInCart.quantity === 1) {
-        const removeItem = state.cart.filter((item) => item.productOption.id !== action.payload.productOption.id);
+      const itemInCart = state.cart.find(
+        (item) => item.productOption.productId === productOption.productId
+      );
+
+      if (itemInCart.productOption.quantity === 1) {
+        const removeItem = state.cart.filter(
+          (item) => item.productOption.productId !== productOption.productId
+        );
+
         state.cart = removeItem;
       } else {
-        itemInCart.quantity--;
+        itemInCart.productOption.quantity--;
       }
     },
   },
