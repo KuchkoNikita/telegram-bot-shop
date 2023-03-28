@@ -55,7 +55,7 @@ const ProductInformationPopup = ({
           {isImageSlider 
             ? (
               <Slider
-                images={productOptions}
+                list={productOptions}
                 imageWidth={380}
                 imageHeight={380}
               />
@@ -84,8 +84,8 @@ const ProductInformationPopup = ({
             <div className={styles.productLables}>
               {details.map(({ title, text }, index) => (
                 <Tooltip
+                  key={`${title}-${index}`}
                   arrow
-                  key={`${title}=${text}`}
                   title={text}
                 >
                   <div className={styles.productLable}>

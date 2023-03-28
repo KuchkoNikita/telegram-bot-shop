@@ -20,7 +20,7 @@ const ProductList = (props) => {
       <div className={styles.container}>
         {products.map((product) => 
           <ProductCard
-            key={product.id}
+            key={`${product.id}-${product.slug}`}
             onClick={handleProductClick(product)}
             product={product}
           />

@@ -21,7 +21,12 @@ const NavigationSubMenu = ({
     <Collapse in={isOpen} timeout="auto" unmountOnExit>
       <List component="div" disablePadding>
         {list.map(({ title, link }) => (
-          <NavigationItem title={title} link={link} onClick={onCloseClick} />
+          <NavigationItem
+            key={`${title}-${link}`}
+            title={title}
+            link={link}
+            onClick={onCloseClick}
+          />
         ))}
       </List>
     </Collapse>

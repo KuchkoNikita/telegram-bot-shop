@@ -4,6 +4,7 @@
   @include container;
   @include grid(repeat(2, 1fr), none, 20px);
 
+  padding: 15px;
   margin: 0 auto;
   flex-wrap: wrap;
 }

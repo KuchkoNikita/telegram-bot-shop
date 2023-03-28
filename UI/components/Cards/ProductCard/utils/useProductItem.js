@@ -18,7 +18,6 @@ export const useProductItem = ({
   const dispatch = useDispatch()
   const [countProduct, setCountProduct] = useState(0);
   const [activeImageProduct, setActiveImageProduct] = useState(productOptions?.[0]);
-  console.log('& activeImageProduct: ', activeImageProduct);
 
   const handlePlusClick = () => {
     dispatch(addToCart({ ...product, productOption: activeImageProduct }));

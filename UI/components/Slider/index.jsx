@@ -10,7 +10,7 @@ import 'swiper/css/scrollbar';
 import styles from './styles.module.scss';
 
 const Slider = ({
-  images,
+  list,
   imageWidth,
   imageHeight,
   onClick,
@@ -18,7 +18,7 @@ const Slider = ({
   className,
 }) => {
   const onSlideChange = ({ activeIndex }) => {
-    onImageChange && onImageChange(images[activeIndex].color);
+    onImageChange && onImageChange(list[activeIndex].color);
   };
 
   return (
@@ -34,8 +34,8 @@ const Slider = ({
         bulletActiveClass: styles.swiperBulletActive,
       }}
     >
-      {images.map(({ image, title }) => (
-        <SwiperSlide key={`${image.src}-${title}`}>
+      {list.map(({ image }, index) => (
+        <SwiperSlide key={`${index}-${image.src}`}>
           <Image
             onClick={onClick}
             src={image.src}

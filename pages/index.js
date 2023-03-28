@@ -12,8 +12,6 @@ export const getStaticProps = async () => {
     CONTENTFUL_CONTENT_TYPE.text,
   );
 
-  console.log('page', page);
-
   return {
     props: {
       page,

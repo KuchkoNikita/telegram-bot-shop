@@ -20,8 +20,6 @@ const BasketPopup = (props) => {
     handlePopupChange,
   } = useBasketPopup(props)
 
-  console.log('& cart', cart);
-
   return (
     <Popup 
       isShowCloseButton
@@ -33,7 +31,10 @@ const BasketPopup = (props) => {
         <div className={styles.popupContainer}>
           <div className={styles.productCardList}>
             {cart.map((product) => (
-              <BasketProductCard key={product.id} product={product} />
+              <BasketProductCard
+                key={`${product.slug}-${product.id}`}
+                product={product}
+              />
             ))}
           </div>
           <div className={styles.productTotalInfo}>
@@ -55,7 +56,7 @@ const BasketPopup = (props) => {
       {contenTextPopup.map(({ fields }) => {
         return (
           <InformativePopup
-            key={fields.type + fields.title}
+            key={`${fields.slug}-${fields.title}`}
             isOpen={typeTextPopup === fields.type}
             title={fields.title}
             text={fields.text}

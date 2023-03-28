@@ -20,7 +20,7 @@ const TagsList = ({
       {tagsList?.map(({ fields }) => {
         return (
           <Tag
-            key={`${fields.tag}-${fields.title}`}
+            key={fields.tag}
             tagActive={tagActive}
             label={fields.title}
             tag={fields.tag}

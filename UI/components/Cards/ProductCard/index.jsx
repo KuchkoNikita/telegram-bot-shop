@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Slider from '@/UI/components/Slider';
@@ -22,14 +23,12 @@ const ProductCard = (props) => {
     handleImageChange,
   } = useProductItem(props);
 
-  console.log('productOptions', productOptions[0].image.src);
-
   return (
     <div className={styles.card}>
       {isImageSlider 
         ? (
           <Slider
-            images={productOptions}
+            list={productOptions}
             imageWidth={165}
             imageHeight={165}
             onClick={onClick}
@@ -49,7 +48,11 @@ const ProductCard = (props) => {
       }
       <div className={styles.cardInfo}>
         <h3 className={styles.productPrice}>{price} р.</h3>
-        <Typography className={styles.productTitle}>{title}</Typography>
+        <Tooltip arrow title={title}>
+          <Typography noWrap className={styles.productTitle}>
+            {title}
+          </Typography>
+        </Tooltip>
         <Typography className={styles.productDetails}>
           <span className={styles.productDetail}>
             {details[0]?.title}

@@ -5,7 +5,6 @@ import {
 } from '@/utils/contentfull';
 
 export const useHome = ({ page, contenTextPopup, className }) => {
-  console.log('page: ', page);
   const { tags = [], products = [] } = getContentfulFields(page);
 
   const [isActiveCard, setIsActiveCard] = useState(false);
@@ -48,8 +47,6 @@ export const useHome = ({ page, contenTextPopup, className }) => {
     }),
     [products]
   );
-
-  console.log('formatProducts', formatProducts);
 
   const filterProducts = useMemo(() =>
     formatProducts.filter((formatProduct) => {
