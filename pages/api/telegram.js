@@ -3,9 +3,12 @@ const express = require('express');
 const cors = require('cors');
 
 const TELEGRAM_TOKEN_BOT = '5347531296:AAE9ox_QjFfaOU25DVTnSubzKPpxwAz44ZU';
+const ANSWER_TELEGRAM_TOKEN_BOT = '';
 const TELEGRAM_WEB_APP = 'https://master--celadon-rabanadas-6e8c54.netlify.app/'
 
 const bot = new TelegramBot(TELEGRAM_TOKEN_BOT, {polling: true});
+const answerBot = new TelegramBot(ANSWER_TELEGRAM_TOKEN_BOT, {polling: true});
+
 const app = express();
 
 app.use(express.json());
