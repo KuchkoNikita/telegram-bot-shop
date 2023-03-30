@@ -8,7 +8,6 @@ export const useBasketProductCard = ({ product }) => {
     title,
     productOption,
   } = product;
-  console.log('product: ', product);
   const quantity = productOption.quantity;
 
   const dispatch = useDispatch()

@@ -28,7 +28,9 @@ const BasketProductCard = (props) => {
         <div className={styles.cardProductInfo}>
           <h4 className={styles.cardPrice}>{price} р.</h4>
           <h3 className={styles.cardTitle}>{title}</h3>
-          <Typography className={styles.cardColor}>{productOption.texture}</Typography>
+          <Typography className={styles.cardColor}>
+            {productOption.texture}
+          </Typography>
         </div>
         <AddProductButton
           count={countProduct}

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux'
+import { useState, useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
@@ -8,6 +8,8 @@ import Slider from '@/UI/components/Slider';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { getContentfulText } from '@/utils/contentfull';
 import { addToCart, removeItem } from '@/redux/slice/cartSlice';
+import { findAndGetProductQuantity } from '@/utils/helpers';
+import { getAllCartsSelector } from '@/redux/selectors';
 import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
 
@@ -32,8 +34,15 @@ const ProductInformationPopup = ({
 
   const dispatch = useDispatch();
 
+  const cart = useSelector(getAllCartsSelector);
   const [activeProductOption, setActiveProductOption] = useState(productOptions?.[0]);
-  const [countProduct, setCountProduct] = useState(0);
+
+  const findProductQuantity = useMemo(
+    () => findAndGetProductQuantity(cart, activeProductOption),
+    [cart, activeProductOption]
+  );
+
+  const [countProduct, setCountProduct] = useState(findProductQuantity);
  
   const content = getContentfulText(description);
   const isImageSlider = productOptions.length > 1;
@@ -57,6 +66,12 @@ const ProductInformationPopup = ({
   const handleProductOptionChange = (newImage) => {
     setActiveProductOption(newImage);
   };
+
+  useEffect(() => {
+    const findProductQuantity = findAndGetProductQuantity(cart, activeProductOption);
+
+    setCountProduct(findProductQuantity)
+  }, [cart, activeProductOption])
 
   return (
     <Popup 

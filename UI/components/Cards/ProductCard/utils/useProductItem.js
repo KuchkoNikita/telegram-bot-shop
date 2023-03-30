@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeItem } from '@/redux/slice/cartSlice';
 import { getAllCartsSelector } from '@/redux/selectors';
-import { findProductInСart } from './helpers'
+import { findAndGetProductQuantity } from '@/utils/helpers';
 
 export const useProductItem = ({
   product,
@@ -14,9 +14,12 @@ export const useProductItem = ({
   const isImageSlider = productOptions.length > 1;
   const [activeProductOption, setActiveProductOption] = useState(productOptions?.[0]);
 
-  const findProduct = findProductInСart(cart, activeProductOption);
+  const findProductQuantity = useMemo(
+    () => findAndGetProductQuantity(cart, activeProductOption)
+    [cart, activeProductOption]
+  );
 
-  const [countProduct, setCountProduct] = useState(findProduct?.productOption.quantity || 0);
+  const [countProduct, setCountProduct] = useState(findProductQuantity);
 
   const handlePlusClick = () => {
     dispatch(addToCart({
@@ -39,9 +42,9 @@ export const useProductItem = ({
   };
 
   useEffect(() => {
-    const findProduct = findProductInСart(cart, activeProductOption);
+    const findProductQuantity = findAndGetProductQuantity(cart, activeProductOption);
 
-    setCountProduct(findProduct?.productOption.quantity || 0)
+    setCountProduct(findProductQuantity)
   }, [cart, activeProductOption])
 
   return {
