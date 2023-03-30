@@ -5,7 +5,7 @@ const productsSlice = createSlice({
   initialState: {
     pods: [],
     hookah: [],
-    liquid: []
+    liquid: [],
   },
   reducers: {
     load: () => {

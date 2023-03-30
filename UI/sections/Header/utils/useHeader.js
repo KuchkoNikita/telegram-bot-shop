@@ -5,10 +5,10 @@ export const useHeader = () => {
 
   const handleBurgerClick = () => {
     setIsBurgerMenu(!isBurgerMenu);
-  }
+  };
 
   return {
     isBurgerMenu,
-    handleBurgerClick
+    handleBurgerClick,
   };
 };

@@ -11,40 +11,39 @@ const AddProductButton = ({
   count,
   handlePlusClick,
   handleMinusClick,
-}) => {
-  return (
-    <>
-      {count === 0 
-        ? <Button
-            variant="contained"
-            onClick={handlePlusClick}
-            className={styles.button}
+}) => (
+  <>
+    {count === 0
+      ? (
+        <Button
+          variant="contained"
+          onClick={handlePlusClick}
+          className={styles.button}
+        >
+          <ShoppingCartIcon className={cn(styles.iconCart, styles.icon)} />
+          <span>Добавить</span>
+        </Button>
+      )
+      : (
+        <div className={styles.buttonsWrapper}>
+          <IconButton
+            variant="text"
+            onClick={handleMinusClick}
+            className={styles.controllButton}
           >
-            <ShoppingCartIcon className={cn(styles.iconCart, styles.icon)} />
-            <span>Добавить</span>
-          </Button>
-        : (
-          <div className={styles.buttonsWrapper}>
-            <IconButton 
-              variant="text"
-              onClick={handleMinusClick}
-              className={styles.controllButton}
-            >
-              <RemoveIcon className={styles.icon} />
-            </IconButton>
-            <Typography>{count}</Typography>
-            <IconButton
-              variant="text"
-              onClick={handlePlusClick}
-              className={styles.controllButton}
-            >
-              <AddIcon className={styles.icon} />
-            </IconButton>
-          </div>
-        )
-      }
-    </>
-  );
-}
+            <RemoveIcon className={styles.icon} />
+          </IconButton>
+          <Typography>{count}</Typography>
+          <IconButton
+            variant="text"
+            onClick={handlePlusClick}
+            className={styles.controllButton}
+          >
+            <AddIcon className={styles.icon} />
+          </IconButton>
+        </div>
+      )}
+  </>
+);
 
 export default AddProductButton;

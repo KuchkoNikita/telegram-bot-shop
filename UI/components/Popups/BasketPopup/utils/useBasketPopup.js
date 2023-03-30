@@ -9,22 +9,22 @@ export const useBasketPopup = ({
 }) => {
   const [typeTextPopup, setTypeTextPopup] = useState(null);
   const cart = useSelector(getAllCartsSelector);
- 
-  const totalAmountProducts = useMemo(() => 
-    cart
+
+  const totalAmountProducts = useMemo(
+    () => cart
       ?.reduce((acc, { productOption, price }) => acc + productOption.quantity * price, 0)
-      .toFixed(2), 
-    [cart]
+      .toFixed(2),
+    [cart],
   );
-  
+
   const totalCountProducts = useMemo(
     () => cart?.reduce((acc, { productOption }) => acc + productOption.quantity, 0),
-    [cart]
+    [cart],
   );
 
   const handlePopupChange = useCallback(
-    (typePopup) => () => setTypeTextPopup(typePopup), 
-    []
+    (typePopup) => () => setTypeTextPopup(typePopup),
+    [],
   );
 
   return {

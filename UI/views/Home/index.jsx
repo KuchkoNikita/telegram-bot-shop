@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 import cn from 'classnames';
 import ProductList from '@/UI/sections/ProductList';
 import { useHome } from './utils/useHome';
@@ -40,7 +40,7 @@ const Home = (props) => {
         contenTextPopup={contenTextPopup}
       />
     </main>
-  )
+  );
 };
 
 export default Home;

@@ -8,10 +8,10 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     });
 
-    return config
+    return config;
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    domains: ['images.ctfassets.net'],
   },
 };
 

@@ -17,18 +17,16 @@ const TagsList = ({
       >
         Все
       </Tag>
-      {tagsList?.map(({ fields }) => {
-        return (
-          <Tag
-            key={fields.tag}
-            tagActive={tagActive}
-            label={fields.title}
-            tag={fields.tag}
-            className={styles.tag}
-            onClick={onTagClick(fields.tag)}
-          />
-        )
-      })}
+      {tagsList?.map(({ fields }) => (
+        <Tag
+          key={fields.tag}
+          tagActive={tagActive}
+          label={fields.title}
+          tag={fields.tag}
+          className={styles.tag}
+          onClick={onTagClick(fields.tag)}
+        />
+      ))}
     </div>
   </div>
 );

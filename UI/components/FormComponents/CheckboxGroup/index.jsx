@@ -11,7 +11,7 @@ const LabelPrivacyPolicy = ({ onLinkClick }) => (
       className={styles.link}
       onClick={onLinkClick(TYPE_TEXT_POPUP.privacyPolicy)}
     >
-      пользовательское соглашение 
+      пользовательское соглашение
     </span>
     <span> и даю согласие на </span>
     <span
@@ -44,7 +44,7 @@ const CheckboxGroup = ({
       value={isOverEighteenChange}
       onClick={onOverEighteenClick}
       className={styles.controlLabel}
-      label="Подтверждаю, что мне больше 18-ти лет" 
+      label="Подтверждаю, что мне больше 18-ти лет"
       control={
         <Checkbox classes={{ root: styles.checkbox, checked: styles.checkbox }} />
       }

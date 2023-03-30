@@ -16,6 +16,6 @@ export const useProductList = ({
     tagActive,
     onAllTagClick,
     activeProduct,
-    handleProductClick
+    handleProductClick,
   };
-}
+};

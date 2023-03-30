@@ -1,6 +1,6 @@
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import NavigationPopupMenu from '@/UI/components/Popups/NavigationPopupMenu'
+import NavigationPopupMenu from '@/UI/components/Popups/NavigationPopupMenu';
 import { useHeader } from './utils/useHeader';
 import styles from './styles.module.scss';
 
@@ -20,7 +20,7 @@ const Header = () => {
         onCloseClick={handleBurgerClick}
       />
     </header>
-  )
+  );
 };
 
 export default Header;

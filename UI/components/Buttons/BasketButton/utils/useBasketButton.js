@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import { getAllCartsSelector } from '@/redux/selectors';
 
 export const useBasketButton = ({ onClick }) => {

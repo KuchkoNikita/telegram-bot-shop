@@ -8,7 +8,7 @@ const InformativePopup = ({
   isOpen,
   onCloseButtonClick,
 }) => (
-  <Popup 
+  <Popup
     isShowCloseButton
     className={styles.popup}
     isOpen={isOpen}

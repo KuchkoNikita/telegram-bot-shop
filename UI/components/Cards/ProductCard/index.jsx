@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -25,7 +25,7 @@ const ProductCard = (props) => {
 
   return (
     <div className={styles.card}>
-      {isImageSlider 
+      {isImageSlider
         ? (
           <Slider
             list={productOptions}
@@ -44,24 +44,34 @@ const ProductCard = (props) => {
             height={165}
             className={styles.cardImage}
           />
-        )
-      }
+        )}
       <div className={styles.cardInfo}>
-        <h3 className={styles.productPrice}>{price} р.</h3>
-        <Tooltip arrow title={title} enterTouchDelay={0}>
-          <Typography noWrap className={styles.productTitle}>
+        <h3 className={styles.productPrice}>
+          {price}
+          {' '}
+          р.
+        </h3>
+        <Tooltip
+          arrow
+          title={title}
+          enterTouchDelay={0}
+        >
+          <Typography
+            noWrap
+            className={styles.productTitle}
+          >
             {title}
           </Typography>
         </Tooltip>
         <Typography className={styles.productDetails}>
           <span className={styles.productDetail}>
             {details[0]?.title}
-          </span>   
+          </span>
           <span className={styles.productDetail}>
             {details[1]?.title}
           </span>
         </Typography>
-        {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type) 
+        {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type)
           ? (
             <Button
               variant="contained"
@@ -76,11 +86,10 @@ const ProductCard = (props) => {
               handlePlusClick={handlePlusClick}
               handleMinusClick={handleMinusClick}
             />
-          )
-        }
+          )}
       </div>
     </div>
-  )
+  );
 };
 
 export default ProductCard;

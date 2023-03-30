@@ -1,5 +1,5 @@
 import Home from '@/UI/views/Home';
-import { getEntriesByTypeAndSlug } from "@/utils/contentfull";
+import { getEntriesByTypeAndSlug } from '@/utils/contentfull';
 import { CONTENTFUL_CONTENT_TYPE, CONTENTFUL_PRODUCT_TYPE } from '@/utils/constants';
 
 export const getStaticProps = async () => {

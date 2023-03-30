@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { addToCart, removeItem } from '@/redux/slice/cartSlice';
 
 export const useBasketProductCard = ({ product }) => {
@@ -8,19 +8,19 @@ export const useBasketProductCard = ({ product }) => {
     title,
     productOption,
   } = product;
-  const quantity = productOption.quantity;
+  const { quantity } = productOption;
 
-  const dispatch = useDispatch()
-  const [countProduct, setCountProduct] = useState(quantity)
+  const dispatch = useDispatch();
+  const [countProduct, setCountProduct] = useState(quantity);
 
   const handlePlusClick = () => {
     dispatch(addToCart(product));
-    setCountProduct((prevState => prevState + 1));
+    setCountProduct(((prevState) => prevState + 1));
   };
 
   const handleMinusClick = () => {
     dispatch(removeItem(product));
-    setCountProduct((prevState => prevState - 1));
+    setCountProduct(((prevState) => prevState - 1));
   };
 
   return {
@@ -32,4 +32,4 @@ export const useBasketProductCard = ({ product }) => {
     handlePlusClick,
     handleMinusClick,
   };
-}
+};

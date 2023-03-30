@@ -18,8 +18,15 @@ const NavigationSubMenu = ({
       <ListItemText primary={title} />
       {isOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
     </ListItemButton>
-    <Collapse in={isOpen} timeout="auto" unmountOnExit>
-      <List component="div" disablePadding>
+    <Collapse
+      in={isOpen}
+      timeout="auto"
+      unmountOnExit
+    >
+      <List
+        component="div"
+        disablePadding
+      >
         {list.map(({ title, link }) => (
           <NavigationItem
             key={`${title}-${link}`}

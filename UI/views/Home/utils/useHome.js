@@ -1,4 +1,4 @@
-import { useState , useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { getContentfulFields } from '@/utils/contentfull';
 import { formatArrayProducts } from './helper';
 
@@ -18,9 +18,9 @@ export const useHome = ({ page, contenTextPopup, className }) => {
 
   const formatProducts = useMemo(() => formatArrayProducts(products), [products]);
 
-  const filterProducts = useMemo(() =>
-    formatProducts.filter((formatProduct) => formatProduct?.tag.tag === tagActive),
-    [formatProducts, tagActive]
+  const filterProducts = useMemo(
+    () => formatProducts.filter((formatProduct) => formatProduct?.tag.tag === tagActive),
+    [formatProducts, tagActive],
   );
 
   const currentProducts = tagActive ? filterProducts : formatProducts;
@@ -35,5 +35,5 @@ export const useHome = ({ page, contenTextPopup, className }) => {
     tags,
     products: currentProducts,
     contenTextPopup,
-  }
+  };
 };

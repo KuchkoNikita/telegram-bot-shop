@@ -17,14 +17,14 @@ const FeedbackForm = ({ onChange }) => (
           key={value}
           value={value}
           label={label}
-          control={
-            <Radio 
+          control={(
+            <Radio
               classes={{
                 root: styles.radioButton,
                 checked: styles.radioButton,
               }}
             />
-          }
+          )}
         />
       ))}
     </RadioGroup>

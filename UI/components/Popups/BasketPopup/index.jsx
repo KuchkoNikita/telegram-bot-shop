@@ -18,10 +18,10 @@ const BasketPopup = (props) => {
     totalAmountProducts,
     totalCountProducts,
     handlePopupChange,
-  } = useBasketPopup(props)
+  } = useBasketPopup(props);
 
   return (
-    <Popup 
+    <Popup
       isShowCloseButton
       className={styles.popup}
       isOpen={isOpen}
@@ -38,8 +38,17 @@ const BasketPopup = (props) => {
             ))}
           </div>
           <div className={styles.productTotalInfo}>
-            <h2 className={styles.productTotalAmount}>Итого {totalAmountProducts} р.</h2>
-            <Typography>{totalCountProducts} шт.</Typography>
+            <h2 className={styles.productTotalAmount}>
+              Итого
+              {totalAmountProducts}
+              {' '}
+              р.
+            </h2>
+            <Typography>
+              {totalCountProducts}
+              {' '}
+              шт.
+            </Typography>
           </div>
         </div>
       </div>
@@ -53,17 +62,15 @@ const BasketPopup = (props) => {
           />
         </div>
       </div>
-      {contenTextPopup.map(({ fields }) => {
-        return (
-          <InformativePopup
-            key={`${fields.slug}-${fields.title}`}
-            isOpen={typeTextPopup === fields.type}
-            title={fields.title}
-            text={fields.text}
-            onCloseButtonClick={handlePopupChange(null)}
-          />
-        );
-      })}
+      {contenTextPopup.map(({ fields }) => (
+        <InformativePopup
+          key={`${fields.slug}-${fields.title}`}
+          isOpen={typeTextPopup === fields.type}
+          title={fields.title}
+          text={fields.text}
+          onCloseButtonClick={handlePopupChange(null)}
+        />
+      ))}
     </Popup>
   );
 };

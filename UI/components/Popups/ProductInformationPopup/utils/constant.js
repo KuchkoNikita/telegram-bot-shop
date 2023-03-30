@@ -12,7 +12,7 @@ import styles from '../styles.module.scss';
 export const DETAILS_PODS_ICON = [
   <BatteryChargingFullIcon className={styles.icon} />,
   <PropaneTankIcon className={styles.icon} />,
-  <BoltIcon className={styles.icon} />
+  <BoltIcon className={styles.icon} />,
 ];
 
 export const DETAILS_HOOKAH_ICON = [
@@ -24,9 +24,9 @@ export const DETAILS_HOOKAH_ICON = [
 export const DETAILS_ICON = {
   pod: DETAILS_PODS_ICON,
   hookah: DETAILS_HOOKAH_ICON,
-  'e-liquid': DETAILS_HOOKAH_ICON
-}
+  'e-liquid': DETAILS_HOOKAH_ICON,
+};
 
 export const DEFAULT_ACTIVE_PRODUCT = {
-  
-}
+
+};

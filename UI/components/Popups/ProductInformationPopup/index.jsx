@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState, useEffect, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
@@ -18,7 +18,6 @@ const ProductInformationPopup = ({
   isProductActive,
   onCloseButtonClick,
 }) => {
-
   if (!activeProduct) {
     return null;
   }
@@ -39,11 +38,11 @@ const ProductInformationPopup = ({
 
   const findProductQuantity = useMemo(
     () => findAndGetProductQuantity(cart, activeProductOption),
-    [cart, activeProductOption]
+    [cart, activeProductOption],
   );
 
   const [countProduct, setCountProduct] = useState(findProductQuantity);
- 
+
   const content = getContentfulText(description);
   const isImageSlider = productOptions.length > 1;
 
@@ -56,9 +55,9 @@ const ProductInformationPopup = ({
   };
 
   const handleMinusClick = () => {
-    setCountProduct((prevState) => prevState - 1)
-    dispatch(removeItem({ 
-      ...activeProduct, 
+    setCountProduct((prevState) => prevState - 1);
+    dispatch(removeItem({
+      ...activeProduct,
       productOption: activeProductOption,
     }));
   };
@@ -70,11 +69,11 @@ const ProductInformationPopup = ({
   useEffect(() => {
     const findProductQuantity = findAndGetProductQuantity(cart, activeProductOption);
 
-    setCountProduct(findProductQuantity)
-  }, [cart, activeProductOption])
+    setCountProduct(findProductQuantity);
+  }, [cart, activeProductOption]);
 
   return (
-    <Popup 
+    <Popup
       isShowCloseButton
       className={styles.popup}
       isOpen={isProductActive}
@@ -82,7 +81,7 @@ const ProductInformationPopup = ({
     >
       <div className={styles.popupContainer}>
         <div className={styles.imageWrapper}>
-          {isImageSlider 
+          {isImageSlider
             ? (
               <Slider
                 list={productOptions}
@@ -98,12 +97,15 @@ const ProductInformationPopup = ({
                 width={380}
                 height={380}
               />
-            )
-          }
+            )}
         </div>
         <div className={styles.productInfo}>
           <div className={styles.productHeader}>
-            <h2>{price} р.</h2>
+            <h2>
+              {price}
+              {' '}
+              р.
+            </h2>
             <AddProductButton
               count={countProduct}
               handlePlusClick={handlePlusClick}

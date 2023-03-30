@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import List from '@mui/material/List';
 import Popup from '@/UI/containers/Popup';
 import NavigationItem from '@/UI/components/NavigationItem';
@@ -10,7 +10,7 @@ const NavigationPopupMenu = ({ isBurgerMenu, onCloseClick }) => {
   const [isOpenPods, setIsOpenPods] = useState(false);
   const [isOpenHookah, setIsOpenHookah] = useState(false);
   const [isOpenEliquid, setIsOpenEliquid] = useState(false);
-  
+
   const handlPodsMenuClick = () => {
     setIsOpenPods((prevState) => !prevState);
   };
@@ -37,32 +37,40 @@ const NavigationPopupMenu = ({ isBurgerMenu, onCloseClick }) => {
           className={styles.list}
         >
           <NavigationSubMenu
-            title="Устроиства" 
+            title="Устроиства"
             list={POD}
             isOpen={isOpenPods}
             onClick={handlPodsMenuClick}
             onCloseClick={onCloseClick}
           />
           <NavigationSubMenu
-            title="Кальяны" 
+            title="Кальяны"
             list={HOOKAH}
             isOpen={isOpenHookah}
             onClick={handlHookahMenuClick}
             onCloseClick={onCloseClick}
           />
           <NavigationSubMenu
-            title="Жидкости" 
+            title="Жидкости"
             list={E_LIQUID}
             isOpen={isOpenEliquid}
             onClick={handleEliquidSecondLevel}
             onCloseClick={onCloseClick}
           />
-          <NavigationItem title="Напитки" link="/" onClick={onCloseClick} />
-          <NavigationItem title="О нас" link="/about-us" onClick={onCloseClick} />
+          <NavigationItem
+            title="Напитки"
+            link="/"
+            onClick={onCloseClick}
+          />
+          <NavigationItem
+            title="О нас"
+            link="/about-us"
+            onClick={onCloseClick}
+          />
         </List>
       </div>
     </Popup>
-  )
+  );
 };
 
 export default NavigationPopupMenu;

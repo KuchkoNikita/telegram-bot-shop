@@ -12,19 +12,19 @@ const ProductList = (props) => {
     tagActive,
     onAllTagClick,
     activeProduct,
-    handleProductClick
-  } = useProductList(props)
+    handleProductClick,
+  } = useProductList(props);
 
   return (
     <section>
       <div className={styles.container}>
-        {products.map((product) => 
+        {products.map((product) => (
           <ProductCard
             key={`${product.id}-${product.slug}`}
             onClick={handleProductClick(product)}
             product={product}
           />
-        )}
+        ))}
       </div>
       {tagActive && (
         <div className={styles.buttonWrapper}>
@@ -43,7 +43,7 @@ const ProductList = (props) => {
         onCloseButtonClick={handleProductClick(null)}
       />
     </section>
-  )
+  );
 };
 
 export default ProductList;

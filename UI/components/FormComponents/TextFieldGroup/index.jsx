@@ -22,7 +22,7 @@ const TextFieldGroup = ({ formik, shippingOption, className }) => (
           classes: {
             root: styles.textFieldLabel,
             focused: styles.textFieldLabel,
-          }
+          },
         }}
       />
     ))}

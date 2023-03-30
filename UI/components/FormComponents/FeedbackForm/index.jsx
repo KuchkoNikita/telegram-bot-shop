@@ -18,10 +18,13 @@ const FeedbackForm = (props) => {
     handleOverEighteenClick,
     onLinkClick,
     className,
-  } = useFeedbackForm(props)
+  } = useFeedbackForm(props);
 
   return (
-    <form className={className} onSubmit={formik.handleSubmit}>
+    <form
+      className={className}
+      onSubmit={formik.handleSubmit}
+    >
       <RadioGroup onChange={handleRadioButtonChange} />
       <TextFieldGroup
         formik={formik}
@@ -40,7 +43,7 @@ const FeedbackForm = (props) => {
       </Typography>
       <Button
         fullWidth
-        type='submit'
+        type="submit"
         variant="contained"
         className={styles.button}
         disabled={!disabledSubmitButton}
@@ -49,6 +52,6 @@ const FeedbackForm = (props) => {
       </Button>
     </form>
   );
-}
+};
 
 export default FeedbackForm;
