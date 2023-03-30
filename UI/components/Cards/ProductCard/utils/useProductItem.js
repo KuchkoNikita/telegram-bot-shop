@@ -17,8 +17,8 @@ export const useProductItem = ({
   const [activeProductOption, setActiveProductOption] = useState(productOptions?.[0]);
 
   const findProductQuantity = useMemo(
-    () => findAndGetProductQuantity(cart, activeProductOption)
-      [cart, activeProductOption],
+    () => findAndGetProductQuantity(cart, activeProductOption),
+    [cart, activeProductOption],
   );
 
   const [countProduct, setCountProduct] = useState(findProductQuantity);
