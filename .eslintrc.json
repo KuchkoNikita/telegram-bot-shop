@@ -49,14 +49,14 @@
     ],
     "import/extensions": [
       "error",
-      "ignorePackages",
+      "always",
       {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
+        "pattern": {
+            "jsx": "never",
+            "js": "never"
+        }
       }
-   ],
+  ]
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "max-len": [
