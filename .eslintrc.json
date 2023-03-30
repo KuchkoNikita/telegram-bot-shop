@@ -47,16 +47,7 @@
         "devDependencies": true
       }
     ],
-    "import/extensions": [
-      "error",
-      "always",
-      {
-        "pattern": {
-            "jsx": "never",
-            "js": "never"
-        }
-      }
-  ]
+    "import/extensions": "off",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "max-len": [
