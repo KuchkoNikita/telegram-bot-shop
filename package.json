@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "CI=next build",
+    "build": "next build",
     "start": "next start",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint . --ext .js,.jsx --ignore-path .gitignore",
