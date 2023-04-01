@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const MetaTags = dynamic(() => import('@/UI/components/MetaTags'));
 const Header = dynamic(() => import('UI/sections/Header'));
-const Footer = dynamic(() => import('UI/sections/Footer'));
 
 const Layout = ({ children, className }) => (
   <>
@@ -14,7 +13,6 @@ const Layout = ({ children, className }) => (
     />
     <Header />
     {children}
-    {/* <Footer /> */}
   </>
 );
 
