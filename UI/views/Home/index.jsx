@@ -22,7 +22,6 @@ const Home = (props) => {
 
   return (
     <main className={cn(styles.main, className)}>
-      {/* Добавить сюда котейнер и убрать из TagsList и ProductList */}
       <TagsList
         tagActive={tagActive}
         tagsList={tags}
