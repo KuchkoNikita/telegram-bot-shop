@@ -1,5 +1,4 @@
 import cn from 'classnames';
-import dynamic from 'next/dynamic';
 import Typography from '@mui/material/Typography';
 import Popup from '@/UI/containers/Popup';
 import FeedbackForm from '@/UI/components/FormComponents/FeedbackForm';
