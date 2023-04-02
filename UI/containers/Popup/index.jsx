@@ -23,7 +23,7 @@ const Popup = ({
     open={isOpen}
     classes={{ paper: styles.paper }}
     className={
-      cn(styles.popup, roboto.className, className, { [styles.popupActive]: isOpen })
+      cn(styles.popup, roboto.className, className)
     }
   >
     {children}
