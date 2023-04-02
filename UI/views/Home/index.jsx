@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
 import cn from 'classnames';
-import ProductList from '@/UI/sections/ProductList';
 import { useHome } from './utils/useHome';
 import styles from './styles.module.scss';
 
+const ProductList = dynamic(() => import('@/UI/sections/ProductList'));
 const TagsList = dynamic(() => import('@/UI/components/TagsList'));
 const BasketPopup = dynamic(() => import('@/UI/components/Popups/BasketPopup'));
 const BasketButton = dynamic(() => import('@/UI/components/Buttons/BasketButton'));

@@ -26,7 +26,6 @@ export const formatArrayProducts = (products) => products.map((product) => {
   const newTag = getContentfulFields(tag);
 
   const newDetails = getContentfulFields(details);
-  console.log('newDetails: ', newDetails);
 
   return {
     ...props,
