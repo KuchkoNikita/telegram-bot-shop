@@ -32,7 +32,7 @@ const BasketPopup = (props) => {
             {cart.length
               ? cart.map((product) => (
                 <BasketProductCard
-                  key={`${product.slug}-${product.id}`}
+                  key={product.productOption.productId}
                   product={product}
                 />
               ))
