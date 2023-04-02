@@ -10,6 +10,7 @@ export const useFeedbackForm = ({ onLinkClick, className }) => {
   const [isOverEighteenChange, setIsOverEighteenChange] = useState(false);
 
   const disabledSubmitButton = isOverEighteenChange && isPrivacyPolicyChecked;
+  console.log('disabledSubmitButton: ', disabledSubmitButton);
 
   const formik = useFormik({
     initialValues: {
