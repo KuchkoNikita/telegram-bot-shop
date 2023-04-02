@@ -14,7 +14,7 @@ const cartSlice = createSlice({
       );
 
       if (itemInCart) {
-        itemInCart.productOption.quantity++;
+        itemInCart.productOption.quantity += 1;
       } else {
         state.cart.push({
           ...action.payload,
