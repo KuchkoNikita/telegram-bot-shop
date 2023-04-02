@@ -10,6 +10,9 @@ const nextConfig = {
 
     return config;
   },
+  experimental: {
+    appDir: true,
+  },
   images: {
     domains: ['images.ctfassets.net'],
   },
