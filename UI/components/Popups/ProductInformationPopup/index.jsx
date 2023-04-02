@@ -1,16 +1,14 @@
 import Image from 'next/image';
 import { useState, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
 import Popup from '@/UI/containers/Popup';
+import ProductLabels from '@/UI/components/ProductLabels';
 import Slider from '@/UI/components/Slider';
 import AddProductButton from '@/UI/components/Buttons/AddProductButton';
 import { getContentfulText } from '@/utils/contentfull';
 import { addToCart, removeItem } from '@/redux/slice/cartSlice';
 import { findAndGetProductQuantity } from '@/utils/helpers';
 import { getAllCartsSelector } from '@/redux/selectors';
-import { DETAILS_ICON } from './utils/constant';
 import styles from './styles.module.scss';
 
 const ProductInformationPopup = ({
@@ -114,20 +112,10 @@ const ProductInformationPopup = ({
           </div>
           <div className={styles.productAbout}>
             <h2 className={styles.title}>{title}</h2>
-            <div className={styles.productLables}>
-              {details.map(({ title: detailsTitle, text }, index) => (
-                <Tooltip
-                  key={`${detailsTitle}-${index}`}
-                  arrow
-                  title={text}
-                >
-                  <div className={styles.productLable}>
-                    {DETAILS_ICON?.[type]?.[index]}
-                    <Typography className={styles.productLableText}>{detailsTitle}</Typography>
-                  </div>
-                </Tooltip>
-              ))}
-            </div>
+            <ProductLabels
+              details={details}
+              type={type}
+            />
             <div className={styles.productContent}>
               {content}
             </div>

@@ -1,0 +1,24 @@
+@import '@/styles/mixins';
+
+.productLables,
+.productLable {
+  @include flex(row, initial, center);
+}
+
+.productLables {
+  margin-bottom: 10px;
+
+  .productLable {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  
+  .productLableText {
+    margin-left: 5px;
+  }
+  
+  .iconAngle {
+    transform: rotate(90deg);
+  }
+}

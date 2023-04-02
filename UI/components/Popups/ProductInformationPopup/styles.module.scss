@@ -14,29 +14,10 @@
     margin-bottom: 10px;
   }
 
-  .productLables,
-  .productLable {
-    @include flex(row, initial, center);
-  }
-
-  .productLables {
-    margin-bottom: 10px;
-  }
-
-  .productLable {
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
   .productHeader {
     @include flex(row, space-between, center);
 
     margin-top: 15px;
-  }
-
-  .productLableText {
-    margin-left: 5px;
   }
 
   .imageWrapper {
@@ -59,9 +40,5 @@
     ul {
       padding-left: 15px;
     }
-  }
-
-  .iconAngle {
-    transform: rotate(90deg);
   }
 }

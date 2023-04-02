@@ -65,10 +65,10 @@ const ProductCard = (props) => {
         </Tooltip>
         <Typography className={styles.productDetails}>
           <span className={styles.productDetail}>
-            {details[0]?.title}
+            {details.firstText}
           </span>
           <span className={styles.productDetail}>
-            {details[1]?.title}
+            {details.secondText}
           </span>
         </Typography>
         {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type)
