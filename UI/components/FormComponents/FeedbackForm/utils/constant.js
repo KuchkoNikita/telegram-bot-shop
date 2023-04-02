@@ -7,7 +7,7 @@ export const validationSchema = yup.object({
     .required('Введите Фамилия Имя Отчество'),
   phone: yup
     .string()
-    .matches(PHONE_REG_EXP, 'Phone number is not valid')
+    .matches(PHONE_REG_EXP, 'Некоректно введеный номер телефона')
     .required('Введите номер телефона'),
   email: yup
     .string()
