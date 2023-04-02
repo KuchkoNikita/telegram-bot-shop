@@ -29,6 +29,7 @@ const NavigationSubMenu = ({
       >
         {list.map(({ title, link }) => (
           <NavigationItem
+            isSubItem
             key={`${title}-${link}`}
             title={title}
             link={link}
