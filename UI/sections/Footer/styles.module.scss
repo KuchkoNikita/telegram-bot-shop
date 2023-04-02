@@ -1,8 +1,0 @@
-@import '@/styles/mixins';
-@import '@/styles/variables';
-
-.container {
-  @include flex(row, space-between, center);
-
-  padding: 0 $sideSectionPadding $orderButtonHeight + 20px;
-}
