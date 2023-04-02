@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import dynamic from 'next/dynamic';
 import Typography from '@mui/material/Typography';
 import Popup from '@/UI/containers/Popup';
@@ -27,18 +28,25 @@ const BasketPopup = (props) => {
       onCloseButtonClick={onCloseButtonClick}
     >
       <div className={styles.popupHeader}>
-        <div className={styles.popupContainer}>
+        <div className={cn(styles.popupContainer)}>
           <div className={styles.productCardList}>
-            {cart.map((product) => (
-              <BasketProductCard
-                key={`${product.slug}-${product.id}`}
-                product={product}
-              />
-            ))}
+            {cart.length
+              ? cart.map((product) => (
+                <BasketProductCard
+                  key={`${product.slug}-${product.id}`}
+                  product={product}
+                />
+              ))
+              : (
+                <p className={styles.popupEmptyBasket}>
+                  Ваша корзина пуста
+                </p>
+              )}
           </div>
           <div className={styles.productTotalInfo}>
             <h2 className={styles.productTotalAmount}>
               Итого
+              {' '}
               {totalAmountProducts}
               {' '}
               р.

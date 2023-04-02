@@ -47,3 +47,8 @@
   color: var(--tg-theme-link-color);
 }
 
+.popupEmptyBasket {
+  @include flex(row, center, center);
+
+  height: 165px;
+}
