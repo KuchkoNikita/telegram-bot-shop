@@ -1,2 +1,1 @@
-export * from './cartSelectors';
-export * from './productsSelectors';
+export const getAllCartsSelector = (state) => state.cart;

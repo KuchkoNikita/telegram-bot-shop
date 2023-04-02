@@ -9,6 +9,7 @@ const InformativePopup = ({
   onCloseButtonClick,
 }) => (
   <Popup
+    anchor="bottom"
     isShowCloseButton
     className={styles.popup}
     isOpen={isOpen}

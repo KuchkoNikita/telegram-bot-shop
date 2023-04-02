@@ -16,8 +16,10 @@ const Popup = ({
   className,
   isShowCloseButton,
   onCloseButtonClick,
+  anchor,
 }) => (
   <Drawer
+    anchor={anchor}
     open={isOpen}
     classes={{ paper: styles.paper }}
     className={
