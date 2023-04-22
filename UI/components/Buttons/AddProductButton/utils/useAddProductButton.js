@@ -5,7 +5,7 @@ export const useAddProductButton = ({
 }) => {
   const vibrationClick = (fn) => () => {
     if (typeof window !== 'undefined') {
-      window.navigator.vibrate(200);
+      window.navigator.vibrate(10);
     }
 
     fn();
