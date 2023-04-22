@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { getAllCartsSelector } from '@/redux/selectors';
+import { vibrationClick } from '@/utils/helpers';
 
 export const useBasketButton = ({ onClick, isShow }) => {
   const cart = useSelector(getAllCartsSelector);
@@ -9,6 +10,6 @@ export const useBasketButton = ({ onClick, isShow }) => {
   return {
     count,
     isShowButton,
-    onClick,
+    onClick: vibrationClick(onClick),
   };
 };

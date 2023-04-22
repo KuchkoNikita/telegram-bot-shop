@@ -1,21 +1,11 @@
-const VIBRATION_CLICK_MILLISECONDS = 20;
+import { vibrationClick } from '@/utils/helpers';
 
 export const useAddProductButton = ({
   count,
   handlePlusClick,
   handleMinusClick,
-}) => {
-  const vibrationClick = (fn) => () => {
-    if (typeof window !== 'undefined') {
-      window.navigator.vibrate(VIBRATION_CLICK_MILLISECONDS);
-    }
-
-    fn();
-  };
-
-  return {
-    count,
-    handlePlusClick: vibrationClick(handlePlusClick),
-    handleMinusClick: vibrationClick(handleMinusClick),
-  };
-};
+}) => ({
+  count,
+  handlePlusClick: vibrationClick(handlePlusClick),
+  handleMinusClick: vibrationClick(handleMinusClick),
+});

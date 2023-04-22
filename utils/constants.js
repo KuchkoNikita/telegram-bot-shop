@@ -1,3 +1,5 @@
+export const VIBRATION_CLICK_MILLISECONDS = 20;
+
 export const PHONE_REG_EXP = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 
 export const SVG_IMAGES_TYPES = {

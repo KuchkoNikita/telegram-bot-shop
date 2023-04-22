@@ -1,5 +1,5 @@
 import { createImage, getContentfulFields, getEntriesByTypeAndSlug } from '@/utils/contentfull';
-import { CONTENTFUL_CONTENT_TYPE } from '@/utils/constants';
+import { CONTENTFUL_CONTENT_TYPE, VIBRATION_CLICK_MILLISECONDS } from '@/utils/constants';
 
 export const findProductInСart = (list, activeItem) => list.find(
   (listItem) => listItem?.productOption.productId === activeItem?.productId,
@@ -64,4 +64,12 @@ export const getDataProductPage = async (productType) => {
     contenTextPopup,
     products: formatProducts,
   };
+};
+
+export const vibrationClick = (fn) => () => {
+  if (typeof window !== 'undefined') {
+    window.navigator.vibrate(VIBRATION_CLICK_MILLISECONDS);
+  }
+
+  fn();
 };
