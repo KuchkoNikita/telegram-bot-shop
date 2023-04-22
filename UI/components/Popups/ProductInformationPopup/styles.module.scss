@@ -2,7 +2,7 @@
 @import '@/styles/mixins';
 
 .popup {
-  z-index: $zindexCardPopup;
+  z-index: $zindexCardPopup !important;
   background-color: var(--tg-theme-secondary-bg-color) !important;
 
   .popupContainer {

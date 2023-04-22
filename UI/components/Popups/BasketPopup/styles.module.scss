@@ -2,7 +2,7 @@
 @import '@/styles/variables';
 
 .popup {
-  z-index: $zindexBasketPopup;
+  z-index: $zindexBasketPopup !important;
 }
 
 .popupHeader {
