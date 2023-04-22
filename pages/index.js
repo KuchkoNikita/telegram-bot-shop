@@ -1,20 +1,14 @@
 import Home from '@/UI/views/Home';
-import { getEntriesByTypeAndSlug } from '@/utils/contentfull';
-import { CONTENTFUL_CONTENT_TYPE, CONTENTFUL_PRODUCT_TYPE } from '@/utils/constants';
+import { CONTENTFUL_PRODUCT_TYPE } from '@/utils/constants';
+import { getDataProductPage } from '@/utils/helpers';
 
 export const getStaticProps = async () => {
-  const [page] = await getEntriesByTypeAndSlug(
-    CONTENTFUL_CONTENT_TYPE.page,
-    CONTENTFUL_PRODUCT_TYPE.pod,
-  );
-
-  const contenTextPopup = await getEntriesByTypeAndSlug(
-    CONTENTFUL_CONTENT_TYPE.text,
-  );
+  const { tags, products, contenTextPopup } = await getDataProductPage(CONTENTFUL_PRODUCT_TYPE.pod);
 
   return {
     props: {
-      page,
+      tags,
+      products,
       contenTextPopup,
     },
   };

@@ -9,7 +9,7 @@ export const useProductItem = ({
   onClick,
 }) => {
   const {
-    type, title, details, price, productOptions,
+    type, title, details, price, productOptions, oldPrice,
   } = product;
   const dispatch = useDispatch();
   const cart = useSelector(getAllCartsSelector);
@@ -54,6 +54,7 @@ export const useProductItem = ({
     title,
     details,
     price,
+    oldPrice,
     productOptions,
     onClick,
     isImageSlider,

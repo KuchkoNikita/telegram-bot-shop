@@ -13,7 +13,7 @@
   }
 
   .productPriceWrapper {
-    @include flex(row, space-between);
+    @include flex(row, space-between, center);
   }
 
   .productOldPrice {

@@ -14,6 +14,7 @@ const ProductCard = (props) => {
     title,
     details,
     price,
+    oldPrice,
     productOptions,
     onClick,
     isImageSlider,
@@ -52,11 +53,13 @@ const ProductCard = (props) => {
             {' '}
             р.
           </h3>
-          <h4 className={styles.productOldPrice}>
-            {price}
-            {' '}
-            р.
-          </h4>
+          {oldPrice && (
+            <h4 className={styles.productOldPrice}>
+              {oldPrice}
+              {' '}
+              р.
+            </h4>
+          )}
         </div>
         <Tooltip
           arrow
