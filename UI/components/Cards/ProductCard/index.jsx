@@ -46,11 +46,18 @@ const ProductCard = (props) => {
           />
         )}
       <div className={styles.cardInfo}>
-        <h3 className={styles.productPrice}>
-          {price}
-          {' '}
-          р.
-        </h3>
+        <div className={styles.productPriceWrapper}>
+          <h3 className={styles.productPrice}>
+            {price}
+            {' '}
+            р.
+          </h3>
+          <h4 className={styles.productOldPrice}>
+            {price}
+            {' '}
+            р.
+          </h4>
+        </div>
         <Tooltip
           arrow
           title={title}

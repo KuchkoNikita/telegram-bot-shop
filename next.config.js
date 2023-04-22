@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   webpack(config) {
@@ -9,9 +8,6 @@ const nextConfig = {
     });
 
     return config;
-  },
-  experimental: {
-    appDir: true,
   },
   images: {
     domains: ['images.ctfassets.net'],

@@ -32,7 +32,10 @@ const Home = (props) => {
         products={products}
         onAllTagClick={handleTagClick(null)}
       />
-      <BasketButton onClick={handleProductClick} />
+      <BasketButton
+        isShow={isActiveCard}
+        onClick={handleProductClick}
+      />
       <BasketPopup
         isOpen={isActiveCard}
         onCloseButtonClick={handleProductClick}

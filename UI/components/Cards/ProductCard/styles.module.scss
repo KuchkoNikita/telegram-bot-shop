@@ -1,3 +1,5 @@
+@import '@/styles/mixins';
+
 .card {
   overflow: hidden !important;
   width: 165px;
@@ -6,8 +8,17 @@
 
   .productDetails,
   .productTitle,
-  .productPrice {
+  .productPriceWrapper {
     margin-bottom: 10px;
+  }
+
+  .productPriceWrapper {
+    @include flex(row, space-between);
+  }
+
+  .productOldPrice {
+    color: var(--tg-theme-hint-color);
+    text-decoration: line-through;
   }
 
   .productDetail {
