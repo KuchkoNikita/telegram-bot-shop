@@ -13,6 +13,7 @@ export const useProductItem = ({
   } = product;
   const dispatch = useDispatch();
   const cart = useSelector(getAllCartsSelector);
+  console.log('cart: ', cart);
   const isImageSlider = productOptions.length > 1;
   const [activeProductOption, setActiveProductOption] = useState(productOptions?.[0]);
 

@@ -1,33 +1,28 @@
-import { useState } from 'react';
 import List from '@mui/material/List';
 import Popup from '@/UI/containers/Popup';
 import NavigationItem from '@/UI/components/NavigationItem';
 import NavigationSubMenu from '@/UI/components/NavigationSubMenu';
+import { useNavigationPopupMenu } from './utils/useNavigationPopupMenu';
 import { HOOKAH, POD, E_LIQUID } from './utils/constant';
 import styles from './styles.module.scss';
 
-const NavigationPopupMenu = ({ isBurgerMenu, onCloseClick }) => {
-  const [isOpenPods, setIsOpenPods] = useState(false);
-  const [isOpenHookah, setIsOpenHookah] = useState(false);
-  const [isOpenEliquid, setIsOpenEliquid] = useState(false);
-
-  const handlPodsMenuClick = () => {
-    setIsOpenPods((prevState) => !prevState);
-  };
-
-  const handlHookahMenuClick = () => {
-    setIsOpenHookah((prevState) => !prevState);
-  };
-
-  const handleEliquidSecondLevel = () => {
-    setIsOpenEliquid((prevState) => !prevState);
-  };
+const NavigationPopupMenu = (props) => {
+  const {
+    isBurgerMenu,
+    handleLinkClick,
+    isOpenPods,
+    isOpenHookah,
+    isOpenEliquid,
+    handlPodsMenuClick,
+    handlHookahMenuClick,
+    handleEliquidSecondLevel,
+  } = useNavigationPopupMenu(props);
 
   return (
     <Popup
       isShowCloseButton
       isOpen={isBurgerMenu}
-      onCloseButtonClick={onCloseClick}
+      onCloseButtonClick={handleLinkClick}
       className={styles.popup}
     >
       <div className={styles.popupContainer}>
@@ -41,31 +36,31 @@ const NavigationPopupMenu = ({ isBurgerMenu, onCloseClick }) => {
             list={POD}
             isOpen={isOpenPods}
             onClick={handlPodsMenuClick}
-            onCloseClick={onCloseClick}
+            onCloseClick={handleLinkClick}
           />
           <NavigationSubMenu
             title="Кальяны"
             list={HOOKAH}
             isOpen={isOpenHookah}
             onClick={handlHookahMenuClick}
-            onCloseClick={onCloseClick}
+            onCloseClick={handleLinkClick}
           />
           <NavigationSubMenu
             title="Жидкости"
             list={E_LIQUID}
             isOpen={isOpenEliquid}
             onClick={handleEliquidSecondLevel}
-            onCloseClick={onCloseClick}
+            onCloseClick={handleLinkClick}
           />
           <NavigationItem
             title="Напитки"
             link="/"
-            onClick={onCloseClick}
+            onClick={handleLinkClick}
           />
           <NavigationItem
             title="О нас"
             link="/about-us"
-            onClick={onCloseClick}
+            onClick={handleLinkClick}
           />
         </List>
       </div>

@@ -1,31 +1,28 @@
+import { useSelector } from 'react-redux';
 import { useState, useCallback, useMemo } from 'react';
+import { getActiveTagSelector } from '@/redux/selectors';
 
 export const useHome = ({
   tags, products, contenTextPopup, className,
 }) => {
+  const activeTag = useSelector(getActiveTagSelector);
+
   const [isActiveCard, setIsActiveCard] = useState(false);
-  const [tagActive, setTagActive] = useState(null);
 
   const handleProductClick = useCallback(() => {
     setIsActiveCard((prevState) => !prevState);
   }, []);
 
-  const handleTagClick = useCallback((tag) => () => {
-    setTagActive(tag);
-  }, []);
-
   const filterProducts = useMemo(
-    () => products.filter((product) => product?.tag.tag === tagActive),
-    [products, tagActive],
+    () => products.filter((product) => product?.tag.tag === activeTag),
+    [products, activeTag],
   );
 
-  const currentProducts = tagActive ? filterProducts : products;
+  const currentProducts = activeTag ? filterProducts : products;
 
   return {
     className,
-    tagActive,
     isActiveCard,
-    handleTagClick,
     handleProductClick,
     tags,
     products: currentProducts,

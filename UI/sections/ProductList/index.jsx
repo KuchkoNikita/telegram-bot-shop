@@ -9,8 +9,8 @@ const ProductInformationPopup = dynamic(() => import('@/UI/components/Popups/Pro
 const ProductList = (props) => {
   const {
     products,
-    tagActive,
-    onAllTagClick,
+    activeTag,
+    handleAllTagClick,
     activeProduct,
     handleProductClick,
   } = useProductList(props);
@@ -26,12 +26,12 @@ const ProductList = (props) => {
           />
         ))}
       </div>
-      {tagActive && (
+      {activeTag && (
         <div className={styles.buttonWrapper}>
           <Button
             variant="outlined"
             className={styles.button}
-            onClick={onAllTagClick}
+            onClick={handleAllTagClick}
           >
             Показать все товары
           </Button>

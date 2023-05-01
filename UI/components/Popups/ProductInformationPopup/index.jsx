@@ -32,6 +32,7 @@ const ProductInformationPopup = ({
   const dispatch = useDispatch();
 
   const cart = useSelector(getAllCartsSelector);
+  console.log('cart: ', cart);
   const [activeProductOption, setActiveProductOption] = useState(productOptions?.[0]);
 
   const findProductQuantity = useMemo(

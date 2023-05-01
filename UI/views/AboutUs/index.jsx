@@ -1,7 +1,8 @@
+import cn from 'classnames';
 import styles from './styles.module.scss';
 
-const AboutUs = () => (
-  <main className={styles.section}>
+const AboutUs = ({ className }) => (
+  <main className={cn(styles.section, className)}>
     <section>
       <div className={styles.container}>
         <h1>О нас</h1>

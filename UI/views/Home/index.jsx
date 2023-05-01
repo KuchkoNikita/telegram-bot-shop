@@ -12,26 +12,16 @@ const Home = (props) => {
   const {
     tags,
     className,
-    tagActive,
     isActiveCard,
     products,
-    handleTagClick,
     handleProductClick,
     contenTextPopup,
   } = useHome(props);
 
   return (
     <main className={cn(styles.main, className)}>
-      <TagsList
-        tagActive={tagActive}
-        tagsList={tags}
-        onTagClick={handleTagClick}
-      />
-      <ProductList
-        tagActive={tagActive}
-        products={products}
-        onAllTagClick={handleTagClick(null)}
-      />
+      <TagsList tagsList={tags} />
+      <ProductList products={products} />
       <BasketButton
         isShow={isActiveCard}
         onClick={handleProductClick}
