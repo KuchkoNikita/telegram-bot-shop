@@ -32,10 +32,10 @@ const cartSlice = createSlice({
           (item) => item.productOption.productId !== productOption.productId,
         );
 
-        state = removeItem;
-      } else {
-        itemInCart.productOption.quantity--;
+        return removeItem;
       }
+
+      itemInCart.productOption.quantity -= 1;
     },
   },
 });
