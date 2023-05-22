@@ -73,3 +73,14 @@ export const vibrationClick = (fn) => () => {
 
   fn();
 };
+
+export const getTelegramUsername = () => {
+  if (typeof window !== 'undefined') {
+    const tg = window.Telegram.WebApp;
+    const user = tg.initDataUnsafe?.user;
+
+    return user?.username || '';
+  }
+
+  return '';
+};

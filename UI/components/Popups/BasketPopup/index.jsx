@@ -64,6 +64,7 @@ const BasketPopup = (props) => {
           <Typography>Доставляете осуществляется бесплатно, заказ оплачивется при получении наличными или картой</Typography>
           <FeedbackForm
             className={styles.form}
+            cart={cart}
             onLinkClick={handlePopupChange}
           />
         </div>

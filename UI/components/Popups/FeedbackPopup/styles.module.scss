@@ -1,0 +1,19 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: red;
+
+  .modalContainer {
+    position: relative;
+    padding: 10px 20px;    
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
