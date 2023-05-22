@@ -81,22 +81,24 @@ const ProductCard = (props) => {
             {details.secondText}
           </span>
         </Typography>
-        {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type)
-          ? (
-            <Button
-              variant="contained"
-              className={styles.button}
-            >
-              Написать нам
-            </Button>
-          )
-          : (
-            <AddProductButton
-              count={countProduct}
-              handlePlusClick={handlePlusClick}
-              handleMinusClick={handleMinusClick}
-            />
-          )}
+        <div className={styles.wrapperButton}>
+          {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type)
+            ? (
+              <Button
+                variant="contained"
+                className={styles.button}
+              >
+                Написать нам
+              </Button>
+            )
+            : (
+              <AddProductButton
+                count={countProduct}
+                handlePlusClick={handlePlusClick}
+                handleMinusClick={handleMinusClick}
+              />
+            )}
+        </div>
       </div>
     </div>
   );

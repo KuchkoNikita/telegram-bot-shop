@@ -18,9 +18,9 @@ const ProductList = (props) => {
   return (
     <section>
       <div className={styles.container}>
-        {products.map((product) => (
+        {products.map((product, index) => (
           <ProductCard
-            key={`${product.id}-${product.slug}`}
+            key={`${product.id}-${product.slug}-${index}`}
             onClick={handleProductClick(product)}
             product={product}
           />

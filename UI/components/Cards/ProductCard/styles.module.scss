@@ -37,6 +37,10 @@
     margin-bottom: 11px;
     object-fit: contain;
   }
+
+  .wrapperButton {
+    @include flex(row, center, center);
+  }
 }
 
 .button {
