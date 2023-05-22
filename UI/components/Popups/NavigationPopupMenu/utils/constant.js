@@ -8,7 +8,6 @@ export const HOOKAH = [
 
 export const POD = [
   { title: 'Под-системы', link: '/' },
-  { title: 'Моды', link: '/' },
   { title: 'Расходники', link: '/' },
   { title: 'Атомайзеры', link: '/' },
 ];

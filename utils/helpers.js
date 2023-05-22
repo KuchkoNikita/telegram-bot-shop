@@ -45,6 +45,15 @@ export const formatArrayProducts = (products) => products.map((product) => {
   };
 });
 
+export const formatArrayProductsLink = (products) => products.map((product) => {
+  const { image, ...productProps } = getContentfulFields(product);
+
+  return {
+    ...productProps,
+    image: { ...createImage(image) },
+  };
+});
+
 export const getDataProductPage = async (productType) => {
   const [page] = await getEntriesByTypeAndSlug(
     CONTENTFUL_CONTENT_TYPE.page,
@@ -63,6 +72,19 @@ export const getDataProductPage = async (productType) => {
     tags,
     contenTextPopup,
     products: formatProducts,
+  };
+};
+
+export const getDataHomePage = async (productType) => {
+  const [page] = await getEntriesByTypeAndSlug(
+    CONTENTFUL_CONTENT_TYPE.page,
+    productType,
+  );
+
+  const { products = [] } = getContentfulFields(page);
+
+  return {
+    products: formatArrayProductsLink(products),
   };
 };
 

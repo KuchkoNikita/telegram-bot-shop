@@ -1,4 +1,4 @@
-import Home from '@/UI/views/Home';
+import ProductsList from '@/UI/views/ProductsList';
 import { CONTENTFUL_PRODUCT_TYPE } from '@/utils/constants';
 import { getDataProductPage } from '@/utils/helpers';
 
@@ -14,4 +14,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default Home;
+export default ProductsList;

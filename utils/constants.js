@@ -13,6 +13,7 @@ export const CONTENTFUL_CONTENT_TYPE = {
 };
 
 export const CONTENTFUL_PRODUCT_TYPE = {
+  home: 'home',
   pod: 'pod',
   hookah: 'hookah',
   eLiquid: 'e-liquid',
