@@ -1,15 +1,16 @@
 export const HOOKAH = [
   { title: 'Шахты', link: '/hookah' },
-  { title: 'Колбы', link: '/hookah' },
-  { title: 'Шланги', link: '/hookah' },
-  { title: 'Калауды', link: '/hookah' },
-  { title: 'Чаши', link: '/hookah' },
+  { title: 'Колбы', link: '/flask-hookah' },
+  { title: 'Шланги', link: '/hoses-hookah' },
+  { title: 'Калауды', link: '/' },
+  { title: 'Чаши', link: '/' },
+  { title: 'Аксесуары для кальяна', link: '/hookah-accessories' },
 ];
 
 export const POD = [
-  { title: 'Под-системы', link: '/' },
-  { title: 'Расходники', link: '/' },
-  { title: 'Атомайзеры', link: '/' },
+  { title: 'Под-системы', link: '/pods' },
+  { title: 'Расходники', link: '/cartridges' },
+  { title: 'Атомайзеры', link: '/atomizers' },
 ];
 
 export const E_LIQUID = [
