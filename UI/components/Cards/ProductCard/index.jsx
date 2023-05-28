@@ -81,29 +81,22 @@ const ProductCard = (props) => {
             {details.secondText}
           </span>
         </Typography>
-        <Typography
-          className={styles.productTitle}
-        >
-          {window.Telegram.WebApp.platform}
-        </Typography>
-        <div className={styles.wrapperButton}>
-          {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type)
-            ? (
-              <Button
-                variant="contained"
-                className={styles.button}
-              >
-                Написать нам
-              </Button>
-            )
-            : (
-              <AddProductButton
-                count={countProduct}
-                handlePlusClick={handlePlusClick}
-                handleMinusClick={handleMinusClick}
-              />
-            )}
-        </div>
+        {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type)
+          ? (
+            <Button
+              variant="contained"
+              className={styles.button}
+            >
+              Написать нам
+            </Button>
+          )
+          : (
+            <AddProductButton
+              count={countProduct}
+              handlePlusClick={handlePlusClick}
+              handleMinusClick={handleMinusClick}
+            />
+          )}
       </div>
     </div>
   );
