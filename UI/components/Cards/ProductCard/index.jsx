@@ -92,11 +92,20 @@ const ProductCard = (props) => {
               </Button>
             )
             : (
-              <AddProductButton
-                count={countProduct}
-                handlePlusClick={handlePlusClick}
-                handleMinusClick={handleMinusClick}
-              />
+              <>
+                <Button
+                  variant="contained"
+                  className={styles.button}
+                  onClick={handlePlusClick}
+                >
+                  Бебебебе
+                </Button>
+                <AddProductButton
+                  count={countProduct}
+                  handlePlusClick={handlePlusClick}
+                  handleMinusClick={handleMinusClick}
+                />
+              </>
             )}
         </div>
       </div>
