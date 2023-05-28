@@ -3,7 +3,7 @@ export const HOOKAH = [
   { title: 'Колбы', link: '/flask-hookah' },
   { title: 'Шланги', link: '/hoses-hookah' },
   { title: 'Калауды', link: '/' },
-  { title: 'Чаши', link: '/' },
+  { title: 'Чаши', link: '/bowls-hookah' },
   { title: 'Аксесуары для кальяна', link: '/hookah-accessories' },
 ];
 
