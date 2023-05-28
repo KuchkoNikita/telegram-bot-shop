@@ -3,7 +3,9 @@ import Button from '@mui/material/Button';
 import TextFieldGroup from '@/UI/components/FormComponents/TextFieldGroup';
 import RadioGroup from '@/UI/components/FormComponents/RadioGroup';
 import CheckboxGroup from '@/UI/components/FormComponents/CheckboxGroup';
-import FeedbackPopup from '@/UI/components/Popups/FeedbackPopup';
+import FeedbackPopup from '@/UI/HOC/FeedbackPopup';
+import FailedFeedbackPopup from '@/UI/components/Popups/FailedFeedbackPopup';
+import SuccessFeedbackPopup from '@/UI/components/Popups/SuccessFeedbackPopup';
 import { useFeedbackForm } from './utils/useFeedbackForm';
 import styles from './styles.module.scss';
 
@@ -55,40 +57,14 @@ const FeedbackForm = (props) => {
       >
         ОФОРМИТЬ ЗАКАЗ
       </Button>
-      <FeedbackPopup
+      <SuccessFeedbackPopup
         isOpen={isOpenSuccessfulPopup}
         handleClose={handleCloseSuccessfulPopup}
-      >
-        <h3>Возникла ошибка при отправке формы 😢</h3>
-        <p>
-          Попробуйте снова или напишите
-          {' '}
-          <a
-            href="https://www.google.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            нам
-          </a>
-        </p>
-      </FeedbackPopup>
-      <FeedbackPopup
+      />
+      <FailedFeedbackPopup
         isOpen={isOpenFailedPopup}
         handleClose={handleCloseFailedPopup}
-      >
-        <h3>Возникла ошибка при отправке формы 😢</h3>
-        <p>
-          Попробуйте снова или напишите
-          {' '}
-          <a
-            href="https://www.google.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            нам
-          </a>
-        </p>
-      </FeedbackPopup>
+      />
     </form>
   );
 };
