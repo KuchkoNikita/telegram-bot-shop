@@ -6,6 +6,6 @@ export const useAddProductButton = ({
   handleMinusClick,
 }) => ({
   count,
-  handlePlusClick: vibrationClick(handlePlusClick),
-  handleMinusClick: vibrationClick(handleMinusClick),
+  handlePlusClick, //: vibrationClick(handlePlusClick),
+  handleMinusClick, //: vibrationClick(handleMinusClick),
 });
