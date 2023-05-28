@@ -81,13 +81,12 @@ const ProductCard = (props) => {
             {details.secondText}
           </span>
         </Typography>
+        <Typography
+          className={styles.productTitle}
+        >
+          {window.Telegram.WebApp.platform}
+        </Typography>
         <div className={styles.wrapperButton}>
-          <Typography
-            noWrap
-            className={styles.productTitle}
-          >
-            {window.Telegram.WebApp.platform}
-          </Typography>
           {PRODUCTS_TYPE_FOR_VIEWING_ONLY.includes(type)
             ? (
               <Button
