@@ -3,7 +3,13 @@ import Popup from '@/UI/containers/Popup';
 import NavigationItem from '@/UI/components/NavigationItem';
 import NavigationSubMenu from '@/UI/components/NavigationSubMenu';
 import { useNavigationPopupMenu } from './utils/useNavigationPopupMenu';
-import { HOOKAH, POD, E_LIQUID } from './utils/constant';
+import {
+  HOOKAH,
+  POD,
+  E_LIQUID,
+  BEVERAGES_LINK,
+  ABOUT_US_LINK,
+} from './utils/constant';
 import styles from './styles.module.scss';
 
 const NavigationPopupMenu = (props) => {
@@ -31,6 +37,11 @@ const NavigationPopupMenu = (props) => {
           aria-labelledby="nested-list-subheader"
           className={styles.list}
         >
+          <NavigationItem
+            title="Главная страница"
+            link="/"
+            onClick={handleLinkClick}
+          />
           <NavigationSubMenu
             title="Устроиства"
             list={POD}
@@ -54,12 +65,12 @@ const NavigationPopupMenu = (props) => {
           />
           <NavigationItem
             title="Напитки"
-            link="/"
+            link={BEVERAGES_LINK}
             onClick={handleLinkClick}
           />
           <NavigationItem
             title="О нас"
-            link="/about-us"
+            link={ABOUT_US_LINK}
             onClick={handleLinkClick}
           />
         </List>

@@ -17,3 +17,9 @@ export const E_LIQUID = [
   { title: 'Жидкости', link: '/e-liquid' },
   { title: 'Основы', link: '/e-liquid' },
 ];
+
+export const HOME_LINK = '/';
+
+export const BEVERAGES_LINK = '/beverages';
+
+export const ABOUT_US_LINK = '/about-us';
