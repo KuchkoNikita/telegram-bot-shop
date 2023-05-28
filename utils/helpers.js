@@ -90,7 +90,7 @@ export const getDataHomePage = async (productType) => {
 
 export const vibrationClick = (fn) => () => {
   if (typeof window !== 'undefined') {
-    window.navigator.vibrate(VIBRATION_CLICK_MILLISECONDS);
+    window?.navigator?.vibrate(VIBRATION_CLICK_MILLISECONDS);
   }
 
   fn();
