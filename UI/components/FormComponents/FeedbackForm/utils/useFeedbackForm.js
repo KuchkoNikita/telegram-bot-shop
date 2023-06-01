@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { RADIO_CONTROL_DATA } from '@/UI/components/FormComponents/RadioGroup/utils/constant';
+import { RADIO_CONTROL_DATA } from '@/utils/constants';
 import { getTelegramUsername } from '@/utils/helpers';
-import { validationSchema } from './constant';
+import { getValidationSchema } from './helper';
 
 export const useFeedbackForm = ({ onLinkClick, cart, className }) => {
   const [shippingOption, setShippingOption] = useState(RADIO_CONTROL_DATA[0].value);
@@ -62,7 +62,7 @@ export const useFeedbackForm = ({ onLinkClick, cart, className }) => {
       address: '',
       comment: '',
     },
-    // validationSchema,
+    validationSchema: getValidationSchema(shippingOption),
     onSubmit: onSubmitForm,
   });
 

@@ -23,3 +23,24 @@ export const TYPE_TEXT_POPUP = {
   termsOfUse: 'termsOfUse',
   privacyPolicy: 'privacyPolicy',
 };
+
+export const RADIO_CONTROL_VALUE = {
+  courier: 'courier',
+  belpost: 'belpost',
+  europost: 'europost',
+};
+
+export const RADIO_CONTROL_DATA = [
+  {
+    value: RADIO_CONTROL_VALUE.courier,
+    label: 'Доставка курьером по Полоцку и Новополоцку',
+  },
+  {
+    value: RADIO_CONTROL_VALUE.belpost,
+    label: 'Доставка почтой',
+  },
+  {
+    value: RADIO_CONTROL_VALUE.europost,
+    label: 'Доставка европочтой',
+  },
+];

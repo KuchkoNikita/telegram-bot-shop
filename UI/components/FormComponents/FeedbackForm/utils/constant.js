@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 import { PHONE_REG_EXP } from '@/utils/constants';
 
-export const validationSchema = yup.object({
+const validationSchema = {
   name: yup
     .string()
     .required('Введите Фамилия Имя Отчество'),
@@ -16,9 +16,24 @@ export const validationSchema = yup.object({
     .string()
     .min(5, 'Должно быть больше 5 символов')
     .required('Введите адресс доставки'),
+};
+
+export const validationSchemaCourier = yup.object({ ...validationSchema });
+
+export const validationSchemaBelpost = yup.object({
+  ...validationSchema,
   index: yup
-    .number()
+    .string()
+    .matches(/^[0-9]+$/, 'В индексе могут быть только цифры')
     .min(6, 'Почтовый индекс состоит из 6 цифр')
     .max(6, 'Почтовый индекс состоит из 6 цифр')
     .required('Введите почтовый индекс'),
+});
+
+export const validationSchemaEuropost = yup.object({
+  ...validationSchema,
+  'address-post': yup
+    .string()
+    .min(5, 'Должно быть больше 5 символов')
+    .required('Введите адресс доставки'),
 });

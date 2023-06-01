@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import TextFieldGroup from '@/UI/components/FormComponents/TextFieldGroup';
 import RadioGroup from '@/UI/components/FormComponents/RadioGroup';
 import CheckboxGroup from '@/UI/components/FormComponents/CheckboxGroup';
-import FeedbackPopup from '@/UI/HOC/FeedbackPopup';
 import FailedFeedbackPopup from '@/UI/components/Popups/FailedFeedbackPopup';
 import SuccessFeedbackPopup from '@/UI/components/Popups/SuccessFeedbackPopup';
 import { useFeedbackForm } from './utils/useFeedbackForm';
