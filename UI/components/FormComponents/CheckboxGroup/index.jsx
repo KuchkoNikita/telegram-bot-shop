@@ -32,7 +32,7 @@ const CheckboxGroup = ({
 }) => (
   <FormGroup>
     <FormControlLabel
-      value={isPrivacyPolicyChecked}
+      checked={isPrivacyPolicyChecked}
       onClick={onPrivacyPolicyClick}
       className={styles.controlLabel}
       control={
@@ -41,7 +41,7 @@ const CheckboxGroup = ({
       label={<LabelPrivacyPolicy onLinkClick={onLinkClick} />}
     />
     <FormControlLabel
-      value={isOverEighteenChange}
+      checked={isOverEighteenChange}
       onClick={onOverEighteenClick}
       className={styles.controlLabel}
       label="Подтверждаю, что мне больше 18-ти лет"

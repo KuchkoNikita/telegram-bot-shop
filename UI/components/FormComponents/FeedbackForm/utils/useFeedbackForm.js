@@ -6,7 +6,6 @@ import { getValidationSchema } from './helper';
 
 export const useFeedbackForm = ({ onLinkClick, cart, className }) => {
   const [shippingOption, setShippingOption] = useState(RADIO_CONTROL_DATA[0].value);
-  // Посмотреть почему не рбаотет чекбокс от состояния
   const [isPrivacyPolicyChecked, setIsPrivacyPolicyChecked] = useState(false);
   const [isOverEighteenChange, setIsOverEighteenChange] = useState(false);
   const [isOpenSuccessfulPopup, setIsOpenSuccessfulPopup] = useState(false);
